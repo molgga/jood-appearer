@@ -4,5 +4,9 @@
   "dependencies": {
     "intersection-observer": "^0.7.0",
     "rxjs": "^6.5.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/molgga/jood-appearer.git"
   }
 }
