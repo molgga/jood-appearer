@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  margin: 10px;
+  padding: 50px;
+  border: 1px dashed #cccccc;
+  text-align: center;
+  background-color: #ffffff;
+  transition: background-color 300ms;
+
+  &.is-appear {
+    background-color: #ff9900;
+  }
+}

@@ -1,0 +1,21 @@
+<div class="actions">
+  <button (click)="handleAddBox()">ADD</button>
+  <button (click)="handleRemoveBox()">REMOVE</button>
+</div>
+<div class="h-list">
+  <box-item
+    *ngFor="let item of testList"
+    class="h-box"
+    [item]="item"
+    (testEvent)="onItemEvent($event)"
+  >
+  </box-item>
+</div>
+<div class="v-list">
+  <box-item
+    *ngFor="let item of testList"
+    [item]="item"
+    (testEvent)="onItemEvent($event)"
+  >
+  </box-item>
+</div>

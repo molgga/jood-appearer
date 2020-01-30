@@ -1,0 +1,18 @@
+.h-list {
+  display: block;
+  overflow: auto;
+  white-space: nowrap;
+}
+.h-box {
+  display: inline-block;
+}
+
+.actions {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
