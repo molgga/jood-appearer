@@ -33,7 +33,7 @@
 
 ▸ **destroy**(): *void*
 
-Defined in projects/packages/src/core/types.ts:34
+*Defined in [projects/packages/src/core/types.ts:34](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L34)*
 
 파기
 
@@ -45,7 +45,7 @@ ___
 
 ▸ **init**(`option`: [AppearerOption](appeareroption.md)): *void*
 
-Defined in projects/packages/src/core/types.ts:17
+*Defined in [projects/packages/src/core/types.ts:17](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L17)*
 
 초기화
 
@@ -63,7 +63,7 @@ ___
 
 ▸ **observe**(`actor`: T): *void*
 
-Defined in projects/packages/src/core/types.ts:23
+*Defined in [projects/packages/src/core/types.ts:23](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L23)*
 
 관찰 대상 등록
 
@@ -81,7 +81,7 @@ ___
 
 ▸ **unobserve**(`actor`: T): *void*
 
-Defined in projects/packages/src/core/types.ts:29
+*Defined in [projects/packages/src/core/types.ts:29](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L29)*
 
 관찰 대상 해제
 

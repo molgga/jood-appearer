@@ -36,7 +36,7 @@
 
 • **element**: *[AppearerActorElement](../globals.md#appeareractorelement)*
 
-Defined in projects/packages/src/core/types.ts:44
+*Defined in [projects/packages/src/core/types.ts:44](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L44)*
 
 관찰 대상이 참조해야하는 DOM
 
@@ -46,7 +46,7 @@ ___
 
 • **events**: *Subject‹[AppearEvent](../classes/appearevent.md)›*
 
-Defined in projects/packages/src/core/types.ts:54
+*Defined in [projects/packages/src/core/types.ts:54](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L54)*
 
 관찰 이벤트 Observable
 
@@ -56,7 +56,7 @@ ___
 
 • **isAppear**: *boolean*
 
-Defined in projects/packages/src/core/types.ts:59
+*Defined in [projects/packages/src/core/types.ts:59](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L59)*
 
 현재 관찰대상의 진입, 이탈 여부
 
@@ -66,7 +66,7 @@ ___
 
 • **stage**: *[IAppearStage](iappearstage.md)‹any›*
 
-Defined in projects/packages/src/core/types.ts:49
+*Defined in [projects/packages/src/core/types.ts:49](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L49)*
 
 관찰 대상이 속하게 되는 스테이지(관찰자)
 
@@ -76,7 +76,7 @@ Defined in projects/packages/src/core/types.ts:49
 
 ▸ **appear**(`entry?`: IntersectionObserverEntry): *void*
 
-Defined in projects/packages/src/core/types.ts:73
+*Defined in [projects/packages/src/core/types.ts:73](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L73)*
 
 스테이지 진입시 알림.
 스테이지에서 호출됨.
@@ -95,7 +95,7 @@ ___
 
 ▸ **bind**(`stage`: [IAppearStage](iappearstage.md)‹[IAppearActor](iappearactor.md)›): *void*
 
-Defined in projects/packages/src/core/types.ts:66
+*Defined in [projects/packages/src/core/types.ts:66](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L66)*
 
 관찰 대상이 속하게 되는 스테이지(관찰자) 지정.
 스테이지에서 직접 등록됨.
@@ -114,7 +114,7 @@ ___
 
 ▸ **destroy**(): *void*
 
-Defined in projects/packages/src/core/types.ts:85
+*Defined in [projects/packages/src/core/types.ts:85](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L85)*
 
 파기
 
@@ -126,7 +126,7 @@ ___
 
 ▸ **disappear**(`entry?`: IntersectionObserverEntry): *void*
 
-Defined in projects/packages/src/core/types.ts:80
+*Defined in [projects/packages/src/core/types.ts:80](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L80)*
 
 스테이지 이탈시 알림.
 스테이지에서 호출됨.

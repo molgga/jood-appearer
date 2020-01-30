@@ -33,7 +33,7 @@
 
 Ƭ **AppearerActorElement**: *HTMLElement | Element*
 
-Defined in projects/packages/src/core/types.ts:91
+*Defined in [projects/packages/src/core/types.ts:91](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L91)*
 
 관찰자, 관찰대상에서 참조되어야 하는 native element 타입
 
@@ -43,7 +43,7 @@ Defined in projects/packages/src/core/types.ts:91
 
 ▸ **sleep**(`delay`: number): *Promise‹unknown›*
 
-Defined in projects/packages/src/core/testing.ts:1
+*Defined in [projects/packages/src/core/testing.ts:1](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/testing.ts#L1)*
 
 **Parameters:**
 

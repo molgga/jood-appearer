@@ -27,7 +27,7 @@
 
 • **actor**: *T*
 
-Defined in projects/packages/src/core/types.ts:135
+*Defined in [projects/packages/src/core/types.ts:135](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L135)*
 
 참조되는 관찰대상
 
@@ -37,6 +37,6 @@ ___
 
 • **entry**: *IntersectionObserverEntry*
 
-Defined in projects/packages/src/core/types.ts:140
+*Defined in [projects/packages/src/core/types.ts:140](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L140)*
 
 인터섹션 옵저버의 진입, 이탈 당시 관찰 상태

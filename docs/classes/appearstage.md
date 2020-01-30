@@ -46,7 +46,7 @@
 
 • **actorMap**: *Map‹[AppearerActorElement](../globals.md#appeareractorelement), T›*
 
-Defined in projects/packages/src/stage/appear-stage.ts:18
+*Defined in [projects/packages/src/stage/appear-stage.ts:18](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L18)*
 
 Actor 맵
 
@@ -56,7 +56,7 @@ ___
 
 • **observer**: *IntersectionObserver*
 
-Defined in projects/packages/src/stage/appear-stage.ts:24
+*Defined in [projects/packages/src/stage/appear-stage.ts:24](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L24)*
 
 IntersectionObserver
 
@@ -68,7 +68,7 @@ IntersectionObserver
 
 • **get actorSize**(): *number*
 
-Defined in projects/packages/src/stage/appear-stage.ts:80
+*Defined in [projects/packages/src/stage/appear-stage.ts:80](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L80)*
 
 옵저버에 등록(관찰) 중 인 Actor 의 수
 
@@ -80,7 +80,7 @@ ___
 
 • **get intersectionObserver**(): *IntersectionObserver*
 
-Defined in projects/packages/src/stage/appear-stage.ts:95
+*Defined in [projects/packages/src/stage/appear-stage.ts:95](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L95)*
 
 생성된 intersection observer 인스턴스
 
@@ -94,7 +94,7 @@ Defined in projects/packages/src/stage/appear-stage.ts:95
 
 *Implementation of [IAppearStage](../interfaces/iappearstage.md)*
 
-Defined in projects/packages/src/stage/appear-stage.ts:43
+*Defined in [projects/packages/src/stage/appear-stage.ts:43](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L43)*
 
 파기
 
@@ -106,7 +106,7 @@ ___
 
 ▸ **getActors**(): *T[]*
 
-Defined in projects/packages/src/stage/appear-stage.ts:88
+*Defined in [projects/packages/src/stage/appear-stage.ts:88](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L88)*
 
 등록 되어있는 Actor 를 반환 합니다.
 
@@ -122,7 +122,7 @@ ___
 
 *Implementation of [IAppearStage](../interfaces/iappearstage.md)*
 
-Defined in projects/packages/src/stage/appear-stage.ts:30
+*Defined in [projects/packages/src/stage/appear-stage.ts:30](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L30)*
 
 초기화
 
@@ -140,7 +140,7 @@ ___
 
 ▸ **observe**(`actor`: T): *void*
 
-Defined in projects/packages/src/stage/appear-stage.ts:56
+*Defined in [projects/packages/src/stage/appear-stage.ts:56](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L56)*
 
 전달된 actor 를 옵저버에 등록합니다.
 
@@ -158,7 +158,7 @@ ___
 
 ▸ **onObserveEntries**(`entries`: IntersectionObserverEntry[]): *void*
 
-Defined in projects/packages/src/stage/appear-stage.ts:104
+*Defined in [projects/packages/src/stage/appear-stage.ts:104](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L104)*
 
 옵저버의 콜백 핸들러
 
@@ -176,7 +176,7 @@ ___
 
 ▸ **unobserve**(`actor`: T): *void*
 
-Defined in projects/packages/src/stage/appear-stage.ts:69
+*Defined in [projects/packages/src/stage/appear-stage.ts:69](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L69)*
 
 전달된 actor 를 옵저버에서 제외합니다.
 

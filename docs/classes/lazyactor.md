@@ -52,7 +52,7 @@ Stage 에 등록될 Actor.
 
 *Inherited from [BaseActor](baseactor.md).[constructor](baseactor.md#constructor)*
 
-Defined in projects/packages/src/actor/base-actor.ts:33
+*Defined in [projects/packages/src/actor/base-actor.ts:33](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L33)*
 
 **Parameters:**
 
@@ -68,7 +68,7 @@ Name | Type | Description |
 
 • **appearDelay**: *number* = 150
 
-Defined in projects/packages/src/actor/lazy-actor.ts:12
+*Defined in [projects/packages/src/actor/lazy-actor.ts:12](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L12)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **appearTimer**: *any* = null
 
-Defined in projects/packages/src/actor/lazy-actor.ts:10
+*Defined in [projects/packages/src/actor/lazy-actor.ts:10](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L10)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **checkoutDelay**: *number* = 1000
 
-Defined in projects/packages/src/actor/lazy-actor.ts:11
+*Defined in [projects/packages/src/actor/lazy-actor.ts:11](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L11)*
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 *Inherited from [BaseActor](baseactor.md).[element](baseactor.md#element)*
 
-Defined in projects/packages/src/actor/base-actor.ts:17
+*Defined in [projects/packages/src/actor/base-actor.ts:17](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L17)*
 
 옵저버에 등록될 native element
 
@@ -110,7 +110,7 @@ ___
 
 *Inherited from [BaseActor](baseactor.md).[events](baseactor.md#events)*
 
-Defined in projects/packages/src/actor/base-actor.ts:23
+*Defined in [projects/packages/src/actor/base-actor.ts:23](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L23)*
 
 이벤트 Observable
 
@@ -126,7 +126,7 @@ ___
 
 *Inherited from [BaseActor](baseactor.md).[isAppear](baseactor.md#isappear)*
 
-Defined in projects/packages/src/actor/base-actor.ts:33
+*Defined in [projects/packages/src/actor/base-actor.ts:33](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L33)*
 
 현재 진입 여부 상태
 
@@ -140,7 +140,7 @@ ___
 
 *Inherited from [BaseActor](baseactor.md).[stage](baseactor.md#stage)*
 
-Defined in projects/packages/src/actor/base-actor.ts:28
+*Defined in [projects/packages/src/actor/base-actor.ts:28](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L28)*
 
 해당 인스턴스가 등록된 스테이지
 
@@ -154,7 +154,7 @@ Defined in projects/packages/src/actor/base-actor.ts:28
 
 *Overrides [BaseActor](baseactor.md).[appear](baseactor.md#appear)*
 
-Defined in projects/packages/src/actor/lazy-actor.ts:41
+*Defined in [projects/packages/src/actor/lazy-actor.ts:41](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L41)*
 
 **Parameters:**
 
@@ -170,7 +170,7 @@ ___
 
 ▸ **appearCheckout**(`entry`: IntersectionObserverEntry): *void*
 
-Defined in projects/packages/src/actor/lazy-actor.ts:53
+*Defined in [projects/packages/src/actor/lazy-actor.ts:53](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L53)*
 
 **Parameters:**
 
@@ -190,7 +190,7 @@ ___
 
 *Inherited from [BaseActor](baseactor.md).[bind](baseactor.md#bind)*
 
-Defined in projects/packages/src/actor/base-actor.ts:46
+*Defined in [projects/packages/src/actor/base-actor.ts:46](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L46)*
 
 해당 인스턴스를 관찰하는 스테이지를 연결
 
@@ -208,7 +208,7 @@ ___
 
 ▸ **clearAppearTimer**(): *void*
 
-Defined in projects/packages/src/actor/lazy-actor.ts:34
+*Defined in [projects/packages/src/actor/lazy-actor.ts:34](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L34)*
 
 진입 대기 타이머 파기
 
@@ -224,7 +224,7 @@ ___
 
 *Inherited from [BaseActor](baseactor.md).[destroy](baseactor.md#destroy)*
 
-Defined in projects/packages/src/actor/base-actor.ts:84
+*Defined in [projects/packages/src/actor/base-actor.ts:84](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L84)*
 
 **Returns:** *void*
 
@@ -238,7 +238,7 @@ ___
 
 *Overrides [BaseActor](baseactor.md).[disappear](baseactor.md#disappear)*
 
-Defined in projects/packages/src/actor/lazy-actor.ts:61
+*Defined in [projects/packages/src/actor/lazy-actor.ts:61](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L61)*
 
 **Parameters:**
 
@@ -256,7 +256,7 @@ ___
 
 *Inherited from [BaseActor](baseactor.md).[dispatch](baseactor.md#dispatch)*
 
-Defined in projects/packages/src/actor/base-actor.ts:55
+*Defined in [projects/packages/src/actor/base-actor.ts:55](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L55)*
 
 진입, 이탈 등 이벤트 알림
 
@@ -275,7 +275,7 @@ ___
 
 ▸ **setAppearDelay**(`delay`: number): *void*
 
-Defined in projects/packages/src/actor/lazy-actor.ts:27
+*Defined in [projects/packages/src/actor/lazy-actor.ts:27](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L27)*
 
 지정된 시간 사이에 진입 후 진출을 하는 경우 진입 알림을 하지 않는 대기 시간.
 
@@ -293,7 +293,7 @@ ___
 
 ▸ **setCheckoutDelay**(`delay`: number): *void*
 
-Defined in projects/packages/src/actor/lazy-actor.ts:19
+*Defined in [projects/packages/src/actor/lazy-actor.ts:19](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L19)*
 
 느린 감지를 시작하기 전 대기 시간.
 지정된 시간 전에 감지된 진입은 느린 감지를 하지 않고 바로 진입을 알림.

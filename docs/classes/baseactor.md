@@ -44,7 +44,7 @@ Stage 에 등록될 Actor.
 
 \+ **new BaseActor**(`element`: [AppearerActorElement](../globals.md#appeareractorelement)): *[BaseActor](baseactor.md)*
 
-Defined in projects/packages/src/actor/base-actor.ts:33
+*Defined in [projects/packages/src/actor/base-actor.ts:33](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L33)*
 
 **Parameters:**
 
@@ -62,7 +62,7 @@ Name | Type | Description |
 
 *Implementation of [IAppearActor](../interfaces/iappearactor.md).[element](../interfaces/iappearactor.md#element)*
 
-Defined in projects/packages/src/actor/base-actor.ts:17
+*Defined in [projects/packages/src/actor/base-actor.ts:17](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L17)*
 
 옵저버에 등록될 native element
 
@@ -74,7 +74,7 @@ ___
 
 *Implementation of [IAppearActor](../interfaces/iappearactor.md).[events](../interfaces/iappearactor.md#events)*
 
-Defined in projects/packages/src/actor/base-actor.ts:23
+*Defined in [projects/packages/src/actor/base-actor.ts:23](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L23)*
 
 이벤트 Observable
 
@@ -88,7 +88,7 @@ ___
 
 *Implementation of [IAppearActor](../interfaces/iappearactor.md).[isAppear](../interfaces/iappearactor.md#isappear)*
 
-Defined in projects/packages/src/actor/base-actor.ts:33
+*Defined in [projects/packages/src/actor/base-actor.ts:33](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L33)*
 
 현재 진입 여부 상태
 
@@ -100,7 +100,7 @@ ___
 
 *Implementation of [IAppearActor](../interfaces/iappearactor.md).[stage](../interfaces/iappearactor.md#stage)*
 
-Defined in projects/packages/src/actor/base-actor.ts:28
+*Defined in [projects/packages/src/actor/base-actor.ts:28](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L28)*
 
 해당 인스턴스가 등록된 스테이지
 
@@ -112,7 +112,7 @@ Defined in projects/packages/src/actor/base-actor.ts:28
 
 *Implementation of [IAppearActor](../interfaces/iappearactor.md)*
 
-Defined in projects/packages/src/actor/base-actor.ts:68
+*Defined in [projects/packages/src/actor/base-actor.ts:68](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L68)*
 
 스테이지 진입
 
@@ -132,7 +132,7 @@ ___
 
 *Implementation of [IAppearActor](../interfaces/iappearactor.md)*
 
-Defined in projects/packages/src/actor/base-actor.ts:46
+*Defined in [projects/packages/src/actor/base-actor.ts:46](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L46)*
 
 해당 인스턴스를 관찰하는 스테이지를 연결
 
@@ -152,7 +152,7 @@ ___
 
 *Implementation of [IAppearActor](../interfaces/iappearactor.md)*
 
-Defined in projects/packages/src/actor/base-actor.ts:84
+*Defined in [projects/packages/src/actor/base-actor.ts:84](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L84)*
 
 **Returns:** *void*
 
@@ -164,7 +164,7 @@ ___
 
 *Implementation of [IAppearActor](../interfaces/iappearactor.md)*
 
-Defined in projects/packages/src/actor/base-actor.ts:78
+*Defined in [projects/packages/src/actor/base-actor.ts:78](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L78)*
 
 스테이지 이탈
 
@@ -182,7 +182,7 @@ ___
 
 ▸ **dispatch**(`type`: string, `entry?`: IntersectionObserverEntry): *void*
 
-Defined in projects/packages/src/actor/base-actor.ts:55
+*Defined in [projects/packages/src/actor/base-actor.ts:55](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L55)*
 
 진입, 이탈 등 이벤트 알림
 
