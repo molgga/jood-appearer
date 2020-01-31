@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>actor/once-actor.ts - Postman Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="OnceActor.html">OnceActor</a><ul class='methods'><li data-type='method'><a href="OnceActor.html#appear">appear</a></li><li data-type='method'><a href="OnceActor.html#bind">bind</a></li><li data-type='method'><a href="OnceActor.html#disappear">disappear</a></li><li data-type='method'><a href="OnceActor.html#dispatch">dispatch</a></li><li data-type='method'><a href="OnceActor.html#dispose">dispose</a></li></ul></li><li><a href="LazyActor.html">LazyActor</a><ul class='methods'><li data-type='method'><a href="LazyActor.html#appear">appear</a></li><li data-type='method'><a href="LazyActor.html#bind">bind</a></li><li data-type='method'><a href="LazyActor.html#disappear">disappear</a></li><li data-type='method'><a href="LazyActor.html#dispatch">dispatch</a></li><li data-type='method'><a href="LazyActor.html#dispose">dispose</a></li><li data-type='method'><a href="LazyActor.html#setAppearDelay">setAppearDelay</a></li><li data-type='method'><a href="LazyActor.html#setCheckoutDelay">setCheckoutDelay</a></li></ul></li><li><a href="BaseActor.html">BaseActor</a><ul class='methods'><li data-type='method'><a href="BaseActor.html#appear">appear</a></li><li data-type='method'><a href="BaseActor.html#bind">bind</a></li><li data-type='method'><a href="BaseActor.html#disappear">disappear</a></li><li data-type='method'><a href="BaseActor.html#dispatch">dispatch</a></li><li data-type='method'><a href="BaseActor.html#dispose">dispose</a></li></ul></li><li><a href="AppearStage.html">AppearStage</a><ul class='methods'><li data-type='method'><a href="AppearStage.html#dispose">dispose</a></li><li data-type='method'><a href="AppearStage.html#getActors">getActors</a></li><li data-type='method'><a href="AppearStage.html#init">init</a></li><li data-type='method'><a href="AppearStage.html#observe">observe</a></li><li data-type='method'><a href="AppearStage.html#onObserveEntries">onObserveEntries</a></li><li data-type='method'><a href="AppearStage.html#unobserve">unobserve</a></li></ul></li><li><a href="AppearEvent.html">AppearEvent</a></li></ul><h3>Interfaces</h3><ul><li><a href="StageOption.html">StageOption</a></li><li><a href="IStage.html">IStage</a></li><li><a href="IActor.html">IActor</a></li><li><a href="AppearEventData.html">AppearEventData</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">actor/once-actor.ts</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { BaseActor } from "./base-actor";
+import { AppearEvent } from "../common/types";
+
+/**
+ * Stage 에 등록될 Actor.
+ * 스테이지 진입을 한번만 감지한 후 본인 스스로 관찰 해제하는 감지형.
+ * (사용 예: 화면 진입시 한번만 애니메이션 한다, 이미지 로드를 한다)
+ * @class OnceActor
+ * @extends {BaseActor}
+ */
+export class OnceActor extends BaseActor {
+  /**
+   * 스테이지 진입. 진입시 자동 관찰 해제.
+   * @override
+   * @param [entry]
+   */
+  appear(entry?: IntersectionObserverEntry): void {
+    if (this.isAppear) return;
+    this.isAppear = true;
+    this.dispatch(AppearEvent.APPEAR, entry);
+    if (this.stage) {
+      this.stage.unobserve(this);
+    }
+  }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated at Fri Jan 31 2020 18:31:50 GMT+0900 (GMT+09:00)
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

@@ -2,24 +2,26 @@ import { Subject } from "rxjs";
 
 /**
  * 관찰자
+ * @interface IStage
  * @template T
+ * @property init {method} 초기화
+ * @property observe {method} 관찰 대상 등록
+ * @property unobserve {method} 관찰 대상 해제
+ * @property dispose {method} 파기
  */
 export interface IStage<T> {
   /**
-   * 초기화
-   * @param option
+   * @param [option] 초기 옵션
    */
-  init(option: StageOption): void;
+  init(option?: StageOption): void;
 
   /**
-   * 관찰 대상 등록
-   * @param actor
+   * @param actor 관찰대상
    */
   observe(actor: T): void;
 
   /**
-   * 관찰 대상 해제
-   * @param actor
+   * @param actor 관찰해제 대상
    */
   unobserve(actor: T): void;
 
@@ -31,70 +33,75 @@ export interface IStage<T> {
 
 /**
  * 관찰대상
+ * @interface IActor
+ * @property element {ActorElement} 관찰 대상이 참조해야하는 DOM
+ * @property stage {IStage<any>} 관찰 대상이 속하게 되는 스테이지(관찰자)
+ * @property events {Subject<AppearEvent>} 관찰 이벤트 Observable
+ * @property isAppear {boolean} 현재 관찰대상의 진입, 이탈 여부
+ * @property bind {method} 관찰 대상이 속하게 되는 스테이지(관찰자) 등록.
+ * @property appear {method} 스테이지 진입.
+ * @property disappear {method} 스테이지 이탈.
+ * @property dispose {method} 파기
  */
 export interface IActor {
-  /**
-   * 관찰 대상이 참조해야하는 DOM
-   */
   element: ActorElement;
-
-  /**
-   * 관찰 대상이 속하게 되는 스테이지(관찰자)
-   */
   stage: IStage<any>;
-
-  /**
-   * 관찰 이벤트 Observable
-   */
   events: Subject<AppearEvent>;
-
-  /**
-   * 현재 관찰대상의 진입, 이탈 여부
-   */
   isAppear: boolean;
 
   /**
-   * 관찰 대상이 속하게 되는 스테이지(관찰자) 지정.
-   * 스테이지에서 직접 등록됨.
-   * @param stage
+   * @param stage 관찰 대상으로 등록될 때 해당 인스턴스를 관찰하는 스테이지
    */
   bind(stage: IStage<IActor>): void;
 
   /**
-   * 스테이지 진입시 알림.
-   * 스테이지에서 호출됨.
-   * @param [entry]
+   * @param [entry] 진입 당시 관찰 정보
    */
   appear(entry?: IntersectionObserverEntry): void;
 
   /**
-   * 스테이지 이탈시 알림.
-   * 스테이지에서 호출됨.
-   * @param [entry]
+   * @param [entry] 이탈 당시 관찰 정보
    */
   disappear(entry?: IntersectionObserverEntry): void;
 
-  /**
-   * 파기
-   */
   dispose(): void;
 }
 
 /**
- * 스테이지 초기 옵션
- */
-export interface StageOption extends IntersectionObserverInit {}
-
-/**
  * 관찰자, 관찰대상에서 참조되어야 하는 native element 타입
+ * @typedef {HTMLElement | Element} ActorElement
  */
 export type ActorElement = HTMLElement | Element;
 
 /**
+ * 스테이지 초기 옵션.
+ * @interface StageOption
+ * @property root {Element} mdn 참고
+ * @property rootMargin {string} mdn 참고
+ * @property threshold {string | array} mdn 참고
+ * @extends {IntersectionObserverInit}
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+ */
+export interface StageOption extends IntersectionObserverInit {}
+
+/**
  * 관찰대상의 이벤트
- * @template D
+ * @class AppearEvent
+ * @implements {AppearEventData<T>}
+ * @template T
  */
 export class AppearEvent<T = IActor> implements AppearEventData<T> {
+  /**
+   * @param type 이벤트 타입
+   * @param option 이벤트 데이터
+   */
+  constructor(type: string, option: AppearEventData<T>) {
+    const { actor, entry } = option;
+    this.type = type;
+    this.actor = actor;
+    this.entry = entry;
+  }
+
   /**
    * 이벤트 타입 - 진입
    */
@@ -119,23 +126,16 @@ export class AppearEvent<T = IActor> implements AppearEventData<T> {
    * 인터섹션 옵저버의 진입, 이탈 당시 관찰 상태
    */
   entry: IntersectionObserverEntry;
-
-  constructor(type: string, option: AppearEventData<T>) {
-    const { actor, entry } = option;
-    this.type = type;
-    this.actor = actor;
-    this.entry = entry;
-  }
 }
 
+/**
+ * Appear 이벤트의 데이터
+ * @interface AppearEventData
+ * @property actor {T} 참조되는 관찰대상
+ * @property entry {IntersectionObserverEntry} 인터섹션 옵저버의 진입, 이탈 당시 관찰 상태
+ * @template T
+ */
 export interface AppearEventData<T> {
-  /**
-   * 참조되는 관찰대상
-   */
   actor: T;
-
-  /**
-   * 인터섹션 옵저버의 진입, 이탈 당시 관찰 상태
-   */
   entry: IntersectionObserverEntry;
 }

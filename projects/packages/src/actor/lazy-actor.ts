@@ -5,6 +5,8 @@ import { AppearEvent } from "../common/types";
  * Stage 에 등록될 Actor.
  * 스테이지에 진입을 한번만 감지하되, 진입 후 너무 빠르게 이탈시에는 감지 처리를 하지 않는 느린 감지형.
  * (사용 예: 촘촘한 상품 목록과 같이 빠르게 스크롤 하여 지나칠 수 있는 곳)
+ * @class LazyActor
+ * @extends {BaseActor}
  */
 export class LazyActor extends BaseActor {
   private appearTimer: any = null;
@@ -38,6 +40,11 @@ export class LazyActor extends BaseActor {
     }
   }
 
+  /**
+   * 스테이지 진입. 진입 후 일정시간 (appearDelay) 전에 이탈하는 경우는 진입으로 취급하지 않음.
+   * @override
+   * @param [entry]
+   */
   appear(entry: IntersectionObserverEntry) {
     this.clearAppearTimer();
     if (this.isAppear) return;
@@ -50,6 +57,11 @@ export class LazyActor extends BaseActor {
     }
   }
 
+  /**
+   * 실제 진입 처리.
+   * @private
+   * @param entry
+   */
   private doAppear(entry: IntersectionObserverEntry) {
     this.isAppear = true;
     this.dispatch(AppearEvent.APPEAR, entry);
@@ -58,6 +70,11 @@ export class LazyActor extends BaseActor {
     }
   }
 
+  /**
+   * 스테이지 이탈.
+   * @override
+   * @param entry
+   */
   disappear(entry: IntersectionObserverEntry) {
     this.clearAppearTimer();
     if (!this.isAppear) return;

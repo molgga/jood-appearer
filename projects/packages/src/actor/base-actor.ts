@@ -4,8 +4,17 @@ import { Subject } from "rxjs";
 /**
  * Stage 에 등록될 Actor.
  * 스테이지에 진입, 이탈 시 계속 알려주는 기본형.
+ * @class BaseActor
+ * @implements {IActor}
  */
 export class BaseActor implements IActor {
+  /**
+   * @param element 옵저버에 등록되어야 하는 native element
+   */
+  constructor(element: ActorElement) {
+    this.element = element;
+  }
+
   /**
    * 옵저버에 등록될 native element
    */
@@ -26,13 +35,6 @@ export class BaseActor implements IActor {
    * 현재 진입 여부 상태
    */
   isAppear: boolean = false;
-
-  /**
-   * @param element 옵저버에 등록되어야 하는 native element
-   */
-  constructor(element: ActorElement) {
-    this.element = element;
-  }
 
   /**
    * 해당 인스턴스를 관찰하는 스테이지를 연결
