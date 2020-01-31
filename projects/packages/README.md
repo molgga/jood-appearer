@@ -6,7 +6,9 @@ intersection observer 활용.
 | ---------------- | ----------------------- | ----------------------------------------------------------------------------- |
 | `@jood/appearer` | npm package             | [link](https://www.npmjs.com/package/@jood/appearer)                          |
 | `packages`       | library packages source | [link](https://github.com/molgga/jood-appearer/tree/master/projects/packages) |
-| `Doc:api`        | api document            | [link](https://github.com/molgga/jood-appearer/blob/master/docs)              |
+| `Doc:api`        | api document            | [link](https://molgga.github.io/jood-appearer)                                |
+
+---
 
 ### AppearStage
 
@@ -20,13 +22,13 @@ intersection observer 활용.
 
 ### example
 
-```
-import { AppearStage, AppearEvent, BaseActor } from '@jood/appearer';
+```typescript
+import { AppearStage, AppearEvent, BaseActor } from "@jood/appearer";
 
 const someStage = new AppearStage();
 someStage.init();
 
-const baseActor = new BaseActor(document.querySelector('.my-some-box1'));
+const baseActor = new BaseActor(document.querySelector(".my-some-box1"));
 someStage.observe(baseActor);
 
 const subscription = baseActor.events.subscribe((evt: AppearEvent) => {
@@ -44,17 +46,17 @@ const subscription = baseActor.events.subscribe((evt: AppearEvent) => {
 
 ---
 
-```
-import { AppearStage, OnceActor } from '@jood/appearer';
+```typescript
+import { AppearStage, OnceActor } from "@jood/appearer";
 
 const someStage = new AppearStage();
 someStage.init();
 
-const onceActor = new OnceActor(document.querySelector('.my-some-box1'));
+const onceActor = new OnceActor(document.querySelector(".my-some-box1"));
 someStage.observe(onceActor);
 
 const subscription = onceActor.events.subscribe((evt: AppearEvent) => {
-  image.src = 'real-src';
+  image.src = "real-src";
   subscription.unsubscribe();
   onceActor.dispose();
 });
@@ -62,20 +64,20 @@ const subscription = onceActor.events.subscribe((evt: AppearEvent) => {
 
 ---
 
-```
-import { AppearStage, AppearEvent, LazyActor } from '@jood/appearer';
+```typescript
+import { AppearStage, AppearEvent, LazyActor } from "@jood/appearer";
 
 const someStage = new AppearStage();
 someStage.init();
 
-const myList = new OnceActor(document.querySelectorAll('.my-some-box'));
+const myList = new OnceActor(document.querySelectorAll(".my-some-box"));
 myList.forEach(elBox => {
   const lazyActor = new LazyActor(elBox);
   someStage.observe(lazyActor);
 
   const subscription = lazyActor.events.subscribe((evt: AppearEvent) => {
     const { element } = evt.actor;
-    element.classList.add('is-active');
+    element.classList.add("is-active");
     subscription.unsubscribe();
     lazyActor.dispose();
   });
@@ -84,10 +86,10 @@ myList.forEach(elBox => {
 
 ---
 
-```
-import { AppearStage, AppearEvent, LazyActor } from '@jood/appearer';
+```typescript
+import { AppearStage, AppearEvent, LazyActor } from "@jood/appearer";
 
-const elHorizontalContainer = document.querySelector('.my-horizonta-container');
+const elHorizontalContainer = document.querySelector(".my-horizonta-container");
 const someStage = new AppearStage();
 
 /**
@@ -96,17 +98,17 @@ const someStage = new AppearStage();
  **/
 someStage.init({
   root: elHorizontalContainer,
-  rootMargin: '0 25% 0 25%'
+  rootMargin: "0 25% 0 25%"
 });
 
-const myBoxList = elHorizontalContainer.querySelectorAll('.my-some-box');
+const myBoxList = elHorizontalContainer.querySelectorAll(".my-some-box");
 myBoxList.forEach(elBox => {
   const lazyActor = new LazyActor(elBox);
   someStage.observe(lazyActor);
 
   const subscription = lazyActor.events.subscribe((evt: AppearEvent) => {
     const { element } = evt.actor;
-    element.classList.add('is-active');
+    element.classList.add("is-active");
     subscription.unsubscribe();
     lazyActor.dispose();
   });
@@ -115,7 +117,7 @@ myBoxList.forEach(elBox => {
 
 ---
 
-```
+```typescript
 import { AppearStage, AppearEvent, LazyActor } from '@jood/appearer';
 
 let isLoading = false;
@@ -142,3 +144,9 @@ function fetchMore() {
   });
 }
 ```
+
+<style>
+table {
+  width:100%;
+}
+</style>
