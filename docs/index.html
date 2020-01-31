@@ -71,10 +71,11 @@
 <tr>
 <td><code>Doc:api</code></td>
 <td>api document</td>
-<td><a href="https://github.com/molgga/jood-appearer/blob/master/docs">link</a></td>
+<td><a href="https://molgga.github.io/jood-appearer">link</a></td>
 </tr>
 </tbody>
 </table>
+<hr>
 <h3>AppearStage</h3>
 <p>한 개의 뷰포트</p>
 <h3>Actors</h3>
@@ -84,12 +85,12 @@
 <li>LazyActor: 1번만. OnceActor 와 동일하나 진입 후 이탈이 지정된 시간 보다 짧으면 진입으로 취급하지 않는다.</li>
 </ul>
 <h3>example</h3>
-<pre class="prettyprint source"><code>import { AppearStage, AppearEvent, BaseActor } from '@jood/appearer';
+<pre class="prettyprint source lang-typescript"><code>import { AppearStage, AppearEvent, BaseActor } from &quot;@jood/appearer&quot;;
 
 const someStage = new AppearStage();
 someStage.init();
 
-const baseActor = new BaseActor(document.querySelector('.my-some-box1'));
+const baseActor = new BaseActor(document.querySelector(&quot;.my-some-box1&quot;));
 someStage.observe(baseActor);
 
 const subscription = baseActor.events.subscribe((evt: AppearEvent) => {
@@ -105,43 +106,43 @@ const subscription = baseActor.events.subscribe((evt: AppearEvent) => {
 });
 </code></pre>
 <hr>
-<pre class="prettyprint source"><code>import { AppearStage, OnceActor } from '@jood/appearer';
+<pre class="prettyprint source lang-typescript"><code>import { AppearStage, OnceActor } from &quot;@jood/appearer&quot;;
 
 const someStage = new AppearStage();
 someStage.init();
 
-const onceActor = new OnceActor(document.querySelector('.my-some-box1'));
+const onceActor = new OnceActor(document.querySelector(&quot;.my-some-box1&quot;));
 someStage.observe(onceActor);
 
 const subscription = onceActor.events.subscribe((evt: AppearEvent) => {
-  image.src = 'real-src';
+  image.src = &quot;real-src&quot;;
   subscription.unsubscribe();
   onceActor.dispose();
 });
 </code></pre>
 <hr>
-<pre class="prettyprint source"><code>import { AppearStage, AppearEvent, LazyActor } from '@jood/appearer';
+<pre class="prettyprint source lang-typescript"><code>import { AppearStage, AppearEvent, LazyActor } from &quot;@jood/appearer&quot;;
 
 const someStage = new AppearStage();
 someStage.init();
 
-const myList = new OnceActor(document.querySelectorAll('.my-some-box'));
+const myList = new OnceActor(document.querySelectorAll(&quot;.my-some-box&quot;));
 myList.forEach(elBox => {
   const lazyActor = new LazyActor(elBox);
   someStage.observe(lazyActor);
 
   const subscription = lazyActor.events.subscribe((evt: AppearEvent) => {
     const { element } = evt.actor;
-    element.classList.add('is-active');
+    element.classList.add(&quot;is-active&quot;);
     subscription.unsubscribe();
     lazyActor.dispose();
   });
 });
 </code></pre>
 <hr>
-<pre class="prettyprint source"><code>import { AppearStage, AppearEvent, LazyActor } from '@jood/appearer';
+<pre class="prettyprint source lang-typescript"><code>import { AppearStage, AppearEvent, LazyActor } from &quot;@jood/appearer&quot;;
 
-const elHorizontalContainer = document.querySelector('.my-horizonta-container');
+const elHorizontalContainer = document.querySelector(&quot;.my-horizonta-container&quot;);
 const someStage = new AppearStage();
 
 /**
@@ -150,24 +151,24 @@ const someStage = new AppearStage();
  **/
 someStage.init({
   root: elHorizontalContainer,
-  rootMargin: '0 25% 0 25%'
+  rootMargin: &quot;0 25% 0 25%&quot;
 });
 
-const myBoxList = elHorizontalContainer.querySelectorAll('.my-some-box');
+const myBoxList = elHorizontalContainer.querySelectorAll(&quot;.my-some-box&quot;);
 myBoxList.forEach(elBox => {
   const lazyActor = new LazyActor(elBox);
   someStage.observe(lazyActor);
 
   const subscription = lazyActor.events.subscribe((evt: AppearEvent) => {
     const { element } = evt.actor;
-    element.classList.add('is-active');
+    element.classList.add(&quot;is-active&quot;);
     subscription.unsubscribe();
     lazyActor.dispose();
   });
 });
 </code></pre>
 <hr>
-<pre class="prettyprint source"><code>import { AppearStage, AppearEvent, LazyActor } from '@jood/appearer';
+<pre class="prettyprint source lang-typescript"><code>import { AppearStage, AppearEvent, LazyActor } from '@jood/appearer';
 
 let isLoading = false;
 
@@ -192,7 +193,12 @@ function fetchMore() {
     isLoading = false;
   });
 }
-</code></pre></article>
+</code></pre>
+<style>
+table {
+  width:100%;
+}
+</style></article>
     </section>
 
 
@@ -205,7 +211,7 @@ function fetchMore() {
 <br class="clear">
 
 <footer>
-    Documentation generated at Fri Jan 31 2020 18:31:50 GMT+0900 (GMT+09:00)
+    Documentation generated at Fri Jan 31 2020 18:59:01 GMT+0900 (GMT+09:00)
 </footer>
 
 <script>prettyPrint();</script>
