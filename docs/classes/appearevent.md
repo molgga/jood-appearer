@@ -38,7 +38,7 @@
 
 \+ **new AppearEvent**(`type`: string, `option`: [AppearEventData](../interfaces/appeareventdata.md)‹T›): *[AppearEvent](appearevent.md)*
 
-*Defined in [projects/packages/src/core/types.ts:121](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L121)*
+*Defined in [projects/packages/src/common/types.ts:121](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/common/types.ts#L121)*
 
 **Parameters:**
 
@@ -57,7 +57,7 @@ Name | Type |
 
 *Implementation of [AppearEventData](../interfaces/appeareventdata.md).[actor](../interfaces/appeareventdata.md#actor)*
 
-*Defined in [projects/packages/src/core/types.ts:116](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L116)*
+*Defined in [projects/packages/src/common/types.ts:116](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/common/types.ts#L116)*
 
 참조되는 관찰대상
 
@@ -69,7 +69,7 @@ ___
 
 *Implementation of [AppearEventData](../interfaces/appeareventdata.md).[entry](../interfaces/appeareventdata.md#entry)*
 
-*Defined in [projects/packages/src/core/types.ts:121](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L121)*
+*Defined in [projects/packages/src/common/types.ts:121](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/common/types.ts#L121)*
 
 인터섹션 옵저버의 진입, 이탈 당시 관찰 상태
 
@@ -79,7 +79,7 @@ ___
 
 • **type**: *string*
 
-*Defined in [projects/packages/src/core/types.ts:111](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L111)*
+*Defined in [projects/packages/src/common/types.ts:111](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/common/types.ts#L111)*
 
 이벤트 타입
 
@@ -89,7 +89,7 @@ ___
 
 ▪ **APPEAR**: *string* = "APPEAR"
 
-*Defined in [projects/packages/src/core/types.ts:101](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L101)*
+*Defined in [projects/packages/src/common/types.ts:101](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/common/types.ts#L101)*
 
 이벤트 타입 - 진입
 
@@ -99,6 +99,6 @@ ___
 
 ▪ **DISAPPEAR**: *string* = "DISAPPEAR"
 
-*Defined in [projects/packages/src/core/types.ts:106](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L106)*
+*Defined in [projects/packages/src/common/types.ts:106](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/common/types.ts#L106)*
 
 이벤트 타입 - 이탈

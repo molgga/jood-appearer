@@ -6,49 +6,49 @@
 
 ### Classes
 
-- [AppearEvent](classes/appearevent.md)
-- [AppearStage](classes/appearstage.md)
-- [BaseActor](classes/baseactor.md)
-- [LazyActor](classes/lazyactor.md)
-- [OnceActor](classes/onceactor.md)
+* [AppearEvent](classes/appearevent.md)
+* [AppearStage](classes/appearstage.md)
+* [BaseActor](classes/baseactor.md)
+* [LazyActor](classes/lazyactor.md)
+* [OnceActor](classes/onceactor.md)
 
 ### Interfaces
 
-- [AppearEventData](interfaces/appeareventdata.md)
-- [StageOption](interfaces/appeareroption.md)
-- [IActor](interfaces/iappearactor.md)
-- [IStage](interfaces/iappearstage.md)
+* [AppearEventData](interfaces/appeareventdata.md)
+* [IActor](interfaces/iactor.md)
+* [IStage](interfaces/istage.md)
+* [StageOption](interfaces/stageoption.md)
 
 ### Type aliases
 
-- [ActorElement](globals.md#appeareractorelement)
+* [ActorElement](globals.md#actorelement)
 
 ### Functions
 
-- [sleep](globals.md#sleep)
+* [sleep](globals.md#sleep)
 
 ## Type aliases
 
-### ActorElement
+###  ActorElement
 
-Ƭ **ActorElement**: _HTMLElement | Element_
+Ƭ **ActorElement**: *HTMLElement | Element*
 
-_Defined in [projects/packages/src/core/types.ts:91](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L91)_
+*Defined in [projects/packages/src/common/types.ts:91](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/common/types.ts#L91)*
 
 관찰자, 관찰대상에서 참조되어야 하는 native element 타입
 
 ## Functions
 
-### sleep
+###  sleep
 
-▸ **sleep**(`delay`: number): _Promise‹unknown›_
+▸ **sleep**(`delay`: number): *Promise‹unknown›*
 
-_Defined in [projects/packages/src/core/testing.ts:1](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/testing.ts#L1)_
+*Defined in [projects/packages/src/common/testing.ts:1](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/common/testing.ts#L1)*
 
 **Parameters:**
 
-| Name    | Type   | Default |
-| ------- | ------ | ------- |
-| `delay` | number | 1       |
+Name | Type | Default |
+------ | ------ | ------ |
+`delay` | number | 1 |
 
-**Returns:** _Promise‹unknown›_
+**Returns:** *Promise‹unknown›*

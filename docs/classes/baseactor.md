@@ -7,7 +7,7 @@ Stage 에 등록될 Actor.
 
 ## Hierarchy
 
-- **BaseActor**
+* **BaseActor**
 
   ↳ [LazyActor](lazyactor.md)
 
@@ -15,182 +15,184 @@ Stage 에 등록될 Actor.
 
 ## Implements
 
-- [IActor](../interfaces/iappearactor.md)
+* [IActor](../interfaces/iactor.md)
 
 ## Index
 
 ### Constructors
 
-- [constructor](baseactor.md#constructor)
+* [constructor](baseactor.md#constructor)
 
 ### Properties
 
-- [element](baseactor.md#element)
-- [events](baseactor.md#events)
-- [isAppear](baseactor.md#isappear)
-- [stage](baseactor.md#stage)
+* [element](baseactor.md#element)
+* [events](baseactor.md#events)
+* [isAppear](baseactor.md#isappear)
+* [stage](baseactor.md#stage)
 
 ### Methods
 
-- [appear](baseactor.md#appear)
-- [bind](baseactor.md#bind)
-- [dispose](baseactor.md#dispose)
-- [disappear](baseactor.md#disappear)
-- [dispatch](baseactor.md#dispatch)
+* [appear](baseactor.md#appear)
+* [bind](baseactor.md#bind)
+* [disappear](baseactor.md#disappear)
+* [dispatch](baseactor.md#dispatch)
+* [dispose](baseactor.md#dispose)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new BaseActor**(`element`: [ActorElement](../globals.md#appeareractorelement)): _[BaseActor](baseactor.md)_
+\+ **new BaseActor**(`element`: [ActorElement](../globals.md#actorelement)): *[BaseActor](baseactor.md)*
 
-_Defined in [projects/packages/src/actor/base-actor.ts:33](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L33)_
+*Defined in [projects/packages/src/actor/base-actor.ts:28](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/actor/base-actor.ts#L28)*
 
 **Parameters:**
 
-| Name      | Type                                               | Description                             |
-| --------- | -------------------------------------------------- | --------------------------------------- |
-| `element` | [ActorElement](../globals.md#appeareractorelement) | 옵저버에 등록되어야 하는 native element |
+Name | Type | Description |
+------ | ------ | ------ |
+`element` | [ActorElement](../globals.md#actorelement) | 옵저버에 등록되어야 하는 native element  |
 
-**Returns:** _[BaseActor](baseactor.md)_
+**Returns:** *[BaseActor](baseactor.md)*
 
 ## Properties
 
-### element
+###  element
 
-• **element**: _[ActorElement](../globals.md#appeareractorelement)_
+• **element**: *[ActorElement](../globals.md#actorelement)*
 
-_Implementation of [IActor](../interfaces/iappearactor.md).[element](../interfaces/iappearactor.md#element)_
+*Implementation of [IActor](../interfaces/iactor.md).[element](../interfaces/iactor.md#element)*
 
-_Defined in [projects/packages/src/actor/base-actor.ts:17](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L17)_
+*Defined in [projects/packages/src/actor/base-actor.ts:12](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/actor/base-actor.ts#L12)*
 
 옵저버에 등록될 native element
 
----
+___
 
-### events
+###  events
 
-• **events**: _Subject‹[AppearEvent](appearevent.md)›_ = new Subject<AppearEvent>()
+• **events**: *Subject‹[AppearEvent](appearevent.md)›* = new Subject<AppearEvent>()
 
-_Implementation of [IActor](../interfaces/iappearactor.md).[events](../interfaces/iappearactor.md#events)_
+*Implementation of [IActor](../interfaces/iactor.md).[events](../interfaces/iactor.md#events)*
 
-_Defined in [projects/packages/src/actor/base-actor.ts:23](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L23)_
+*Defined in [projects/packages/src/actor/base-actor.ts:18](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/actor/base-actor.ts#L18)*
 
 이벤트 Observable
 
 **`see`** https://rxjs-dev.firebaseapp.com/guide/subject
 
----
+___
 
-### isAppear
+###  isAppear
 
-• **isAppear**: _boolean_ = false
+• **isAppear**: *boolean* = false
 
-_Implementation of [IActor](../interfaces/iappearactor.md).[isAppear](../interfaces/iappearactor.md#isappear)_
+*Implementation of [IActor](../interfaces/iactor.md).[isAppear](../interfaces/iactor.md#isappear)*
 
-_Defined in [projects/packages/src/actor/base-actor.ts:33](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L33)_
+*Defined in [projects/packages/src/actor/base-actor.ts:28](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/actor/base-actor.ts#L28)*
 
 현재 진입 여부 상태
 
----
+___
 
-### stage
+###  stage
 
-• **stage**: _[IStage](../interfaces/iappearstage.md)‹[BaseActor](baseactor.md)›_
+• **stage**: *[IStage](../interfaces/istage.md)‹[BaseActor](baseactor.md)›*
 
-_Implementation of [IActor](../interfaces/iappearactor.md).[stage](../interfaces/iappearactor.md#stage)_
+*Implementation of [IActor](../interfaces/iactor.md).[stage](../interfaces/iactor.md#stage)*
 
-_Defined in [projects/packages/src/actor/base-actor.ts:28](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L28)_
+*Defined in [projects/packages/src/actor/base-actor.ts:23](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/actor/base-actor.ts#L23)*
 
 해당 인스턴스가 등록된 스테이지
 
 ## Methods
 
-### appear
+###  appear
 
-▸ **appear**(`entry?`: IntersectionObserverEntry): _void_
+▸ **appear**(`entry?`: IntersectionObserverEntry): *void*
 
-_Implementation of [IActor](../interfaces/iappearactor.md)_
+*Implementation of [IActor](../interfaces/iactor.md)*
 
-_Defined in [projects/packages/src/actor/base-actor.ts:68](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L68)_
+*Defined in [projects/packages/src/actor/base-actor.ts:63](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/actor/base-actor.ts#L63)*
 
 스테이지 진입
 
 **Parameters:**
 
-| Name     | Type                      |
-| -------- | ------------------------- |
-| `entry?` | IntersectionObserverEntry |
+Name | Type |
+------ | ------ |
+`entry?` | IntersectionObserverEntry |
 
-**Returns:** _void_
+**Returns:** *void*
 
----
+___
 
-### bind
+###  bind
 
-▸ **bind**(`stage`: [IStage](../interfaces/iappearstage.md)‹[BaseActor](baseactor.md)›): _void_
+▸ **bind**(`stage`: [IStage](../interfaces/istage.md)‹[BaseActor](baseactor.md)›): *void*
 
-_Implementation of [IActor](../interfaces/iappearactor.md)_
+*Implementation of [IActor](../interfaces/iactor.md)*
 
-_Defined in [projects/packages/src/actor/base-actor.ts:46](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L46)_
+*Defined in [projects/packages/src/actor/base-actor.ts:41](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/actor/base-actor.ts#L41)*
 
 해당 인스턴스를 관찰하는 스테이지를 연결
 
 **Parameters:**
 
-| Name    | Type                                                               | Description |
-| ------- | ------------------------------------------------------------------ | ----------- |
-| `stage` | [IStage](../interfaces/iappearstage.md)‹[BaseActor](baseactor.md)› | 스테이지    |
+Name | Type | Description |
+------ | ------ | ------ |
+`stage` | [IStage](../interfaces/istage.md)‹[BaseActor](baseactor.md)› | 스테이지  |
 
-**Returns:** _void_
+**Returns:** *void*
 
----
+___
 
-### dispose
+###  disappear
 
-▸ **dispose**(): _void_
+▸ **disappear**(`entry?`: IntersectionObserverEntry): *void*
 
-_Implementation of [IActor](../interfaces/iappearactor.md)_
+*Implementation of [IActor](../interfaces/iactor.md)*
 
-_Defined in [projects/packages/src/actor/base-actor.ts:84](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L84)_
-
-**Returns:** _void_
-
----
-
-### disappear
-
-▸ **disappear**(`entry?`: IntersectionObserverEntry): _void_
-
-_Implementation of [IActor](../interfaces/iappearactor.md)_
-
-_Defined in [projects/packages/src/actor/base-actor.ts:78](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L78)_
+*Defined in [projects/packages/src/actor/base-actor.ts:73](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/actor/base-actor.ts#L73)*
 
 스테이지 이탈
 
 **Parameters:**
 
-| Name     | Type                      |
-| -------- | ------------------------- |
-| `entry?` | IntersectionObserverEntry |
+Name | Type |
+------ | ------ |
+`entry?` | IntersectionObserverEntry |
 
-**Returns:** _void_
+**Returns:** *void*
 
----
+___
 
-### dispatch
+###  dispatch
 
-▸ **dispatch**(`type`: string, `entry?`: IntersectionObserverEntry): _void_
+▸ **dispatch**(`type`: string, `entry?`: IntersectionObserverEntry): *void*
 
-_Defined in [projects/packages/src/actor/base-actor.ts:55](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L55)_
+*Defined in [projects/packages/src/actor/base-actor.ts:50](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/actor/base-actor.ts#L50)*
 
 진입, 이탈 등 이벤트 알림
 
 **Parameters:**
 
-| Name     | Type                      | Description |
-| -------- | ------------------------- | ----------- |
-| `type`   | string                    | 이벤트 타입 |
-| `entry?` | IntersectionObserverEntry | -           |
+Name | Type | Description |
+------ | ------ | ------ |
+`type` | string | 이벤트 타입 |
+`entry?` | IntersectionObserverEntry | - |
 
-**Returns:** _void_
+**Returns:** *void*
+
+___
+
+###  dispose
+
+▸ **dispose**(): *void*
+
+*Implementation of [IActor](../interfaces/iactor.md)*
+
+*Defined in [projects/packages/src/actor/base-actor.ts:82](https://github.com/molgga/jood-appearer/blob/fe8cce9/projects/packages/src/actor/base-actor.ts#L82)*
+
+파기
+
+**Returns:** *void*
