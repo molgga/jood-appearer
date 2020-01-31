@@ -15,14 +15,13 @@ import {
   AppearEvent
 } from "projects/packages/src/public-api";
 import { Subscription } from "rxjs";
-// import { BaseActor, OnceActor, LazyActor, AppearEvent } from "dist/packages";
 
 @Component({
   selector: "box-item",
   templateUrl: "./box-item.component.html",
   styleUrls: ["./box-item.component.scss"]
 })
-export class BoxItemComponent implements OnInit {
+export class BoxItemComponent {
   constructor(private elRef: ElementRef) {}
 
   actor: BaseActor;
@@ -30,23 +29,37 @@ export class BoxItemComponent implements OnInit {
   @Input()
   item: any;
 
+  @Input()
+  testCase: string = "base-actor";
+
   @Output("testEvent")
   eventEmitter: EventEmitter<any> = new EventEmitter<any>();
 
   @HostBinding("class.is-appear")
-  isAppear: boolean = false;
+  get isAppear() {
+    return !!(this.actor && this.actor.isAppear);
+  }
 
-  appearEvent$: Subscription;
+  appearEvent$: Subscription | any;
 
   ngOnInit() {
     const { nativeElement } = this.elRef;
 
-    // this.actor = new BaseActor(nativeElement);
-    this.actor = new OnceActor(nativeElement);
-
-    // this.actor = new LazyActor(nativeElement);
-    // (this.actor as LazyActor).setCheckoutDelay(1000);
-    // (this.actor as LazyActor).setAppearDelay(200);
+    switch (this.testCase) {
+      case "once-actor":
+        this.actor = new OnceActor(nativeElement);
+        break;
+      case "lazy-actor":
+        this.actor = new LazyActor(nativeElement);
+        (this.actor as LazyActor).setCheckoutDelay(1000);
+        (this.actor as LazyActor).setAppearDelay(100);
+        // (this.actor as LazyActor).setCheckoutDelay(0);
+        // (this.actor as LazyActor).setAppearDelay(100);
+        break;
+      default:
+        this.actor = new BaseActor(nativeElement);
+        break;
+    }
 
     this.appearEvent$ = this.actor.events.subscribe(
       this.onAppearEvent.bind(this)
@@ -61,30 +74,30 @@ export class BoxItemComponent implements OnInit {
   onAppearEvent(evt: AppearEvent) {
     switch (evt.type) {
       case AppearEvent.APPEAR:
-        this.isAppear = true;
-        // this.appearEvent$.unsubscribe();
-        // this.appearEvent$ = null;
-        // this.actor.destroy();
-        // this.actor = null;
+        switch (this.testCase) {
+          case "once-actor":
+          case "lazy-actor":
+            this.appearEvent$.unsubscribe();
+            this.actor.dispose();
+            break;
+        }
+
         break;
       case AppearEvent.DISAPPEAR:
-        this.isAppear = false;
         break;
     }
   }
 
   ngOnDestroy() {
     this.eventEmitter.emit({
-      type: "destroy",
+      type: "dispose",
       actor: this.actor
     });
-
     if (this.appearEvent$) {
       this.appearEvent$.unsubscribe();
     }
-
     if (this.actor) {
-      this.actor.destroy();
+      this.actor.dispose();
       this.actor = null;
     }
   }

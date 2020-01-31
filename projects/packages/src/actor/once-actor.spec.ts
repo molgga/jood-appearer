@@ -13,9 +13,9 @@ describe("OnceActor", () => {
   });
 
   afterEach(() => {
-    actor.destroy();
+    actor.dispose();
     actor = null;
-    stage.destroy();
+    stage.dispose();
     stage = null;
   });
 

@@ -1,140 +1,140 @@
-[Doc](../README.md) › [Globals](../globals.md) › [IAppearActor](iappearactor.md)
+[Doc](../README.md) › [Globals](../globals.md) › [IActor](iappearactor.md)
 
-# Interface: IAppearActor
+# Interface: IActor
 
 관찰대상
 
 ## Hierarchy
 
-* **IAppearActor**
+- **IActor**
 
 ## Implemented by
 
-* [BaseActor](../classes/baseactor.md)
-* [LazyActor](../classes/lazyactor.md)
-* [OnceActor](../classes/onceactor.md)
+- [BaseActor](../classes/baseactor.md)
+- [LazyActor](../classes/lazyactor.md)
+- [OnceActor](../classes/onceactor.md)
 
 ## Index
 
 ### Properties
 
-* [element](iappearactor.md#element)
-* [events](iappearactor.md#events)
-* [isAppear](iappearactor.md#isappear)
-* [stage](iappearactor.md#stage)
+- [element](iappearactor.md#element)
+- [events](iappearactor.md#events)
+- [isAppear](iappearactor.md#isappear)
+- [stage](iappearactor.md#stage)
 
 ### Methods
 
-* [appear](iappearactor.md#appear)
-* [bind](iappearactor.md#bind)
-* [destroy](iappearactor.md#destroy)
-* [disappear](iappearactor.md#disappear)
+- [appear](iappearactor.md#appear)
+- [bind](iappearactor.md#bind)
+- [dispose](iappearactor.md#dispose)
+- [disappear](iappearactor.md#disappear)
 
 ## Properties
 
-###  element
+### element
 
-• **element**: *[AppearerActorElement](../globals.md#appeareractorelement)*
+• **element**: _[ActorElement](../globals.md#appeareractorelement)_
 
-*Defined in [projects/packages/src/core/types.ts:44](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L44)*
+_Defined in [projects/packages/src/core/types.ts:44](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L44)_
 
 관찰 대상이 참조해야하는 DOM
 
-___
+---
 
-###  events
+### events
 
-• **events**: *Subject‹[AppearEvent](../classes/appearevent.md)›*
+• **events**: _Subject‹[AppearEvent](../classes/appearevent.md)›_
 
-*Defined in [projects/packages/src/core/types.ts:54](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L54)*
+_Defined in [projects/packages/src/core/types.ts:54](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L54)_
 
 관찰 이벤트 Observable
 
-___
+---
 
-###  isAppear
+### isAppear
 
-• **isAppear**: *boolean*
+• **isAppear**: _boolean_
 
-*Defined in [projects/packages/src/core/types.ts:59](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L59)*
+_Defined in [projects/packages/src/core/types.ts:59](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L59)_
 
 현재 관찰대상의 진입, 이탈 여부
 
-___
+---
 
-###  stage
+### stage
 
-• **stage**: *[IAppearStage](iappearstage.md)‹any›*
+• **stage**: _[IStage](iappearstage.md)‹any›_
 
-*Defined in [projects/packages/src/core/types.ts:49](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L49)*
+_Defined in [projects/packages/src/core/types.ts:49](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L49)_
 
 관찰 대상이 속하게 되는 스테이지(관찰자)
 
 ## Methods
 
-###  appear
+### appear
 
-▸ **appear**(`entry?`: IntersectionObserverEntry): *void*
+▸ **appear**(`entry?`: IntersectionObserverEntry): _void_
 
-*Defined in [projects/packages/src/core/types.ts:73](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L73)*
+_Defined in [projects/packages/src/core/types.ts:73](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L73)_
 
 스테이지 진입시 알림.
 스테이지에서 호출됨.
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`entry?` | IntersectionObserverEntry |
+| Name     | Type                      |
+| -------- | ------------------------- |
+| `entry?` | IntersectionObserverEntry |
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
-###  bind
+### bind
 
-▸ **bind**(`stage`: [IAppearStage](iappearstage.md)‹[IAppearActor](iappearactor.md)›): *void*
+▸ **bind**(`stage`: [IStage](iappearstage.md)‹[IActor](iappearactor.md)›): _void_
 
-*Defined in [projects/packages/src/core/types.ts:66](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L66)*
+_Defined in [projects/packages/src/core/types.ts:66](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L66)_
 
 관찰 대상이 속하게 되는 스테이지(관찰자) 지정.
 스테이지에서 직접 등록됨.
 
 **Parameters:**
 
-Name | Type | Description |
------- | ------ | ------ |
-`stage` | [IAppearStage](iappearstage.md)‹[IAppearActor](iappearactor.md)› |   |
+| Name    | Type                                                 | Description |
+| ------- | ---------------------------------------------------- | ----------- |
+| `stage` | [IStage](iappearstage.md)‹[IActor](iappearactor.md)› |             |
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
-###  destroy
+### dispose
 
-▸ **destroy**(): *void*
+▸ **dispose**(): _void_
 
-*Defined in [projects/packages/src/core/types.ts:85](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L85)*
+_Defined in [projects/packages/src/core/types.ts:85](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L85)_
 
 파기
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
-###  disappear
+### disappear
 
-▸ **disappear**(`entry?`: IntersectionObserverEntry): *void*
+▸ **disappear**(`entry?`: IntersectionObserverEntry): _void_
 
-*Defined in [projects/packages/src/core/types.ts:80](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L80)*
+_Defined in [projects/packages/src/core/types.ts:80](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/core/types.ts#L80)_
 
 스테이지 이탈시 알림.
 스테이지에서 호출됨.
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`entry?` | IntersectionObserverEntry |
+| Name     | Type                      |
+| -------- | ------------------------- |
+| `entry?` | IntersectionObserverEntry |
 
-**Returns:** *void*
+**Returns:** _void_

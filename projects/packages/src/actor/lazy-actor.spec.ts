@@ -1,6 +1,6 @@
-import { sleep } from "../core/testing";
+import { sleep } from "../common/testing";
 import { AppearStage } from "../stage/appear-stage";
-import { AppearEvent } from "../core/types";
+import { AppearEvent } from "../common/types";
 import { LazyActor } from "./lazy-actor";
 
 describe("LazyActor", () => {
@@ -25,9 +25,9 @@ describe("LazyActor", () => {
   });
 
   afterEach(() => {
-    actor.destroy();
+    actor.dispose();
     actor = null;
-    stage.destroy();
+    stage.dispose();
     stage = null;
   });
 

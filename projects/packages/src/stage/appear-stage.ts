@@ -1,21 +1,15 @@
-import {
-  IAppearStage,
-  IAppearActor,
-  AppearerOption,
-  AppearerActorElement
-} from "../core/types";
+import { IStage, IActor, StageOption, ActorElement } from "../common/types";
 
 /**
  * 화면(지정된 root 영역)에 진입 여부를 판단하고 알리기 위한 클래스.
  * 등록된 Actor(s)를 IntersectionObserver 를 통해 관찰하고 관찰된 상태에 따라 Actor 에게 알림.
  * @template T Actor
  */
-export class AppearStage<T extends IAppearActor = any>
-  implements IAppearStage<T> {
+export class AppearStage<T extends IActor = any> implements IStage<T> {
   /**
    * Actor 맵
    */
-  protected actorMap: Map<AppearerActorElement, T>;
+  protected actorMap: Map<ActorElement, T>;
 
   /**
    * IntersectionObserver
@@ -27,26 +21,14 @@ export class AppearStage<T extends IAppearActor = any>
    * 초기화
    * @param [option] 초기 옵션. 인터섹션 옵저버는 생성시에만 옵션 지정이 가능
    */
-  init(option: AppearerOption = {}): void {
+  init(option: StageOption = {}): void {
     if (!this.observer) {
-      this.actorMap = new Map<AppearerActorElement, T>();
+      this.actorMap = new Map<ActorElement, T>();
       this.observer = new IntersectionObserver(
         this.onObserveEntries.bind(this),
         option
       );
     }
-  }
-
-  /**
-   * 파기
-   */
-  destroy(): void {
-    try {
-      this.actorMap.clear();
-      this.actorMap = null;
-      this.intersectionObserver.disconnect();
-      this.observer = null;
-    } catch (err) {}
   }
 
   /**
@@ -58,7 +40,7 @@ export class AppearStage<T extends IAppearActor = any>
     if (!this.actorMap.has(element)) {
       actor.bind(this);
       this.actorMap.set(element, actor);
-      this.intersectionObserver.observe(actor.element);
+      this.intersectionObserver.observe(element);
     }
   }
 
@@ -70,7 +52,7 @@ export class AppearStage<T extends IAppearActor = any>
     const { element } = actor;
     if (this.actorMap.has(element)) {
       this.actorMap.delete(element);
-      this.intersectionObserver.unobserve(actor.element);
+      this.intersectionObserver.unobserve(element);
     }
   }
 
@@ -105,11 +87,27 @@ export class AppearStage<T extends IAppearActor = any>
     entries.forEach((entry: IntersectionObserverEntry) => {
       const { isIntersecting, target } = entry;
       const actor = this.actorMap.get(target);
-      if (isIntersecting) {
-        actor.appear(entry);
-      } else {
-        actor.disappear(entry);
+      if (actor) {
+        if (isIntersecting) {
+          actor.appear(entry);
+        } else {
+          actor.disappear(entry);
+        }
       }
     });
+  }
+
+  /**
+   * 파기
+   */
+  dispose(): void {
+    if (this.actorMap) {
+      this.actorMap.clear();
+      this.actorMap = null;
+    }
+    if (this.observer) {
+      this.observer.disconnect();
+      this.observer = null;
+    }
   }
 }

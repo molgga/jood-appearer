@@ -1,21 +1,60 @@
 <div class="actions">
-  <button (click)="handleAddBox()">ADD</button>
-  <button (click)="handleRemoveBox()">REMOVE</button>
+  <div class="opts">
+    <label class="rdo">
+      <input
+        name="actorTest"
+        type="radio"
+        value="base-actor"
+        [(ngModel)]="testCase"
+        (change)="handleCaseChange($event)"
+      />base
+    </label>
+    <label class="rdo">
+      <input
+        name="actorTest"
+        type="radio"
+        value="once-actor"
+        [(ngModel)]="testCase"
+        (change)="handleCaseChange($event)"
+      />once
+    </label>
+    <label class="rdo">
+      <input
+        name="actorTest"
+        type="radio"
+        value="lazy-actor"
+        [(ngModel)]="testCase"
+        (change)="handleCaseChange($event)"
+      />lazy
+    </label>
+  </div>
+  <span class="count">({{ testList.length }})</span>
+  <button class="action" (click)="handleAddBox()">ADD</button>
+  <button class="action" (click)="handleRemoveBox()">REMOVE</button>
 </div>
-<div class="h-list">
-  <box-item
-    *ngFor="let item of testList"
-    class="h-box"
-    [item]="item"
-    (testEvent)="onItemEvent($event)"
-  >
-  </box-item>
-</div>
-<div class="v-list">
-  <box-item
-    *ngFor="let item of testList"
-    [item]="item"
-    (testEvent)="onItemEvent($event)"
-  >
-  </box-item>
+
+<div class="test-viewport">
+  <div class="h-list-wrap">
+    <div class="boxs" *ngFor="let item of testList; trackBy: trackByFn">
+      <box-item
+        class="box"
+        [testCase]="testCase"
+        [item]="item"
+        (testEvent)="onItemEvent($event)"
+      >
+      </box-item>
+    </div>
+  </div>
+
+  <div class="v-list-wrap">
+    <div class="boxs" *ngFor="let item of testList; trackBy: trackByFn">
+      <box-item
+        class="box"
+        [testCase]="testCase"
+        [item]="item"
+        (testEvent)="onItemEvent($event)"
+      >
+      </box-item>
+    </div>
+  </div>
 </div>

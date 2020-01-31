@@ -1,5 +1,5 @@
 import { BaseActor } from "./base-actor";
-import { AppearEvent } from "../core/types";
+import { AppearEvent } from "../common/types";
 
 /**
  * Stage 에 등록될 Actor.
@@ -41,16 +41,16 @@ export class LazyActor extends BaseActor {
   appear(entry: IntersectionObserverEntry) {
     this.clearAppearTimer();
     if (this.isAppear) return;
-    if (this.checkoutDelay < entry.time) {
+    if (this.checkoutDelay <= entry.time) {
       this.appearTimer = setTimeout(() => {
-        this.appearCheckout(entry);
+        this.doAppear(entry);
       }, this.appearDelay);
     } else {
-      this.appearCheckout(entry);
+      this.doAppear(entry);
     }
   }
 
-  private appearCheckout(entry: IntersectionObserverEntry) {
+  private doAppear(entry: IntersectionObserverEntry) {
     this.isAppear = true;
     this.dispatch(AppearEvent.APPEAR, entry);
     if (this.stage) {

@@ -9,54 +9,54 @@
 
 ## Type parameters
 
-▪ **T**: *[IAppearActor](../interfaces/iappearactor.md)*
+▪ **T**: _[IActor](../interfaces/iappearactor.md)_
 
 ## Hierarchy
 
-* **AppearStage**
+- **AppearStage**
 
 ## Implements
 
-* [IAppearStage](../interfaces/iappearstage.md)‹T›
+- [IStage](../interfaces/iappearstage.md)‹T›
 
 ## Index
 
 ### Properties
 
-* [actorMap](appearstage.md#protected-actormap)
-* [observer](appearstage.md#protected-observer)
+- [actorMap](appearstage.md#protected-actormap)
+- [observer](appearstage.md#protected-observer)
 
 ### Accessors
 
-* [actorSize](appearstage.md#actorsize)
-* [intersectionObserver](appearstage.md#intersectionobserver)
+- [actorSize](appearstage.md#actorsize)
+- [intersectionObserver](appearstage.md#intersectionobserver)
 
 ### Methods
 
-* [destroy](appearstage.md#destroy)
-* [getActors](appearstage.md#getactors)
-* [init](appearstage.md#init)
-* [observe](appearstage.md#observe)
-* [onObserveEntries](appearstage.md#protected-onobserveentries)
-* [unobserve](appearstage.md#unobserve)
+- [dispose](appearstage.md#dispose)
+- [getActors](appearstage.md#getactors)
+- [init](appearstage.md#init)
+- [observe](appearstage.md#observe)
+- [onObserveEntries](appearstage.md#protected-onobserveentries)
+- [unobserve](appearstage.md#unobserve)
 
 ## Properties
 
 ### `Protected` actorMap
 
-• **actorMap**: *Map‹[AppearerActorElement](../globals.md#appeareractorelement), T›*
+• **actorMap**: _Map‹[ActorElement](../globals.md#appeareractorelement), T›_
 
-*Defined in [projects/packages/src/stage/appear-stage.ts:18](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L18)*
+_Defined in [projects/packages/src/stage/appear-stage.ts:18](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L18)_
 
 Actor 맵
 
-___
+---
 
 ### `Protected` observer
 
-• **observer**: *IntersectionObserver*
+• **observer**: _IntersectionObserver_
 
-*Defined in [projects/packages/src/stage/appear-stage.ts:24](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L24)*
+_Defined in [projects/packages/src/stage/appear-stage.ts:24](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L24)_
 
 IntersectionObserver
 
@@ -64,126 +64,126 @@ IntersectionObserver
 
 ## Accessors
 
-###  actorSize
+### actorSize
 
-• **get actorSize**(): *number*
+• **get actorSize**(): _number_
 
-*Defined in [projects/packages/src/stage/appear-stage.ts:80](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L80)*
+_Defined in [projects/packages/src/stage/appear-stage.ts:80](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L80)_
 
 옵저버에 등록(관찰) 중 인 Actor 의 수
 
-**Returns:** *number*
+**Returns:** _number_
 
-___
+---
 
-###  intersectionObserver
+### intersectionObserver
 
-• **get intersectionObserver**(): *IntersectionObserver*
+• **get intersectionObserver**(): _IntersectionObserver_
 
-*Defined in [projects/packages/src/stage/appear-stage.ts:95](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L95)*
+_Defined in [projects/packages/src/stage/appear-stage.ts:95](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L95)_
 
 생성된 intersection observer 인스턴스
 
-**Returns:** *IntersectionObserver*
+**Returns:** _IntersectionObserver_
 
 ## Methods
 
-###  destroy
+### dispose
 
-▸ **destroy**(): *void*
+▸ **dispose**(): _void_
 
-*Implementation of [IAppearStage](../interfaces/iappearstage.md)*
+_Implementation of [IStage](../interfaces/iappearstage.md)_
 
-*Defined in [projects/packages/src/stage/appear-stage.ts:43](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L43)*
+_Defined in [projects/packages/src/stage/appear-stage.ts:43](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L43)_
 
 파기
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
-###  getActors
+### getActors
 
-▸ **getActors**(): *T[]*
+▸ **getActors**(): _T[]_
 
-*Defined in [projects/packages/src/stage/appear-stage.ts:88](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L88)*
+_Defined in [projects/packages/src/stage/appear-stage.ts:88](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L88)_
 
 등록 되어있는 Actor 를 반환 합니다.
 
-**Returns:** *T[]*
+**Returns:** _T[]_
 
 T[]
 
-___
+---
 
-###  init
+### init
 
-▸ **init**(`option`: [AppearerOption](../interfaces/appeareroption.md)): *void*
+▸ **init**(`option`: [StageOption](../interfaces/appeareroption.md)): _void_
 
-*Implementation of [IAppearStage](../interfaces/iappearstage.md)*
+_Implementation of [IStage](../interfaces/iappearstage.md)_
 
-*Defined in [projects/packages/src/stage/appear-stage.ts:30](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L30)*
+_Defined in [projects/packages/src/stage/appear-stage.ts:30](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L30)_
 
 초기화
 
 **Parameters:**
 
-Name | Type | Default |
------- | ------ | ------ |
-`option` | [AppearerOption](../interfaces/appeareroption.md) | {} |
+| Name     | Type                                           | Default |
+| -------- | ---------------------------------------------- | ------- |
+| `option` | [StageOption](../interfaces/appeareroption.md) | {}      |
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
-###  observe
+### observe
 
-▸ **observe**(`actor`: T): *void*
+▸ **observe**(`actor`: T): _void_
 
-*Defined in [projects/packages/src/stage/appear-stage.ts:56](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L56)*
+_Defined in [projects/packages/src/stage/appear-stage.ts:56](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L56)_
 
 전달된 actor 를 옵저버에 등록합니다.
 
 **Parameters:**
 
-Name | Type | Description |
------- | ------ | ------ |
-`actor` | T | 등록할 Actor  |
+| Name    | Type | Description  |
+| ------- | ---- | ------------ |
+| `actor` | T    | 등록할 Actor |
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
 ### `Protected` onObserveEntries
 
-▸ **onObserveEntries**(`entries`: IntersectionObserverEntry[]): *void*
+▸ **onObserveEntries**(`entries`: IntersectionObserverEntry[]): _void_
 
-*Defined in [projects/packages/src/stage/appear-stage.ts:104](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L104)*
+_Defined in [projects/packages/src/stage/appear-stage.ts:104](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L104)_
 
 옵저버의 콜백 핸들러
 
 **Parameters:**
 
-Name | Type | Description |
------- | ------ | ------ |
-`entries` | IntersectionObserverEntry[] | 옵저버의 콜백으로 전달받는 엔트리 값  |
+| Name      | Type                        | Description                          |
+| --------- | --------------------------- | ------------------------------------ |
+| `entries` | IntersectionObserverEntry[] | 옵저버의 콜백으로 전달받는 엔트리 값 |
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
-###  unobserve
+### unobserve
 
-▸ **unobserve**(`actor`: T): *void*
+▸ **unobserve**(`actor`: T): _void_
 
-*Defined in [projects/packages/src/stage/appear-stage.ts:69](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L69)*
+_Defined in [projects/packages/src/stage/appear-stage.ts:69](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/stage/appear-stage.ts#L69)_
 
 전달된 actor 를 옵저버에서 제외합니다.
 
 **Parameters:**
 
-Name | Type | Description |
------- | ------ | ------ |
-`actor` | T | 제외할 Actor  |
+| Name    | Type | Description  |
+| ------- | ---- | ------------ |
+| `actor` | T    | 제외할 Actor |
 
-**Returns:** *void*
+**Returns:** _void_

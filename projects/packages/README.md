@@ -56,7 +56,7 @@ someStage.observe(onceActor);
 const subscription = onceActor.events.subscribe((evt: AppearEvent) => {
   image.src = 'real-src';
   subscription.unsubscribe();
-  onceActor.destroy();
+  onceActor.dispose();
 });
 ```
 
@@ -77,7 +77,7 @@ myList.forEach(elBox => {
     const { element } = evt.actor;
     element.classList.add('is-active');
     subscription.unsubscribe();
-    lazyActor.destroy();
+    lazyActor.dispose();
   });
 });
 ```
@@ -108,7 +108,7 @@ myBoxList.forEach(elBox => {
     const { element } = evt.actor;
     element.classList.add('is-active');
     subscription.unsubscribe();
-    lazyActor.destroy();
+    lazyActor.dispose();
   });
 });
 ```

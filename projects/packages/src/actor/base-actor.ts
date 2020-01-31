@@ -1,20 +1,15 @@
-import {
-  AppearerActorElement,
-  AppearEvent,
-  IAppearActor,
-  IAppearStage
-} from "../core/types";
+import { ActorElement, AppearEvent, IActor, IStage } from "../common/types";
 import { Subject } from "rxjs";
 
 /**
  * Stage 에 등록될 Actor.
  * 스테이지에 진입, 이탈 시 계속 알려주는 기본형.
  */
-export class BaseActor implements IAppearActor {
+export class BaseActor implements IActor {
   /**
    * 옵저버에 등록될 native element
    */
-  element: AppearerActorElement;
+  element: ActorElement;
 
   /**
    * 이벤트 Observable
@@ -25,7 +20,7 @@ export class BaseActor implements IAppearActor {
   /**
    * 해당 인스턴스가 등록된 스테이지
    */
-  stage: IAppearStage<BaseActor>;
+  stage: IStage<BaseActor>;
 
   /**
    * 현재 진입 여부 상태
@@ -35,7 +30,7 @@ export class BaseActor implements IAppearActor {
   /**
    * @param element 옵저버에 등록되어야 하는 native element
    */
-  constructor(element: AppearerActorElement) {
+  constructor(element: ActorElement) {
     this.element = element;
   }
 
@@ -43,7 +38,7 @@ export class BaseActor implements IAppearActor {
    * 해당 인스턴스를 관찰하는 스테이지를 연결
    * @param stage 스테이지
    */
-  bind(stage: IAppearStage<BaseActor>) {
+  bind(stage: IStage<BaseActor>) {
     this.stage = stage;
   }
 
@@ -81,12 +76,12 @@ export class BaseActor implements IAppearActor {
     this.dispatch(AppearEvent.DISAPPEAR, entry);
   }
 
-  destroy() {
-    try {
-      if (this.stage) {
-        this.stage.unobserve(this);
-      }
-      this.events = null;
-    } catch (err) {}
+  /**
+   * 파기
+   */
+  dispose() {
+    if (this.stage) {
+      this.stage.unobserve(this);
+    }
   }
 }

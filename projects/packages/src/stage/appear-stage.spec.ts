@@ -1,4 +1,4 @@
-import { sleep } from "../core/testing";
+import { sleep } from "../common/testing";
 import { AppearStage } from "./appear-stage";
 import { BaseActor } from "../actor/base-actor";
 
@@ -10,7 +10,7 @@ describe("AppearStage", () => {
   });
 
   afterEach(() => {
-    stage.destroy();
+    stage.dispose();
     stage = null;
   });
 

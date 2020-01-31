@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start:dev": "ng serve dev",
+    "start:dev": "ng serve dev --host=0.0.0.0",
     "packages:build": "ng build packages",
     "packages:deploy": "npm publish ./dist/packages --access=public",
     "packages:test": "ng test packages",
@@ -27,6 +27,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.23",
     "@angular-devkit/build-ng-packagr": "~0.803.23",
+    "@angular/cdk": "^8.2.3",
     "@angular/cli": "~8.3.21",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",

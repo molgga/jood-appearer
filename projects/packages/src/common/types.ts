@@ -1,20 +1,15 @@
 import { Subject } from "rxjs";
 
 /**
- * 스테이지 초기 옵션
- */
-export interface AppearerOption extends IntersectionObserverInit {}
-
-/**
  * 관찰자
  * @template T
  */
-export interface IAppearStage<T> {
+export interface IStage<T> {
   /**
    * 초기화
    * @param option
    */
-  init(option: AppearerOption): void;
+  init(option: StageOption): void;
 
   /**
    * 관찰 대상 등록
@@ -31,22 +26,22 @@ export interface IAppearStage<T> {
   /**
    * 파기
    */
-  destroy(): void;
+  dispose(): void;
 }
 
 /**
  * 관찰대상
  */
-export interface IAppearActor {
+export interface IActor {
   /**
    * 관찰 대상이 참조해야하는 DOM
    */
-  element: AppearerActorElement;
+  element: ActorElement;
 
   /**
    * 관찰 대상이 속하게 되는 스테이지(관찰자)
    */
-  stage: IAppearStage<any>;
+  stage: IStage<any>;
 
   /**
    * 관찰 이벤트 Observable
@@ -63,7 +58,7 @@ export interface IAppearActor {
    * 스테이지에서 직접 등록됨.
    * @param stage
    */
-  bind(stage: IAppearStage<IAppearActor>): void;
+  bind(stage: IStage<IActor>): void;
 
   /**
    * 스테이지 진입시 알림.
@@ -82,19 +77,24 @@ export interface IAppearActor {
   /**
    * 파기
    */
-  destroy(): void;
+  dispose(): void;
 }
+
+/**
+ * 스테이지 초기 옵션
+ */
+export interface StageOption extends IntersectionObserverInit {}
 
 /**
  * 관찰자, 관찰대상에서 참조되어야 하는 native element 타입
  */
-export type AppearerActorElement = HTMLElement | Element;
+export type ActorElement = HTMLElement | Element;
 
 /**
  * 관찰대상의 이벤트
  * @template D
  */
-export class AppearEvent<T = IAppearActor> implements AppearEventData<T> {
+export class AppearEvent<T = IActor> implements AppearEventData<T> {
   /**
    * 이벤트 타입 - 진입
    */

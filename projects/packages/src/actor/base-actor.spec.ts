@@ -1,6 +1,6 @@
-import { sleep } from "../core/testing";
+import { sleep } from "../common/testing";
 import { AppearStage } from "../stage/appear-stage"; //"projects/packages/src/stage/appear-stage";
-import { AppearEvent } from "../core/types";
+import { AppearEvent } from "../common/types";
 import { BaseActor } from "./base-actor";
 
 describe("BaseActor", () => {
@@ -25,9 +25,9 @@ describe("BaseActor", () => {
   });
 
   afterEach(() => {
-    actor.destroy();
+    actor.dispose();
     actor = null;
-    stage.destroy();
+    stage.dispose();
     stage = null;
   });
 

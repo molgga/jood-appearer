@@ -8,300 +8,300 @@ Stage 에 등록될 Actor.
 
 ## Hierarchy
 
-* [BaseActor](baseactor.md)
+- [BaseActor](baseactor.md)
 
   ↳ **LazyActor**
 
 ## Implements
 
-* [IAppearActor](../interfaces/iappearactor.md)
+- [IActor](../interfaces/iappearactor.md)
 
 ## Index
 
 ### Constructors
 
-* [constructor](lazyactor.md#constructor)
+- [constructor](lazyactor.md#constructor)
 
 ### Properties
 
-* [appearDelay](lazyactor.md#private-appeardelay)
-* [appearTimer](lazyactor.md#private-appeartimer)
-* [checkoutDelay](lazyactor.md#private-checkoutdelay)
-* [element](lazyactor.md#element)
-* [events](lazyactor.md#events)
-* [isAppear](lazyactor.md#isappear)
-* [stage](lazyactor.md#stage)
+- [appearDelay](lazyactor.md#private-appeardelay)
+- [appearTimer](lazyactor.md#private-appeartimer)
+- [checkoutDelay](lazyactor.md#private-checkoutdelay)
+- [element](lazyactor.md#element)
+- [events](lazyactor.md#events)
+- [isAppear](lazyactor.md#isappear)
+- [stage](lazyactor.md#stage)
 
 ### Methods
 
-* [appear](lazyactor.md#appear)
-* [appearCheckout](lazyactor.md#private-appearcheckout)
-* [bind](lazyactor.md#bind)
-* [clearAppearTimer](lazyactor.md#private-clearappeartimer)
-* [destroy](lazyactor.md#destroy)
-* [disappear](lazyactor.md#disappear)
-* [dispatch](lazyactor.md#dispatch)
-* [setAppearDelay](lazyactor.md#setappeardelay)
-* [setCheckoutDelay](lazyactor.md#setcheckoutdelay)
+- [appear](lazyactor.md#appear)
+- [appearCheckout](lazyactor.md#private-appearcheckout)
+- [bind](lazyactor.md#bind)
+- [clearAppearTimer](lazyactor.md#private-clearappeartimer)
+- [dispose](lazyactor.md#dispose)
+- [disappear](lazyactor.md#disappear)
+- [dispatch](lazyactor.md#dispatch)
+- [setAppearDelay](lazyactor.md#setappeardelay)
+- [setCheckoutDelay](lazyactor.md#setcheckoutdelay)
 
 ## Constructors
 
-###  constructor
+### constructor
 
-\+ **new LazyActor**(`element`: [AppearerActorElement](../globals.md#appeareractorelement)): *[LazyActor](lazyactor.md)*
+\+ **new LazyActor**(`element`: [ActorElement](../globals.md#appeareractorelement)): _[LazyActor](lazyactor.md)_
 
-*Inherited from [BaseActor](baseactor.md).[constructor](baseactor.md#constructor)*
+_Inherited from [BaseActor](baseactor.md).[constructor](baseactor.md#constructor)_
 
-*Defined in [projects/packages/src/actor/base-actor.ts:33](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L33)*
+_Defined in [projects/packages/src/actor/base-actor.ts:33](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L33)_
 
 **Parameters:**
 
-Name | Type | Description |
------- | ------ | ------ |
-`element` | [AppearerActorElement](../globals.md#appeareractorelement) | 옵저버에 등록되어야 하는 native element  |
+| Name      | Type                                               | Description                             |
+| --------- | -------------------------------------------------- | --------------------------------------- |
+| `element` | [ActorElement](../globals.md#appeareractorelement) | 옵저버에 등록되어야 하는 native element |
 
-**Returns:** *[LazyActor](lazyactor.md)*
+**Returns:** _[LazyActor](lazyactor.md)_
 
 ## Properties
 
 ### `Private` appearDelay
 
-• **appearDelay**: *number* = 150
+• **appearDelay**: _number_ = 150
 
-*Defined in [projects/packages/src/actor/lazy-actor.ts:12](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L12)*
+_Defined in [projects/packages/src/actor/lazy-actor.ts:12](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L12)_
 
-___
+---
 
 ### `Private` appearTimer
 
-• **appearTimer**: *any* = null
+• **appearTimer**: _any_ = null
 
-*Defined in [projects/packages/src/actor/lazy-actor.ts:10](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L10)*
+_Defined in [projects/packages/src/actor/lazy-actor.ts:10](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L10)_
 
-___
+---
 
 ### `Private` checkoutDelay
 
-• **checkoutDelay**: *number* = 1000
+• **checkoutDelay**: _number_ = 1000
 
-*Defined in [projects/packages/src/actor/lazy-actor.ts:11](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L11)*
+_Defined in [projects/packages/src/actor/lazy-actor.ts:11](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L11)_
 
-___
+---
 
-###  element
+### element
 
-• **element**: *[AppearerActorElement](../globals.md#appeareractorelement)*
+• **element**: _[ActorElement](../globals.md#appeareractorelement)_
 
-*Implementation of [IAppearActor](../interfaces/iappearactor.md).[element](../interfaces/iappearactor.md#element)*
+_Implementation of [IActor](../interfaces/iappearactor.md).[element](../interfaces/iappearactor.md#element)_
 
-*Inherited from [BaseActor](baseactor.md).[element](baseactor.md#element)*
+_Inherited from [BaseActor](baseactor.md).[element](baseactor.md#element)_
 
-*Defined in [projects/packages/src/actor/base-actor.ts:17](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L17)*
+_Defined in [projects/packages/src/actor/base-actor.ts:17](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L17)_
 
 옵저버에 등록될 native element
 
-___
+---
 
-###  events
+### events
 
-• **events**: *Subject‹[AppearEvent](appearevent.md)›* = new Subject<AppearEvent>()
+• **events**: _Subject‹[AppearEvent](appearevent.md)›_ = new Subject<AppearEvent>()
 
-*Implementation of [IAppearActor](../interfaces/iappearactor.md).[events](../interfaces/iappearactor.md#events)*
+_Implementation of [IActor](../interfaces/iappearactor.md).[events](../interfaces/iappearactor.md#events)_
 
-*Inherited from [BaseActor](baseactor.md).[events](baseactor.md#events)*
+_Inherited from [BaseActor](baseactor.md).[events](baseactor.md#events)_
 
-*Defined in [projects/packages/src/actor/base-actor.ts:23](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L23)*
+_Defined in [projects/packages/src/actor/base-actor.ts:23](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L23)_
 
 이벤트 Observable
 
 **`see`** https://rxjs-dev.firebaseapp.com/guide/subject
 
-___
+---
 
-###  isAppear
+### isAppear
 
-• **isAppear**: *boolean* = false
+• **isAppear**: _boolean_ = false
 
-*Implementation of [IAppearActor](../interfaces/iappearactor.md).[isAppear](../interfaces/iappearactor.md#isappear)*
+_Implementation of [IActor](../interfaces/iappearactor.md).[isAppear](../interfaces/iappearactor.md#isappear)_
 
-*Inherited from [BaseActor](baseactor.md).[isAppear](baseactor.md#isappear)*
+_Inherited from [BaseActor](baseactor.md).[isAppear](baseactor.md#isappear)_
 
-*Defined in [projects/packages/src/actor/base-actor.ts:33](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L33)*
+_Defined in [projects/packages/src/actor/base-actor.ts:33](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L33)_
 
 현재 진입 여부 상태
 
-___
+---
 
-###  stage
+### stage
 
-• **stage**: *[IAppearStage](../interfaces/iappearstage.md)‹[BaseActor](baseactor.md)›*
+• **stage**: _[IStage](../interfaces/iappearstage.md)‹[BaseActor](baseactor.md)›_
 
-*Implementation of [IAppearActor](../interfaces/iappearactor.md).[stage](../interfaces/iappearactor.md#stage)*
+_Implementation of [IActor](../interfaces/iappearactor.md).[stage](../interfaces/iappearactor.md#stage)_
 
-*Inherited from [BaseActor](baseactor.md).[stage](baseactor.md#stage)*
+_Inherited from [BaseActor](baseactor.md).[stage](baseactor.md#stage)_
 
-*Defined in [projects/packages/src/actor/base-actor.ts:28](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L28)*
+_Defined in [projects/packages/src/actor/base-actor.ts:28](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L28)_
 
 해당 인스턴스가 등록된 스테이지
 
 ## Methods
 
-###  appear
+### appear
 
-▸ **appear**(`entry`: IntersectionObserverEntry): *void*
+▸ **appear**(`entry`: IntersectionObserverEntry): _void_
 
-*Implementation of [IAppearActor](../interfaces/iappearactor.md)*
+_Implementation of [IActor](../interfaces/iappearactor.md)_
 
-*Overrides [BaseActor](baseactor.md).[appear](baseactor.md#appear)*
+_Overrides [BaseActor](baseactor.md).[appear](baseactor.md#appear)_
 
-*Defined in [projects/packages/src/actor/lazy-actor.ts:41](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L41)*
+_Defined in [projects/packages/src/actor/lazy-actor.ts:41](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L41)_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`entry` | IntersectionObserverEntry |
+| Name    | Type                      |
+| ------- | ------------------------- |
+| `entry` | IntersectionObserverEntry |
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
 ### `Private` appearCheckout
 
-▸ **appearCheckout**(`entry`: IntersectionObserverEntry): *void*
+▸ **appearCheckout**(`entry`: IntersectionObserverEntry): _void_
 
-*Defined in [projects/packages/src/actor/lazy-actor.ts:53](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L53)*
+_Defined in [projects/packages/src/actor/lazy-actor.ts:53](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L53)_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`entry` | IntersectionObserverEntry |
+| Name    | Type                      |
+| ------- | ------------------------- |
+| `entry` | IntersectionObserverEntry |
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
-###  bind
+### bind
 
-▸ **bind**(`stage`: [IAppearStage](../interfaces/iappearstage.md)‹[BaseActor](baseactor.md)›): *void*
+▸ **bind**(`stage`: [IStage](../interfaces/iappearstage.md)‹[BaseActor](baseactor.md)›): _void_
 
-*Implementation of [IAppearActor](../interfaces/iappearactor.md)*
+_Implementation of [IActor](../interfaces/iappearactor.md)_
 
-*Inherited from [BaseActor](baseactor.md).[bind](baseactor.md#bind)*
+_Inherited from [BaseActor](baseactor.md).[bind](baseactor.md#bind)_
 
-*Defined in [projects/packages/src/actor/base-actor.ts:46](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L46)*
+_Defined in [projects/packages/src/actor/base-actor.ts:46](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L46)_
 
 해당 인스턴스를 관찰하는 스테이지를 연결
 
 **Parameters:**
 
-Name | Type | Description |
------- | ------ | ------ |
-`stage` | [IAppearStage](../interfaces/iappearstage.md)‹[BaseActor](baseactor.md)› | 스테이지  |
+| Name    | Type                                                               | Description |
+| ------- | ------------------------------------------------------------------ | ----------- |
+| `stage` | [IStage](../interfaces/iappearstage.md)‹[BaseActor](baseactor.md)› | 스테이지    |
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
 ### `Private` clearAppearTimer
 
-▸ **clearAppearTimer**(): *void*
+▸ **clearAppearTimer**(): _void_
 
-*Defined in [projects/packages/src/actor/lazy-actor.ts:34](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L34)*
+_Defined in [projects/packages/src/actor/lazy-actor.ts:34](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L34)_
 
 진입 대기 타이머 파기
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
-###  destroy
+### dispose
 
-▸ **destroy**(): *void*
+▸ **dispose**(): _void_
 
-*Implementation of [IAppearActor](../interfaces/iappearactor.md)*
+_Implementation of [IActor](../interfaces/iappearactor.md)_
 
-*Inherited from [BaseActor](baseactor.md).[destroy](baseactor.md#destroy)*
+_Inherited from [BaseActor](baseactor.md).[dispose](baseactor.md#dispose)_
 
-*Defined in [projects/packages/src/actor/base-actor.ts:84](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L84)*
+_Defined in [projects/packages/src/actor/base-actor.ts:84](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L84)_
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
-###  disappear
+### disappear
 
-▸ **disappear**(`entry`: IntersectionObserverEntry): *void*
+▸ **disappear**(`entry`: IntersectionObserverEntry): _void_
 
-*Implementation of [IAppearActor](../interfaces/iappearactor.md)*
+_Implementation of [IActor](../interfaces/iappearactor.md)_
 
-*Overrides [BaseActor](baseactor.md).[disappear](baseactor.md#disappear)*
+_Overrides [BaseActor](baseactor.md).[disappear](baseactor.md#disappear)_
 
-*Defined in [projects/packages/src/actor/lazy-actor.ts:61](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L61)*
+_Defined in [projects/packages/src/actor/lazy-actor.ts:61](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L61)_
 
 **Parameters:**
 
-Name | Type |
------- | ------ |
-`entry` | IntersectionObserverEntry |
+| Name    | Type                      |
+| ------- | ------------------------- |
+| `entry` | IntersectionObserverEntry |
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
-###  dispatch
+### dispatch
 
-▸ **dispatch**(`type`: string, `entry?`: IntersectionObserverEntry): *void*
+▸ **dispatch**(`type`: string, `entry?`: IntersectionObserverEntry): _void_
 
-*Inherited from [BaseActor](baseactor.md).[dispatch](baseactor.md#dispatch)*
+_Inherited from [BaseActor](baseactor.md).[dispatch](baseactor.md#dispatch)_
 
-*Defined in [projects/packages/src/actor/base-actor.ts:55](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L55)*
+_Defined in [projects/packages/src/actor/base-actor.ts:55](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/base-actor.ts#L55)_
 
 진입, 이탈 등 이벤트 알림
 
 **Parameters:**
 
-Name | Type | Description |
------- | ------ | ------ |
-`type` | string | 이벤트 타입 |
-`entry?` | IntersectionObserverEntry | - |
+| Name     | Type                      | Description |
+| -------- | ------------------------- | ----------- |
+| `type`   | string                    | 이벤트 타입 |
+| `entry?` | IntersectionObserverEntry | -           |
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
-###  setAppearDelay
+### setAppearDelay
 
-▸ **setAppearDelay**(`delay`: number): *void*
+▸ **setAppearDelay**(`delay`: number): _void_
 
-*Defined in [projects/packages/src/actor/lazy-actor.ts:27](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L27)*
+_Defined in [projects/packages/src/actor/lazy-actor.ts:27](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L27)_
 
 지정된 시간 사이에 진입 후 진출을 하는 경우 진입 알림을 하지 않는 대기 시간.
 
 **Parameters:**
 
-Name | Type | Default |
------- | ------ | ------ |
-`delay` | number | 150 |
+| Name    | Type   | Default |
+| ------- | ------ | ------- |
+| `delay` | number | 150     |
 
-**Returns:** *void*
+**Returns:** _void_
 
-___
+---
 
-###  setCheckoutDelay
+### setCheckoutDelay
 
-▸ **setCheckoutDelay**(`delay`: number): *void*
+▸ **setCheckoutDelay**(`delay`: number): _void_
 
-*Defined in [projects/packages/src/actor/lazy-actor.ts:19](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L19)*
+_Defined in [projects/packages/src/actor/lazy-actor.ts:19](https://github.com/molgga/jood-appearer/blob/4c4cb79/projects/packages/src/actor/lazy-actor.ts#L19)_
 
 느린 감지를 시작하기 전 대기 시간.
 지정된 시간 전에 감지된 진입은 느린 감지를 하지 않고 바로 진입을 알림.
 
 **Parameters:**
 
-Name | Type | Default |
------- | ------ | ------ |
-`delay` | number | 1000 |
+| Name    | Type   | Default |
+| ------- | ------ | ------- |
+| `delay` | number | 1000    |
 
-**Returns:** *void*
+**Returns:** _void_

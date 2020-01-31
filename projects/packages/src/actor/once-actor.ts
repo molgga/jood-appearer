@@ -1,5 +1,5 @@
 import { BaseActor } from "./base-actor";
-import { AppearEvent } from "../core/types";
+import { AppearEvent } from "../common/types";
 
 /**
  * Stage 에 등록될 Actor.

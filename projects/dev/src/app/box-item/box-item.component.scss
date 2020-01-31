@@ -1,9 +1,12 @@
 :host {
   display: block;
-  margin: 10px;
-  padding: 50px;
+  margin: 5px;
+  padding: 10px;
+  max-width: 100%;
   border: 1px dashed #cccccc;
-  text-align: center;
+  font-size: 13px;
+  word-break: break-all;
+  box-sizing: border-box;
   background-color: #ffffff;
   transition: background-color 300ms;
 
