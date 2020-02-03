@@ -1,6 +1,6 @@
 {
   "name": "@jood/appearer",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "dependencies": {
     "intersection-observer": "^0.7.0",
     "rxjs": "^6.5.4"
@@ -8,5 +8,15 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/molgga/jood-appearer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/molgga/jood-appearer/issues",
+    "email": "molgga84@gmail.com"
+  },
+  "homepage": "https://molgga.github.io/jood-appearer",
+  "keywords": [],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   }
 }
