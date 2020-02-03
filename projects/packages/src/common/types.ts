@@ -86,7 +86,6 @@ export interface StageOption extends IntersectionObserverInit {}
 
 /**
  * 관찰대상의 이벤트
- * @class AppearEvent
  * @implements {AppearEventData<T>}
  * @template T
  */
