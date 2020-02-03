@@ -1,14 +1,14 @@
 # @jood/appearer
 
+![TRAVIS](https://travis-ci.org/molgga/jood-appearer.svg?_v=2&branch=master)
+![NPM version](https://img.shields.io/npm/v/@jood/appearer.svg?_v=2&style=flat-square)
+![NPM license](https://img.shields.io/npm/l/@jood/appearer?_v=2&style=flat-square)
+![NPM download](https://img.shields.io/npm/dt/@jood/appearer?_v=2&style=flat-square)
+![NPM bundle size](https://img.shields.io/bundlephobia/min/@jood/appearer?_v=2&style=flat-square)
+
 javascript intersection observer
 
-![TRAVIS](https://travis-ci.org/molgga/jood-appearer.svg?branch=master)
-![NPM version](https://img.shields.io/npm/v/@jood/appearer.svg?style=flat-square)
-![NPM license](https://img.shields.io/npm/l/@jood/appearer?style=flat-square)
-![NPM download](https://img.shields.io/npm/dt/@jood/appearer?style=flat-square)
-![NPM bundle size](https://img.shields.io/bundlephobia/min/@jood/appearer?style=flat-square)
-
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli)
 
 ## Quick link
 
