@@ -1,4 +1,4 @@
-import { sleep } from "../common/testing";
+import { sleep } from "../__testing__";
 import { AppearStage } from "../stage/appear-stage";
 import { AppearEvent } from "../common/types";
 import { LazyActor } from "./lazy-actor";
@@ -91,5 +91,33 @@ describe("LazyActor", () => {
     expect(isCalled).toBe(true);
 
     subscription.unsubscribe();
+  });
+
+  it("checkoutDelay 설정 확인", async () => {
+    const DEFAULT_VALUE = 1000;
+    // @ts-ignore
+    expect(actor.checkoutDelay).toBe(DEFAULT_VALUE);
+
+    actor.setCheckoutDelay(200);
+    // @ts-ignore
+    expect(actor.checkoutDelay).toBe(200);
+
+    actor.setCheckoutDelay(undefined);
+    // @ts-ignore
+    expect(actor.checkoutDelay).toBe(DEFAULT_VALUE);
+  });
+
+  it("appearDelay 설정 확인", async () => {
+    const DEFAULT_VALUE = 150;
+    // @ts-ignore
+    expect(actor.appearDelay).toBe(DEFAULT_VALUE);
+
+    actor.setAppearDelay(200);
+    // @ts-ignore
+    expect(actor.appearDelay).toBe(200);
+
+    actor.setAppearDelay(undefined);
+    // @ts-ignore
+    expect(actor.appearDelay).toBe(DEFAULT_VALUE);
   });
 });

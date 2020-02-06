@@ -1,4 +1,4 @@
-import { sleep } from "../common/testing";
+import { sleep, createEntry } from "../__testing__";
 import { AppearStage } from "./appear-stage";
 import { BaseActor } from "../actor/base-actor";
 
@@ -14,7 +14,14 @@ describe("AppearStage", () => {
     stage = null;
   });
 
-  it("init options", () => {
+  it("init 안된 상태에서 기본값 확인", () => {
+    expect(function() {
+      console.log(stage.intersectionObserver); // getter throw
+    }).toThrowError("uninitialize");
+    expect(stage.actorSize).toBe(0);
+  });
+
+  it("init 옵션 설정 확인", () => {
     const rootEl: any = document.createElement("div");
     stage.init({
       root: rootEl,
@@ -97,5 +104,63 @@ describe("AppearStage", () => {
     expect(handle.calls.count()).toBe(0);
     await sleep(1);
     expect(handle.calls.count()).toBe(1);
+  });
+
+  it("onObserveEntries 호출 확인", async () => {
+    const dom1 = document.createElement("div");
+    const actor1 = new BaseActor(dom1);
+    const dom2 = document.createElement("div");
+    const actor2 = new BaseActor(dom2);
+
+    stage.init();
+    stage.observe(actor1);
+    stage.observe(actor2);
+
+    const entry1 = createEntry();
+    entry1.isIntersecting = true;
+    entry1.target = dom1;
+
+    const entry2 = createEntry();
+    entry2.isIntersecting = true;
+    entry2.target = dom2;
+
+    const actor1Appear = spyOn(actor1, "appear");
+    const actor1Disappear = spyOn(actor1, "disappear");
+    const actor2Appear = spyOn(actor2, "appear");
+    const actor2Disappear = spyOn(actor2, "disappear");
+
+    // @ts-ignore
+    stage.onObserveEntries([entry1, entry2]);
+    expect(actor1Appear.calls.count()).toBe(1);
+    expect(actor1Disappear.calls.count()).toBe(0);
+    expect(actor2Appear.calls.count()).toBe(1);
+    expect(actor2Disappear.calls.count()).toBe(0);
+
+    entry1.isIntersecting = false;
+    // @ts-ignore
+    stage.onObserveEntries([entry1, entry2]);
+    expect(actor1Appear.calls.count()).toBe(1);
+    expect(actor1Disappear.calls.count()).toBe(1);
+    expect(actor2Appear.calls.count()).toBe(2);
+    expect(actor2Disappear.calls.count()).toBe(0);
+
+    entry1.isIntersecting = false;
+    entry2.isIntersecting = false;
+    // @ts-ignore
+    stage.onObserveEntries([entry1, entry2]);
+    expect(actor1Appear.calls.count()).toBe(1);
+    expect(actor1Disappear.calls.count()).toBe(2);
+    expect(actor2Appear.calls.count()).toBe(2);
+    expect(actor2Disappear.calls.count()).toBe(1);
+
+    const unknown1 = createEntry();
+    const unknown2 = createEntry();
+    const unknown3 = createEntry();
+    // @ts-ignore
+    stage.onObserveEntries([unknown1, unknown2, unknown3]);
+    expect(actor1Appear.calls.count()).toBe(1);
+    expect(actor1Disappear.calls.count()).toBe(2);
+    expect(actor2Appear.calls.count()).toBe(2);
+    expect(actor2Disappear.calls.count()).toBe(1);
   });
 });

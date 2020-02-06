@@ -1,4 +1,4 @@
-import { sleep } from "../common/testing";
+import { sleep, createEntry } from "../__testing__";
 import { AppearStage } from "../stage/appear-stage"; //"projects/packages/src/stage/appear-stage";
 import { AppearEvent } from "../common/types";
 import { BaseActor } from "./base-actor";
@@ -13,15 +13,7 @@ describe("BaseActor", () => {
     stage = new AppearStage();
     dom = document.createElement("div");
     actor = new BaseActor(dom);
-    entry = {
-      isIntersecting: true,
-      target: dom,
-      time: 0,
-      intersectionRatio: 0,
-      boundingClientRect: {},
-      intersectionRect: {},
-      rootBounds: {}
-    };
+    entry = createEntry({ target: dom });
   });
 
   afterEach(() => {
@@ -96,5 +88,22 @@ describe("BaseActor", () => {
 
     expect(isCalled).toBe(false);
     subscription.unsubscribe();
+  });
+
+  it("appear 중복 진입 안된는것 확인", () => {
+    stage.init();
+    stage.observe(actor);
+
+    const handle = spyOn(actor, "dispatch");
+
+    actor.appear(null);
+    expect(handle.calls.count()).toBe(1);
+    actor.appear(null);
+    expect(handle.calls.count()).toBe(1);
+
+    actor.disappear(null);
+    expect(handle.calls.count()).toBe(2);
+    actor.appear(null);
+    expect(handle.calls.count()).toBe(3);
   });
 });
