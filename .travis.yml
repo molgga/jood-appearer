@@ -9,13 +9,17 @@ cache:
   directories:
     - node_modules
 
+# Set DISPLAY for Xvfb
+env:
+  - DISPLAY=:99.0
+
 # 알림 설정
 # see: https://docs.travis-ci.com/user/notifications#configuring-email-notifications
 notifications:
   email:
     recipients:
       - molgga84@gmail.com
-    on_success: always
+    on_success: never
     on_failure: always
 
 # Job Lifecycle
@@ -36,19 +40,28 @@ notifications:
 install:
   - npm install
 
+services:
+  - xvfb
+
 script:
   - echo $TRAVIS_COMMIT
   - echo $TRAVIS_BRANCH
   - echo $TRAVIS_TAG
+  - echo $TRAVIS_PULL_REQUEST
   - echo $TRAVIS_BUILD_NUMBER
   - echo $TRAVIS_REPO_SLUG
-  - npm run packages:build
-  - npm run packages:doc
+  - npm run travis:build
+  - npm run travis:doc
+  - npm run travis:test
 
 branches:
   only:
     - master
     - /^v[0-9]+\.[0-9]+\.[0-9]+$/
+
+# condition https://stackoverflow.com/questions/34591587/travis-conditional-on-branch-after-success
+after_success:
+  - test $TRAVIS_BRANCH = "master" && test $TRAVIS_PULL_REQUEST = "false" && npm run travis:codecov
 
 deploy:
   # 배포 설정 - npm module
@@ -71,4 +84,4 @@ deploy:
     local_dir: docs
     github_token: $GITHUB_PAGES_TOKEN
     on:
-      all_branches: true
+      branch: master
