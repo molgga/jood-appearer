@@ -21,7 +21,11 @@
           "options": {
             "main": "projects/packages/src/test.ts",
             "tsConfig": "projects/packages/tsconfig.spec.json",
-            "karmaConfig": "projects/packages/karma.conf.js"
+            "karmaConfig": "projects/packages/karma.conf.js",
+            "codeCoverageExclude": [
+              "projects/packages/src/test.ts",
+              "projects/packages/src/__testing__/**"
+            ]
           }
         },
         "lint": {
