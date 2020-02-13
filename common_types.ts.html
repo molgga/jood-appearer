@@ -43,6 +43,17 @@
             <pre class="prettyprint source linenums"><code>import { Subject } from "rxjs";
 
 /**
+ * Actor type 구분
+ * @export
+ * @enum {number}
+ */
+export enum AppearType {
+  NORMAL,
+  ONCE,
+  LAZY
+}
+
+/**
  * 관찰자
  * @interface IStage
  * @template T
@@ -192,7 +203,7 @@ export interface AppearEventData&lt;T> {
 <br class="clear">
 
 <footer>
-    Documentation generated at Thu Feb 06 2020 09:48:48 GMT+0000 (Coordinated Universal Time)
+    Documentation generated at Thu Feb 13 2020 06:31:04 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script>prettyPrint();</script>
