@@ -1,5 +1,5 @@
 import { BaseActor } from "./base-actor";
-import { AppearEvent } from "../common/types";
+import { AppearEvent, ILazyActor } from "../common/types";
 
 /**
  * Stage 에 등록될 Actor.
@@ -8,7 +8,7 @@ import { AppearEvent } from "../common/types";
  * @class LazyActor
  * @extends {BaseActor}
  */
-export class LazyActor extends BaseActor {
+export class LazyActor extends BaseActor implements ILazyActor {
   private appearTimer: any = null;
   private checkoutDelay: number = 1000;
   private appearDelay: number = 150;

@@ -6,7 +6,7 @@ import { Subject } from "rxjs";
  * @enum {number}
  */
 export enum AppearType {
-  NORMAL,
+  BASE,
   ONCE,
   LAZY
 }
@@ -77,6 +77,27 @@ export interface IActor {
 
   dispose(): void;
 }
+
+/**
+ * 관찰대상 - 한번만 형
+ * @export
+ * @interface IOnceActor
+ */
+export interface IOnceActor {}
+
+/**
+ * 관찰대상 - 한번만 느긋하게 형
+ * @export
+ * @interface ILazyActor
+ * @property setCheckoutDelay {method} 느린 감지를 시작하기 전 대기 시간.
+ * @property setAppearDelay {method} 지정된 시간 사이에 진입 후 진출을 하는 경우 진입 알림을 하지 않는 대기 시간.
+ */
+export interface ILazyActor {
+  setCheckoutDelay?(delay: number): void;
+  setAppearDelay?(delay: number): void;
+}
+
+export interface Actor extends IActor, IOnceActor, ILazyActor {}
 
 /**
  * 관찰자, 관찰대상에서 참조되어야 하는 native element 타입

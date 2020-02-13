@@ -1,5 +1,5 @@
 import { BaseActor } from "./base-actor";
-import { AppearEvent } from "../common/types";
+import { AppearEvent, IOnceActor } from "../common/types";
 
 /**
  * Stage 에 등록될 Actor.
@@ -8,7 +8,7 @@ import { AppearEvent } from "../common/types";
  * @class OnceActor
  * @extends {BaseActor}
  */
-export class OnceActor extends BaseActor {
+export class OnceActor extends BaseActor implements IOnceActor {
   /**
    * 스테이지 진입. 진입시 자동 관찰 해제.
    * @override
