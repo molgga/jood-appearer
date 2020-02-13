@@ -1,6 +1,17 @@
 import { Subject } from "rxjs";
 
 /**
+ * Actor type 구분
+ * @export
+ * @enum {number}
+ */
+export enum AppearType {
+  NORMAL,
+  ONCE,
+  LAZY
+}
+
+/**
  * 관찰자
  * @interface IStage
  * @template T
