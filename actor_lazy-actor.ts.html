@@ -25,7 +25,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AppearEvent.html">AppearEvent</a></li><li><a href="AppearStage.html">AppearStage</a><ul class='methods'><li data-type='method'><a href="AppearStage.html#dispose">dispose</a></li><li data-type='method'><a href="AppearStage.html#getActors">getActors</a></li><li data-type='method'><a href="AppearStage.html#init">init</a></li><li data-type='method'><a href="AppearStage.html#observe">observe</a></li><li data-type='method'><a href="AppearStage.html#onObserveEntries">onObserveEntries</a></li><li data-type='method'><a href="AppearStage.html#unobserve">unobserve</a></li></ul></li><li><a href="BaseActor.html">BaseActor</a><ul class='methods'><li data-type='method'><a href="BaseActor.html#appear">appear</a></li><li data-type='method'><a href="BaseActor.html#bind">bind</a></li><li data-type='method'><a href="BaseActor.html#disappear">disappear</a></li><li data-type='method'><a href="BaseActor.html#dispatch">dispatch</a></li><li data-type='method'><a href="BaseActor.html#dispose">dispose</a></li></ul></li><li><a href="LazyActor.html">LazyActor</a><ul class='methods'><li data-type='method'><a href="LazyActor.html#appear">appear</a></li><li data-type='method'><a href="LazyActor.html#bind">bind</a></li><li data-type='method'><a href="LazyActor.html#disappear">disappear</a></li><li data-type='method'><a href="LazyActor.html#dispatch">dispatch</a></li><li data-type='method'><a href="LazyActor.html#dispose">dispose</a></li><li data-type='method'><a href="LazyActor.html#setAppearDelay">setAppearDelay</a></li><li data-type='method'><a href="LazyActor.html#setCheckoutDelay">setCheckoutDelay</a></li></ul></li><li><a href="OnceActor.html">OnceActor</a><ul class='methods'><li data-type='method'><a href="OnceActor.html#appear">appear</a></li><li data-type='method'><a href="OnceActor.html#bind">bind</a></li><li data-type='method'><a href="OnceActor.html#disappear">disappear</a></li><li data-type='method'><a href="OnceActor.html#dispatch">dispatch</a></li><li data-type='method'><a href="OnceActor.html#dispose">dispose</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="AppearEventData.html">AppearEventData</a></li><li><a href="IActor.html">IActor</a></li><li><a href="IStage.html">IStage</a></li><li><a href="StageOption.html">StageOption</a></li></ul><h3><a href="global.html">Global</a></h3>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AppearEvent.html">AppearEvent</a></li><li><a href="AppearStage.html">AppearStage</a><ul class='methods'><li data-type='method'><a href="AppearStage.html#dispose">dispose</a></li><li data-type='method'><a href="AppearStage.html#getActors">getActors</a></li><li data-type='method'><a href="AppearStage.html#init">init</a></li><li data-type='method'><a href="AppearStage.html#observe">observe</a></li><li data-type='method'><a href="AppearStage.html#onObserveEntries">onObserveEntries</a></li><li data-type='method'><a href="AppearStage.html#unobserve">unobserve</a></li></ul></li><li><a href="BaseActor.html">BaseActor</a><ul class='methods'><li data-type='method'><a href="BaseActor.html#appear">appear</a></li><li data-type='method'><a href="BaseActor.html#bind">bind</a></li><li data-type='method'><a href="BaseActor.html#disappear">disappear</a></li><li data-type='method'><a href="BaseActor.html#dispatch">dispatch</a></li><li data-type='method'><a href="BaseActor.html#dispose">dispose</a></li></ul></li><li><a href="LazyActor.html">LazyActor</a><ul class='methods'><li data-type='method'><a href="LazyActor.html#appear">appear</a></li><li data-type='method'><a href="LazyActor.html#bind">bind</a></li><li data-type='method'><a href="LazyActor.html#disappear">disappear</a></li><li data-type='method'><a href="LazyActor.html#dispatch">dispatch</a></li><li data-type='method'><a href="LazyActor.html#dispose">dispose</a></li><li data-type='method'><a href="LazyActor.html#setAppearDelay">setAppearDelay</a></li><li data-type='method'><a href="LazyActor.html#setCheckoutDelay">setCheckoutDelay</a></li></ul></li><li><a href="OnceActor.html">OnceActor</a><ul class='methods'><li data-type='method'><a href="OnceActor.html#appear">appear</a></li><li data-type='method'><a href="OnceActor.html#bind">bind</a></li><li data-type='method'><a href="OnceActor.html#disappear">disappear</a></li><li data-type='method'><a href="OnceActor.html#dispatch">dispatch</a></li><li data-type='method'><a href="OnceActor.html#dispose">dispose</a></li></ul></li></ul><h3>Interfaces</h3><ul><li><a href="AppearEventData.html">AppearEventData</a></li><li><a href="IActor.html">IActor</a></li><li><a href="ILazyActor.html">ILazyActor</a></li><li><a href="IOnceActor.html">IOnceActor</a></li><li><a href="IStage.html">IStage</a></li><li><a href="StageOption.html">StageOption</a></li></ul><h3><a href="global.html">Global</a></h3>
 </nav>
 
 <div id="main">
@@ -41,7 +41,7 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import { BaseActor } from "./base-actor";
-import { AppearEvent } from "../common/types";
+import { AppearEvent, ILazyActor } from "../common/types";
 
 /**
  * Stage 에 등록될 Actor.
@@ -50,7 +50,7 @@ import { AppearEvent } from "../common/types";
  * @class LazyActor
  * @extends {BaseActor}
  */
-export class LazyActor extends BaseActor {
+export class LazyActor extends BaseActor implements ILazyActor {
   private appearTimer: any = null;
   private checkoutDelay: number = 1000;
   private appearDelay: number = 150;
@@ -136,7 +136,7 @@ export class LazyActor extends BaseActor {
 <br class="clear">
 
 <footer>
-    Documentation generated at Thu Feb 13 2020 06:31:04 GMT+0000 (Coordinated Universal Time)
+    Documentation generated at Thu Feb 13 2020 07:14:25 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script>prettyPrint();</script>
