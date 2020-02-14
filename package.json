@@ -35,7 +35,7 @@
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
     "@daybrush/jsdoc": "^0.3.7",
-    "@jood/jsdoc-theme": "^0.1.12",
+    "@jood/jsdoc-theme": "^0.1.13",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^8.9.5",
