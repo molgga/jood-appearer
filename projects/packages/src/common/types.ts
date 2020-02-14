@@ -6,9 +6,9 @@ import { Subject } from "rxjs";
  * @enum {number}
  */
 export enum AppearType {
-  BASE,
-  ONCE,
-  LAZY
+  BASE = "base",
+  ONCE = "once",
+  LAZY = "lazy"
 }
 
 /**
