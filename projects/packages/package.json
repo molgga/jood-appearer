@@ -1,6 +1,6 @@
 {
   "name": "@jood/appearer",
-  "version": "0.0.17",
+  "version": "0.1.0",
   "license": "MIT",
   "dependencies": {
     "intersection-observer": "^0.7.0",
@@ -15,7 +15,16 @@
     "email": "molgga84@gmail.com"
   },
   "homepage": "https://molgga.github.io/jood-appearer",
-  "keywords": [],
+  "keywords": [
+    "javascript",
+    "typescript",
+    "angular",
+    "intersection",
+    "observer",
+    "intersection-observer",
+    "es6",
+    "ployfill"
+  ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
     "access": "public"
