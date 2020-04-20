@@ -37,7 +37,7 @@ export class AppearStage<T extends IActor = any> implements IStage<T> {
    */
   observe(actor: T): void {
     const { element } = actor;
-    if (!this.actorMap.has(element)) {
+    if (this.actorMap && !this.actorMap.has(element)) {
       actor.bind(this);
       this.actorMap.set(element, actor);
       this.intersectionObserver.observe(element);
@@ -50,7 +50,7 @@ export class AppearStage<T extends IActor = any> implements IStage<T> {
    */
   unobserve(actor: T): void {
     const { element } = actor;
-    if (this.actorMap.has(element)) {
+    if (this.actorMap && this.actorMap.has(element)) {
       this.actorMap.delete(element);
       this.intersectionObserver.unobserve(element);
     }
@@ -68,7 +68,7 @@ export class AppearStage<T extends IActor = any> implements IStage<T> {
    * @returns T[]
    */
   getActors(): T[] {
-    return Array.from(this.actorMap.values());
+    return Array.from(this.actorMap ? this.actorMap.values() : []);
   }
 
   /**
