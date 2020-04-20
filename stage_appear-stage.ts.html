@@ -79,7 +79,7 @@ export class AppearStage&lt;T extends IActor = any> implements IStage&lt;T> {
    */
   observe(actor: T): void {
     const { element } = actor;
-    if (!this.actorMap.has(element)) {
+    if (this.actorMap &amp;&amp; !this.actorMap.has(element)) {
       actor.bind(this);
       this.actorMap.set(element, actor);
       this.intersectionObserver.observe(element);
@@ -92,7 +92,7 @@ export class AppearStage&lt;T extends IActor = any> implements IStage&lt;T> {
    */
   unobserve(actor: T): void {
     const { element } = actor;
-    if (this.actorMap.has(element)) {
+    if (this.actorMap &amp;&amp; this.actorMap.has(element)) {
       this.actorMap.delete(element);
       this.intersectionObserver.unobserve(element);
     }
@@ -110,7 +110,7 @@ export class AppearStage&lt;T extends IActor = any> implements IStage&lt;T> {
    * @returns T[]
    */
   getActors(): T[] {
-    return Array.from(this.actorMap.values());
+    return Array.from(this.actorMap ? this.actorMap.values() : []);
   }
 
   /**
@@ -165,7 +165,7 @@ export class AppearStage&lt;T extends IActor = any> implements IStage&lt;T> {
 <br class="clear">
 
 <footer>
-    Documentation generated at Sat Feb 15 2020 11:05:00 GMT+0000 (Coordinated Universal Time)
+    Documentation generated at Mon Apr 20 2020 04:50:47 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script>prettyPrint();</script>
