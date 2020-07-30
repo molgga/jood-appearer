@@ -1,0 +1,17 @@
+<div class="horizontal-list">
+  <sample-actor
+    *ngFor="let item of actorMakeList"
+    actorType="once"
+    (sampleEvent)="onSampleAppearEvent($event)"
+  >
+  </sample-actor>
+</div>
+
+<div class="vertical-list">
+  <sample-actor
+    *ngFor="let item of actorMakeList"
+    actorType="once"
+    (sampleEvent)="onSampleAppearEvent($event)"
+  >
+  </sample-actor>
+</div>

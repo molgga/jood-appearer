@@ -1,11 +1,38 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { LayoutModule } from "~/dev/app/modules/layout/layout.module";
+import { LayoutComponent } from "~/dev/app/modules/layout/layout.component";
+import { LAYOUT_SERVICE_TOKEN } from "~/dev/app/modules/layout/service/token";
+import { ExampleLayoutService } from "~/dev/app/service/example-layout.service";
 
-
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: "",
+    component: LayoutComponent,
+    children: [
+      {
+        path: "example",
+        loadChildren: () =>
+          import("~/dev/app/pages/example/example.module").then(
+            (m) => m.PageModule
+          ),
+      },
+      {
+        path: "**",
+        loadChildren: () =>
+          import("~/dev/app/pages/example/example.module").then(
+            (m) => m.PageModule
+          ),
+      },
+    ],
+  },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [LayoutModule, RouterModule.forRoot(routes)],
+  providers: [
+    { provide: LAYOUT_SERVICE_TOKEN, useClass: ExampleLayoutService },
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

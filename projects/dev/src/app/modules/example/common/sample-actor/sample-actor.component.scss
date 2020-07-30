@@ -1,0 +1,39 @@
+:host {
+  display: block;
+  margin: 10px;
+  padding: 20px;
+  color: #333333;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  transition: color 300ms, background-color 300ms;
+  &.is-appeared {
+    color: #ffffff;
+    background-color: #333333;
+  }
+
+  .panel-count {
+    display: flex;
+    text-align: center;
+    .spacer {
+      flex: 1;
+      min-width: 20px;
+    }
+    .label {
+      display: block;
+      font-size: 13px;
+    }
+    .count {
+      display: block;
+      padding-top: 5px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+
+  .panel-item {
+    padding-top: 5px;
+    text-align: center;
+    font-size: 13px;
+  }
+}
