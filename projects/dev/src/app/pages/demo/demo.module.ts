@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { RoutingModule } from "~/dev/app/pages/example/example.routing";
+import { RoutingModule } from "~/dev/app/pages/demo/demo.routing";
 import { SharedModule } from "~/dev/app/shared/shared.module";
 import { ExampleCommonModule } from "~/dev/app/modules/example/common/common.module";
 import { BaseActorComponent } from "./base-actor/base-actor.component";

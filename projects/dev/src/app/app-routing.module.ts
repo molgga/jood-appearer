@@ -13,16 +13,12 @@ const routes: Routes = [
       {
         path: "example",
         loadChildren: () =>
-          import("~/dev/app/pages/example/example.module").then(
-            (m) => m.PageModule
-          ),
+          import("~/dev/app/pages/demo/demo.module").then((m) => m.PageModule),
       },
       {
         path: "**",
         loadChildren: () =>
-          import("~/dev/app/pages/example/example.module").then(
-            (m) => m.PageModule
-          ),
+          import("~/dev/app/pages/demo/demo.module").then((m) => m.PageModule),
       },
     ],
   },

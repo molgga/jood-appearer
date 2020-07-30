@@ -5,22 +5,22 @@ import { ILayoutService } from "~/dev/app/modules/layout/service/types";
   providedIn: "root",
 })
 export class ExampleLayoutService implements ILayoutService {
-  appTitle = "appTitle";
+  appTitle = "@jood/appearer";
   getMenuList() {
     return [
       {
-        label: "Examples",
+        label: "Demo",
         children: [
           {
-            href: "/example/base-actor",
+            href: "/demo/base-actor",
             label: "base-actor",
           },
           {
-            href: "/example/once-actor",
+            href: "/demo/once-actor",
             label: "once-actor",
           },
           {
-            href: "/example/lazy-actor",
+            href: "/demo/lazy-actor",
             label: "lazy-actor",
           },
         ],

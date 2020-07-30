@@ -105,7 +105,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "dev:build"
+            "browserTarget": "dev:build",
+            "deployUrl": "",
+            "baseHref": ""
           },
           "configurations": {
             "production": {
