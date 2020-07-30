@@ -107,7 +107,7 @@
           "options": {
             "browserTarget": "dev:build",
             "deployUrl": "",
-            "baseHref": ""
+            "baseHref": "/"
           },
           "configurations": {
             "production": {
