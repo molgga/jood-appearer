@@ -1,0 +1,22 @@
+<div class="">
+  <button mat-raised-button (click)="onTestRemoveShift($event)">
+    shift item
+  </button>
+</div>
+<div class="horizontal-list">
+  <sample-actor
+    *ngFor="let item of actorMakeList"
+    [item]="item"
+    (sampleEvent)="onSampleAppearEvent($event)"
+  >
+  </sample-actor>
+</div>
+
+<div class="vertical-list">
+  <sample-actor
+    *ngFor="let item of actorMakeList"
+    [item]="item"
+    (sampleEvent)="onSampleAppearEvent($event)"
+  >
+  </sample-actor>
+</div>
