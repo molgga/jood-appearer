@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>AppearStage - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow-eighties.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AppearEvent.html">AppearEvent</a></li><li><a href="AppearStage.html">AppearStage</a><ul class='methods'><li data-type='method'><a href="AppearStage.html#dispose">dispose</a></li><li data-type='method'><a href="AppearStage.html#getActors">getActors</a></li><li data-type='method'><a href="AppearStage.html#init">init</a></li><li data-type='method'><a href="AppearStage.html#observe">observe</a></li><li data-type='method'><a href="AppearStage.html#onObserveEntries">onObserveEntries</a></li><li data-type='method'><a href="AppearStage.html#unobserve">unobserve</a></li></ul></li><li><a href="BaseActor.html">BaseActor</a><ul class='methods'><li data-type='method'><a href="BaseActor.html#appear">appear</a></li><li data-type='method'><a href="BaseActor.html#bind">bind</a></li><li data-type='method'><a href="BaseActor.html#disappear">disappear</a></li><li data-type='method'><a href="BaseActor.html#dispatch">dispatch</a></li><li data-type='method'><a href="BaseActor.html#dispose">dispose</a></li></ul></li><li><a href="BaseActor_BaseActor.html">BaseActor</a></li><li><a href="LazyActor.html">LazyActor</a><ul class='methods'><li data-type='method'><a href="LazyActor.html#appear">appear</a></li><li data-type='method'><a href="LazyActor.html#bind">bind</a></li><li data-type='method'><a href="LazyActor.html#clearAppearTimer">clearAppearTimer</a></li><li data-type='method'><a href="LazyActor.html#disappear">disappear</a></li><li data-type='method'><a href="LazyActor.html#dispatch">dispatch</a></li><li data-type='method'><a href="LazyActor.html#dispose">dispose</a></li><li data-type='method'><a href="LazyActor.html#setAppearDelay">setAppearDelay</a></li><li data-type='method'><a href="LazyActor.html#setCheckoutDelay">setCheckoutDelay</a></li></ul></li><li><a href="LazyActor_BaseActor.html">BaseActor</a></li><li><a href="OnceActor.html">OnceActor</a><ul class='methods'><li data-type='method'><a href="OnceActor.html#appear">appear</a></li><li data-type='method'><a href="OnceActor.html#bind">bind</a></li><li data-type='method'><a href="OnceActor.html#disappear">disappear</a></li><li data-type='method'><a href="OnceActor.html#dispatch">dispatch</a></li><li data-type='method'><a href="OnceActor.html#dispose">dispose</a></li></ul></li><li><a href="OnceActor_BaseActor.html">BaseActor</a></li></ul><h3>Interfaces</h3><ul><li><a href="AppearEventData.html">AppearEventData</a></li><li><a href="IActor.html">IActor</a></li><li><a href="ILazyActor.html">ILazyActor</a></li><li><a href="IOnceActor.html">IOnceActor</a></li><li><a href="IStage.html">IStage</a></li><li><a href="StageOption.html">StageOption</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AppearType">AppearType</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">AppearStage</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        AppearStage
+        </h2>
+        
+            <div class="class-description">화면(지정된 root 영역)에 진입 여부를 판단하고 알리기 위한 클래스.
+등록된 Actor(s)를 IntersectionObserver 를 통해 관찰하고 관찰된 상태에 따라 Actor 에게 알림.</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    <h4 class="name" id="AppearStage"><span class="type-signature"></span>new AppearStage<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="stage_appear-stage.ts.html">stage/appear-stage.ts</a>, <a href="stage_appear-stage.ts.html#line7">line 7</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="actorMap"><span class="type-signature">(protected) </span>actorMap<span class="type-signature"> :Map.&lt;ActorElement, T></span></h4>
+
+
+
+
+<div class="description">
+    Actor 맵
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Map.&lt;ActorElement, T></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="stage_appear-stage.ts.html">stage/appear-stage.ts</a>, <a href="stage_appear-stage.ts.html#line102">line 102</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="actorSize"><span class="type-signature"></span>actorSize<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    옵저버에 등록(관찰) 중 인 Actor 의 수
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="stage_appear-stage.ts.html">stage/appear-stage.ts</a>, <a href="stage_appear-stage.ts.html#line44">line 44</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="intersectionObserver"><span class="type-signature"></span>intersectionObserver<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    생성된 intersection observer 인스턴스
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="stage_appear-stage.ts.html">stage/appear-stage.ts</a>, <a href="stage_appear-stage.ts.html#line57">line 57</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="observer"><span class="type-signature">(protected) </span>observer<span class="type-signature"> :IntersectionObserver</span></h4>
+
+
+
+
+<div class="description">
+    IntersectionObserver
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">IntersectionObserver</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="stage_appear-stage.ts.html">stage/appear-stage.ts</a>, <a href="stage_appear-stage.ts.html#line109">line 109</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="dispose"><span class="type-signature"></span>dispose<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    파기
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="stage_appear-stage.ts.html">stage/appear-stage.ts</a>, <a href="stage_appear-stage.ts.html#line83">line 83</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getActors"><span class="type-signature"></span>getActors<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    등록 되어있는 Actor 를 반환 합니다.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="stage_appear-stage.ts.html">stage/appear-stage.ts</a>, <a href="stage_appear-stage.ts.html#line51">line 51</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    T[]
+</div>
+
+
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="init"><span class="type-signature"></span>init<span class="signature">(option<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    초기화
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="parameters-wrap">
+  <div class="parameters-inner">
+    <table class="params">
+      <thead>
+      <tr>
+          
+          <th>Name</th>
+          
+
+          <th>Type</th>
+
+          
+          <th>Attributes</th>
+          
+
+          
+
+          <th class="last">Description</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      
+
+          <tr>
+              
+                  <td class="name"><code>option</code></td>
+              
+
+              <td class="type">
+              
+              </td>
+
+              
+                  <td class="attributes">
+                  
+                      &lt;optional><br>
+                  
+
+                  
+
+                  
+                  </td>
+              
+
+              
+
+              <td class="description last">초기 옵션. 인터섹션 옵저버는 생성시에만 옵션 지정이 가능</td>
+          </tr>
+
+      
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="stage_appear-stage.ts.html">stage/appear-stage.ts</a>, <a href="stage_appear-stage.ts.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="observe"><span class="type-signature"></span>observe<span class="signature">(actor)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    전달된 actor 를 옵저버에 등록합니다.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="parameters-wrap">
+  <div class="parameters-inner">
+    <table class="params">
+      <thead>
+      <tr>
+          
+          <th>Name</th>
+          
+
+          <th>Type</th>
+
+          
+
+          
+
+          <th class="last">Description</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      
+
+          <tr>
+              
+                  <td class="name"><code>actor</code></td>
+              
+
+              <td class="type">
+              
+              </td>
+
+              
+
+              
+
+              <td class="description last">등록할 Actor</td>
+          </tr>
+
+      
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="stage_appear-stage.ts.html">stage/appear-stage.ts</a>, <a href="stage_appear-stage.ts.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="onObserveEntries"><span class="type-signature"></span>onObserveEntries<span class="signature">(entries)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    옵저버의 콜백 핸들러
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="parameters-wrap">
+  <div class="parameters-inner">
+    <table class="params">
+      <thead>
+      <tr>
+          
+          <th>Name</th>
+          
+
+          <th>Type</th>
+
+          
+
+          
+
+          <th class="last">Description</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      
+
+          <tr>
+              
+                  <td class="name"><code>entries</code></td>
+              
+
+              <td class="type">
+              
+              </td>
+
+              
+
+              
+
+              <td class="description last">옵저버의 콜백으로 전달받는 엔트리 값</td>
+          </tr>
+
+      
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="stage_appear-stage.ts.html">stage/appear-stage.ts</a>, <a href="stage_appear-stage.ts.html#line66">line 66</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="unobserve"><span class="type-signature"></span>unobserve<span class="signature">(actor)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    전달된 actor 를 옵저버에서 제외합니다.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="parameters-wrap">
+  <div class="parameters-inner">
+    <table class="params">
+      <thead>
+      <tr>
+          
+          <th>Name</th>
+          
+
+          <th>Type</th>
+
+          
+
+          
+
+          <th class="last">Description</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      
+
+          <tr>
+              
+                  <td class="name"><code>actor</code></td>
+              
+
+              <td class="type">
+              
+              </td>
+
+              
+
+              
+
+              <td class="description last">제외할 Actor</td>
+          </tr>
+
+      
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="stage_appear-stage.ts.html">stage/appear-stage.ts</a>, <a href="stage_appear-stage.ts.html#line34">line 34</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated at Thu Jul 30 2020 09:51:10 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

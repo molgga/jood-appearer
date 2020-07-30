@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Home - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow-eighties.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link type="text/css" rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AppearEvent.html">AppearEvent</a></li><li><a href="AppearStage.html">AppearStage</a><ul class='methods'><li data-type='method'><a href="AppearStage.html#dispose">dispose</a></li><li data-type='method'><a href="AppearStage.html#getActors">getActors</a></li><li data-type='method'><a href="AppearStage.html#init">init</a></li><li data-type='method'><a href="AppearStage.html#observe">observe</a></li><li data-type='method'><a href="AppearStage.html#onObserveEntries">onObserveEntries</a></li><li data-type='method'><a href="AppearStage.html#unobserve">unobserve</a></li></ul></li><li><a href="BaseActor.html">BaseActor</a><ul class='methods'><li data-type='method'><a href="BaseActor.html#appear">appear</a></li><li data-type='method'><a href="BaseActor.html#bind">bind</a></li><li data-type='method'><a href="BaseActor.html#disappear">disappear</a></li><li data-type='method'><a href="BaseActor.html#dispatch">dispatch</a></li><li data-type='method'><a href="BaseActor.html#dispose">dispose</a></li></ul></li><li><a href="BaseActor_BaseActor.html">BaseActor</a></li><li><a href="LazyActor.html">LazyActor</a><ul class='methods'><li data-type='method'><a href="LazyActor.html#appear">appear</a></li><li data-type='method'><a href="LazyActor.html#bind">bind</a></li><li data-type='method'><a href="LazyActor.html#clearAppearTimer">clearAppearTimer</a></li><li data-type='method'><a href="LazyActor.html#disappear">disappear</a></li><li data-type='method'><a href="LazyActor.html#dispatch">dispatch</a></li><li data-type='method'><a href="LazyActor.html#dispose">dispose</a></li><li data-type='method'><a href="LazyActor.html#setAppearDelay">setAppearDelay</a></li><li data-type='method'><a href="LazyActor.html#setCheckoutDelay">setCheckoutDelay</a></li></ul></li><li><a href="LazyActor_BaseActor.html">BaseActor</a></li><li><a href="OnceActor.html">OnceActor</a><ul class='methods'><li data-type='method'><a href="OnceActor.html#appear">appear</a></li><li data-type='method'><a href="OnceActor.html#bind">bind</a></li><li data-type='method'><a href="OnceActor.html#disappear">disappear</a></li><li data-type='method'><a href="OnceActor.html#dispatch">dispatch</a></li><li data-type='method'><a href="OnceActor.html#dispose">dispose</a></li></ul></li><li><a href="OnceActor_BaseActor.html">BaseActor</a></li></ul><h3>Interfaces</h3><ul><li><a href="AppearEventData.html">AppearEventData</a></li><li><a href="IActor.html">IActor</a></li><li><a href="ILazyActor.html">ILazyActor</a></li><li><a href="IOnceActor.html">IOnceActor</a></li><li><a href="IStage.html">IStage</a></li><li><a href="StageOption.html">StageOption</a></li></ul><h3>Global</h3><ul><li><a href="global.html#AppearType">AppearType</a></li></ul>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+    <section class="readme">
+        <article><h1>@jood/appearer</h1>
+<p><img src="https://travis-ci.org/molgga/jood-appearer.svg?branch=master" alt="TRAVIS">
+<img src="https://img.shields.io/codecov/c/github/molgga/jood-appearer/master" alt="Codecov branch">
+<img src="https://img.shields.io/npm/v/@jood/appearer.svg" alt="NPM version">
+<img src="https://img.shields.io/npm/l/@jood/appearer" alt="NPM license">
+<img src="https://img.shields.io/npm/dt/@jood/appearer" alt="NPM download">
+<img src="https://img.shields.io/bundlephobia/min/@jood/appearer" alt="NPM bundle size"></p>
+<p>javascript intersection observer</p>
+<p>This library was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a></p>
+<h2>Quick link</h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/@jood/appearer">Package npm</a></li>
+<li><a href="https://github.com/molgga/jood-appearer/tree/master/projects/packages">Package source</a></li>
+<li><a href="https://molgga.github.io/jood-appearer">Doc - API</a></li>
+</ul>
+<h2>Quick sample</h2>
+<p><a href="https://codesandbox.io/s/prod-dream-vc2ce?fontsize=14&amp;hidenavigation=1&amp;theme=dark"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit prod-dream-vc2ce"></a></p>
+<h3>AppearStage</h3>
+<p>한 개의 뷰포트</p>
+<h3>Actors</h3>
+<ul>
+<li>BaseActor: 기본형. 화면에 진입, 이탈 이벤트를 전달 받을 수 있다.</li>
+<li>OnceActor: 1번만. 화면에 진입할 때 한번만 appear 이벤트가 트리거 된다.(트리거 후 자동 관찰해제)</li>
+<li>LazyActor: 1번만. OnceActor 와 동일하나 진입 후 이탈이 지정된 시간 보다 짧으면 진입으로 취급하지 않는다.</li>
+</ul>
+<h3>example</h3>
+<pre class="prettyprint source lang-typescript"><code>import { AppearStage, AppearEvent, BaseActor } from &quot;@jood/appearer&quot;;
+
+const someStage = new AppearStage();
+someStage.init();
+
+const baseActor = new BaseActor(document.querySelector(&quot;.my-some-box1&quot;));
+someStage.observe(baseActor);
+
+const subscription = baseActor.events.subscribe((evt: AppearEvent) => {
+  if (evt.type === AppearEvent.APPEAR) {
+    // image.src = 'real-src';
+    // showAnimationStart();
+    // fetchMore();
+    // ...
+  } else if (evt.type === AppearEvent.DISAPPEAR) {
+    // hideAnimationStart();
+    // ...
+  }
+});
+</code></pre>
+<hr>
+<pre class="prettyprint source lang-typescript"><code>import { AppearStage, OnceActor } from &quot;@jood/appearer&quot;;
+
+const someStage = new AppearStage();
+someStage.init();
+
+const onceActor = new OnceActor(document.querySelector(&quot;.my-some-box1&quot;));
+someStage.observe(onceActor);
+
+const subscription = onceActor.events.subscribe((evt: AppearEvent) => {
+  image.src = &quot;real-src&quot;;
+  subscription.unsubscribe();
+  onceActor.dispose();
+});
+</code></pre>
+<hr>
+<pre class="prettyprint source lang-typescript"><code>import { AppearStage, AppearEvent, LazyActor } from &quot;@jood/appearer&quot;;
+
+const someStage = new AppearStage();
+someStage.init();
+
+const myList = new OnceActor(document.querySelectorAll(&quot;.my-some-box&quot;));
+myList.forEach(elBox => {
+  const lazyActor = new LazyActor(elBox);
+  someStage.observe(lazyActor);
+
+  const subscription = lazyActor.events.subscribe((evt: AppearEvent) => {
+    const { element } = evt.actor;
+    element.classList.add(&quot;is-active&quot;);
+    subscription.unsubscribe();
+    lazyActor.dispose();
+  });
+});
+</code></pre>
+<hr>
+<pre class="prettyprint source lang-typescript"><code>import { AppearStage, AppearEvent, LazyActor } from &quot;@jood/appearer&quot;;
+
+const elHorizontalContainer = document.querySelector(&quot;.my-horizonta-container&quot;);
+const someStage = new AppearStage();
+
+/**
+ * Intersection observer options
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+ **/
+someStage.init({
+  root: elHorizontalContainer,
+  rootMargin: &quot;0 25% 0 25%&quot;
+});
+
+const myBoxList = elHorizontalContainer.querySelectorAll(&quot;.my-some-box&quot;);
+myBoxList.forEach(elBox => {
+  const lazyActor = new LazyActor(elBox);
+  someStage.observe(lazyActor);
+
+  const subscription = lazyActor.events.subscribe((evt: AppearEvent) => {
+    const { element } = evt.actor;
+    element.classList.add(&quot;is-active&quot;);
+    subscription.unsubscribe();
+    lazyActor.dispose();
+  });
+});
+</code></pre>
+<hr>
+<pre class="prettyprint source lang-typescript"><code>import { AppearStage, AppearEvent, LazyActor } from '@jood/appearer';
+
+let isLoading = false;
+
+const someStage = new AppearStage();
+someStage.init({
+  rootMargin: '0 0 50% 0',
+});
+
+const myInfiniteLoading = new BaseAppear(document.querySelector('.my-list-foot-loading'));
+someStage.observe(myInfiniteLoading);
+
+const subscription = myInfiniteLoading.events.subscribe((evt: AppearEvent) => {
+  if (evt.type === AppearEvent.APPEAR) {
+    fetchMore();
+  }
+});
+
+function fetchMore() {
+  if (isLoading === true) return;
+  isLoading = true;
+  fetch(...).then((result) => {
+    isLoading = false;
+  });
+}
+</code></pre></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated at Thu Jul 30 2020 09:51:10 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
