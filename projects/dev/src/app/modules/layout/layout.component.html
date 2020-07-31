@@ -2,7 +2,17 @@
   <button mat-icon-button (click)="drawer.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <h1 class="app-title">{{ appTitle }}</h1>
+  <div class="head-bar">
+    <h1 class="app-title">{{ appTitle }}</h1>
+  </div>
+  <button
+    *ngFor="let publish of publishList"
+    mat-icon-button
+    [matTooltip]="publish.label"
+    (click)="onOpenToPublish(publish)"
+  >
+    <mat-icon>{{ publish.icon }}</mat-icon>
+  </button>
 </mat-toolbar>
 
 <mat-sidenav-container class="ly-container">

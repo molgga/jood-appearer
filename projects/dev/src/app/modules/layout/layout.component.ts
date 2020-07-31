@@ -3,6 +3,7 @@ import { MediaMatcher } from "@angular/cdk/layout";
 import { LAYOUT_SERVICE_TOKEN } from "~/dev/app/modules/layout/service/token";
 import { LayoutService } from "~/dev/app/modules/layout/service/layout.service";
 import { IMenu } from "~/dev/app/modules/layout/model/menu.model";
+import { IPublish } from "~/dev/app/modules/layout/model/publish.model";
 
 @Component({
   selector: "app-layout",
@@ -19,9 +20,11 @@ export class LayoutComponent implements OnInit {
     this.mobileMediaQuery = mediaMatcher.matchMedia("(max-width: 600px)");
     this.mobileMediaQuery.addListener(this._handleMediaQuery);
     this.menuList = this.layoutService.getMenuList();
+    this.publishList = this.layoutService.getPublishList();
   }
 
   menuList: IMenu[] = [];
+  publishList: IPublish[] = [];
   mobileMediaQuery: MediaQueryList;
 
   private _handleMediaQuery: () => void;
@@ -44,6 +47,11 @@ export class LayoutComponent implements OnInit {
   }
   get drawerMode(): string {
     return this.isMobile ? "over" : "side";
+  }
+
+  onOpenToPublish(publish: IPublish) {
+    const { url } = publish;
+    if (url) window.open(url);
   }
 
   ngOnInit() {}
