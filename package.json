@@ -37,7 +37,6 @@
     "@angular/cli": "^10.0.4",
     "@angular/compiler-cli": "~10.0.6",
     "@angular/language-service": "~10.0.6",
-    "@daybrush/jsdoc": "^0.3.7",
     "@jood/jsdoc-theme": "^0.1.13",
     "@types/jasmine": "~3.5.11",
     "@types/jasminewd2": "~2.0.3",
