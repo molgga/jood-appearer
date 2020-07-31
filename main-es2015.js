@@ -131,7 +131,7 @@ const routes = [
         component: _dev_app_modules_layout_layout_component__WEBPACK_IMPORTED_MODULE_4__["LayoutComponent"],
         children: [
             {
-                path: "example",
+                path: "demo",
                 loadChildren: () => __webpack_require__.e(/*! import() | dev-app-pages-demo-demo-module */ "dev-app-pages-demo-demo-module").then(__webpack_require__.bind(null, /*! ~/dev/app/pages/demo/demo.module */ "./src/app/pages/demo/demo.module.ts")).then((m) => m.PageModule),
             },
             {

@@ -1071,7 +1071,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"\">\n  <button mat-raised-button (click)=\"onTestRemoveShift($event)\">\n    shift item\n  </button>\n</div>\n<div class=\"horizontal-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    [item]=\"item\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n\n<div class=\"vertical-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    [item]=\"item\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n";
+      __webpack_exports__["default"] = "<div class=\"horizontal-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    [item]=\"item\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n\n<div class=\"vertical-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    [item]=\"item\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n";
       /***/
     },
 
@@ -2155,11 +2155,6 @@
             });
             this.appearStage = new projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_2__["AppearStage"]();
             this.appearStage.init();
-          }
-        }, {
-          key: "onTestRemoveShift",
-          value: function onTestRemoveShift() {
-            this.actorMakeList.shift();
           }
         }, {
           key: "onSampleAppearEvent",

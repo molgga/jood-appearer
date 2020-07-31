@@ -222,7 +222,7 @@
         path: "",
         component: _dev_app_modules_layout_layout_component__WEBPACK_IMPORTED_MODULE_4__["LayoutComponent"],
         children: [{
-          path: "example",
+          path: "demo",
           loadChildren: function loadChildren() {
             return __webpack_require__.e(
             /*! import() | dev-app-pages-demo-demo-module */
