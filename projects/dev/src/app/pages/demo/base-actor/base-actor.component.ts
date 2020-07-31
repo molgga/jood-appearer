@@ -24,10 +24,6 @@ export class BaseActorComponent implements OnInit {
     this.appearStage.init();
   }
 
-  onTestRemoveShift() {
-    this.actorMakeList.shift();
-  }
-
   onSampleAppearEvent(evt: SampleActorEvent) {
     const { type, actor } = evt;
     switch (type) {
