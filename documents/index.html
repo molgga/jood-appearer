@@ -50,19 +50,20 @@
 
     <section class="readme">
         <article><h1>@jood/appearer</h1>
+<p>javascript intersection observer</p>
+<hr>
 <p><img src="https://travis-ci.org/molgga/jood-appearer.svg?branch=master" alt="TRAVIS">
 <img src="https://img.shields.io/codecov/c/github/molgga/jood-appearer/master" alt="Codecov branch">
 <img src="https://img.shields.io/npm/v/@jood/appearer.svg" alt="NPM version">
 <img src="https://img.shields.io/npm/l/@jood/appearer" alt="NPM license">
 <img src="https://img.shields.io/npm/dt/@jood/appearer" alt="NPM download">
 <img src="https://img.shields.io/bundlephobia/min/@jood/appearer" alt="NPM bundle size"></p>
-<p>javascript intersection observer</p>
-<p>This library was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a></p>
 <h2>Quick link</h2>
 <ul>
-<li><a href="https://www.npmjs.com/package/@jood/appearer">Package npm</a></li>
-<li><a href="https://github.com/molgga/jood-appearer/tree/master/projects/packages">Package source</a></li>
-<li><a href="https://molgga.github.io/jood-appearer">Doc - API</a></li>
+<li><a href="https://molgga.github.io/jood-appearer">Demo</a></li>
+<li><a href="https://molgga.github.io/jood-appearer/documents">Docs</a></li>
+<li><a href="https://github.com/molgga/jood-appearer">Github</a></li>
+<li><a href="https://www.npmjs.com/package/@jood/appearer">NPM</a></li>
 </ul>
 <h2>Quick sample</h2>
 <p><a href="https://codesandbox.io/s/prod-dream-vc2ce?fontsize=14&amp;hidenavigation=1&amp;theme=dark"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit prod-dream-vc2ce"></a></p>
@@ -117,7 +118,7 @@ const someStage = new AppearStage();
 someStage.init();
 
 const myList = new OnceActor(document.querySelectorAll(&quot;.my-some-box&quot;));
-myList.forEach(elBox => {
+myList.forEach((elBox) => {
   const lazyActor = new LazyActor(elBox);
   someStage.observe(lazyActor);
 
@@ -141,11 +142,11 @@ const someStage = new AppearStage();
  **/
 someStage.init({
   root: elHorizontalContainer,
-  rootMargin: &quot;0 25% 0 25%&quot;
+  rootMargin: &quot;0 25% 0 25%&quot;,
 });
 
 const myBoxList = elHorizontalContainer.querySelectorAll(&quot;.my-some-box&quot;);
-myBoxList.forEach(elBox => {
+myBoxList.forEach((elBox) => {
   const lazyActor = new LazyActor(elBox);
   someStage.observe(lazyActor);
 
@@ -183,7 +184,9 @@ function fetchMore() {
     isLoading = false;
   });
 }
-</code></pre></article>
+</code></pre>
+<hr>
+<p>This library was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a></p></article>
     </section>
 
 
@@ -196,7 +199,7 @@ function fetchMore() {
 <br class="clear">
 
 <footer>
-    Documentation generated at Thu Jul 30 2020 09:51:10 GMT+0000 (Coordinated Universal Time)
+    Documentation generated at Fri Jul 31 2020 01:27:53 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script>prettyPrint();</script>

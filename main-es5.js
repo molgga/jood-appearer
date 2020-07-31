@@ -122,7 +122,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<mat-toolbar color=\"primary\" class=\"ly-header\">\n  <button mat-icon-button (click)=\"drawer.toggle()\">\n    <mat-icon>menu</mat-icon>\n  </button>\n  <h1 class=\"app-title\">{{ appTitle }}</h1>\n</mat-toolbar>\n\n<mat-sidenav-container class=\"ly-container\">\n  <mat-sidenav\n    class=\"ly-side\"\n    #drawer\n    [opened]=\"initOpened\"\n    [mode]=\"drawerMode\"\n    [fixedInViewport]=\"fixedInViewport\"\n    [fixedTopGap]=\"fixedTopGap\"\n  >\n    <layout-aside class=\"ly-navi\" [menuList]=\"menuList\"></layout-aside>\n  </mat-sidenav>\n  <mat-sidenav-content class=\"ly-content\">\n    <div class=\"ly-body\">\n      <router-outlet></router-outlet>\n    </div>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n";
+      __webpack_exports__["default"] = "<mat-toolbar color=\"primary\" class=\"ly-header\">\n  <button mat-icon-button (click)=\"drawer.toggle()\">\n    <mat-icon>menu</mat-icon>\n  </button>\n  <div class=\"head-bar\">\n    <h1 class=\"app-title\">{{ appTitle }}</h1>\n  </div>\n  <button\n    *ngFor=\"let publish of publishList\"\n    mat-icon-button\n    [matTooltip]=\"publish.label\"\n    (click)=\"onOpenToPublish(publish)\"\n  >\n    <mat-icon>{{ publish.icon }}</mat-icon>\n  </button>\n</mat-toolbar>\n\n<mat-sidenav-container class=\"ly-container\">\n  <mat-sidenav\n    class=\"ly-side\"\n    #drawer\n    [opened]=\"initOpened\"\n    [mode]=\"drawerMode\"\n    [fixedInViewport]=\"fixedInViewport\"\n    [fixedTopGap]=\"fixedTopGap\"\n  >\n    <layout-aside class=\"ly-navi\" [menuList]=\"menuList\"></layout-aside>\n  </mat-sidenav>\n  <mat-sidenav-content class=\"ly-content\">\n    <div class=\"ly-body\">\n      <router-outlet></router-outlet>\n    </div>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n";
       /***/
     },
 
@@ -225,10 +225,10 @@
           path: "example",
           loadChildren: function loadChildren() {
             return __webpack_require__.e(
-            /*! import() | dev-app-pages-example-example-module */
-            "dev-app-pages-example-example-module").then(__webpack_require__.bind(null,
-            /*! ~/dev/app/pages/example/example.module */
-            "./src/app/pages/example/example.module.ts")).then(function (m) {
+            /*! import() | dev-app-pages-demo-demo-module */
+            "dev-app-pages-demo-demo-module").then(__webpack_require__.bind(null,
+            /*! ~/dev/app/pages/demo/demo.module */
+            "./src/app/pages/demo/demo.module.ts")).then(function (m) {
               return m.PageModule;
             });
           }
@@ -236,10 +236,10 @@
           path: "**",
           loadChildren: function loadChildren() {
             return __webpack_require__.e(
-            /*! import() | dev-app-pages-example-example-module */
-            "dev-app-pages-example-example-module").then(__webpack_require__.bind(null,
-            /*! ~/dev/app/pages/example/example.module */
-            "./src/app/pages/example/example.module.ts")).then(function (m) {
+            /*! import() | dev-app-pages-demo-demo-module */
+            "dev-app-pages-demo-demo-module").then(__webpack_require__.bind(null,
+            /*! ~/dev/app/pages/demo/demo.module */
+            "./src/app/pages/demo/demo.module.ts")).then(function (m) {
               return m.PageModule;
             });
           }
@@ -894,7 +894,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = ":host {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n}\n\n.ly-header {\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0;\n  z-index: 1000;\n}\n\n.ly-header .app-title {\n  margin-left: 8px;\n  font-size: 18px;\n}\n\n.ly-container {\n  flex: 1;\n}\n\n.ly-side {\n  width: 200px;\n  background-color: #ffffff;\n}\n\n.ly-content {\n  position: relative;\n  padding: 20px;\n  box-sizing: border-box;\n  background-color: #ffffff;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2plY3RzL2Rldi9zcmMvYXBwL21vZHVsZXMvbGF5b3V0L2xheW91dC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLE9BQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSxZQUFBO0FBQ0Y7O0FBQ0E7RUFDRSx3QkFBQTtFQUFBLGdCQUFBO0VBQ0EsTUFBQTtFQUNBLGFBQUE7QUFFRjs7QUFERTtFQUNFLGdCQUFBO0VBQ0EsZUFBQTtBQUdKOztBQUFBO0VBQ0UsT0FBQTtBQUdGOztBQURBO0VBQ0UsWUFBQTtFQUNBLHlCQUFBO0FBSUY7O0FBRkE7RUFDRSxrQkFBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHlCQUFBO0FBS0YiLCJmaWxlIjoicHJvamVjdHMvZGV2L3NyYy9hcHAvbW9kdWxlcy9sYXlvdXQvbGF5b3V0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xuICBmbGV4OiAxO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBtaW4td2lkdGg6IDA7XG59XG4ubHktaGVhZGVyIHtcbiAgcG9zaXRpb246IHN0aWNreTtcbiAgdG9wOiAwO1xuICB6LWluZGV4OiAxMDAwO1xuICAuYXBwLXRpdGxlIHtcbiAgICBtYXJnaW4tbGVmdDogOHB4O1xuICAgIGZvbnQtc2l6ZTogMThweDtcbiAgfVxufVxuLmx5LWNvbnRhaW5lciB7XG4gIGZsZXg6IDE7XG59XG4ubHktc2lkZSB7XG4gIHdpZHRoOiAyMDBweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcbn1cbi5seS1jb250ZW50IHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBwYWRkaW5nOiAyMHB4O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmO1xufVxuIl19 */";
+      __webpack_exports__["default"] = ":host {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  min-width: 0;\n}\n\n.ly-header {\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0;\n  z-index: 100;\n}\n\n.ly-header .head-bar {\n  flex: 1;\n}\n\n.ly-header .app-title {\n  margin-left: 8px;\n  font-size: 18px;\n}\n\n.ly-container {\n  flex: 1;\n}\n\n.ly-side {\n  width: 200px;\n  background-color: #ffffff;\n}\n\n.ly-content {\n  position: relative;\n  padding: 20px;\n  box-sizing: border-box;\n  background-color: #ffffff;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2plY3RzL2Rldi9zcmMvYXBwL21vZHVsZXMvbGF5b3V0L2xheW91dC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLE9BQUE7RUFDQSxhQUFBO0VBQ0Esc0JBQUE7RUFDQSxZQUFBO0FBQ0Y7O0FBQ0E7RUFDRSx3QkFBQTtFQUFBLGdCQUFBO0VBQ0EsTUFBQTtFQUNBLFlBQUE7QUFFRjs7QUFERTtFQUNFLE9BQUE7QUFHSjs7QUFERTtFQUNFLGdCQUFBO0VBQ0EsZUFBQTtBQUdKOztBQUFBO0VBQ0UsT0FBQTtBQUdGOztBQURBO0VBQ0UsWUFBQTtFQUNBLHlCQUFBO0FBSUY7O0FBRkE7RUFDRSxrQkFBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLHlCQUFBO0FBS0YiLCJmaWxlIjoicHJvamVjdHMvZGV2L3NyYy9hcHAvbW9kdWxlcy9sYXlvdXQvbGF5b3V0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xuICBmbGV4OiAxO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICBtaW4td2lkdGg6IDA7XG59XG4ubHktaGVhZGVyIHtcbiAgcG9zaXRpb246IHN0aWNreTtcbiAgdG9wOiAwO1xuICB6LWluZGV4OiAxMDA7XG4gIC5oZWFkLWJhciB7XG4gICAgZmxleDogMTtcbiAgfVxuICAuYXBwLXRpdGxlIHtcbiAgICBtYXJnaW4tbGVmdDogOHB4O1xuICAgIGZvbnQtc2l6ZTogMThweDtcbiAgfVxufVxuLmx5LWNvbnRhaW5lciB7XG4gIGZsZXg6IDE7XG59XG4ubHktc2lkZSB7XG4gIHdpZHRoOiAyMDBweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcbn1cbi5seS1jb250ZW50IHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBwYWRkaW5nOiAyMHB4O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmZmZmO1xufVxuIl19 */";
       /***/
     },
 
@@ -956,6 +956,7 @@
           this.changeDetectorRef = changeDetectorRef;
           this.mediaMatcher = mediaMatcher;
           this.menuList = [];
+          this.publishList = [];
 
           this._handleMediaQuery = function () {
             return changeDetectorRef.detectChanges();
@@ -964,9 +965,16 @@
           this.mobileMediaQuery = mediaMatcher.matchMedia("(max-width: 600px)");
           this.mobileMediaQuery.addListener(this._handleMediaQuery);
           this.menuList = this.layoutService.getMenuList();
+          this.publishList = this.layoutService.getPublishList();
         }
 
         _createClass(LayoutComponent, [{
+          key: "onOpenToPublish",
+          value: function onOpenToPublish(publish) {
+            var url = publish.url;
+            if (url) window.open(url);
+          }
+        }, {
           key: "ngOnInit",
           value: function ngOnInit() {}
         }, {
@@ -1158,6 +1166,11 @@
         }
 
         _createClass(LayoutService, [{
+          key: "getPublishList",
+          value: function getPublishList() {
+            return [];
+          }
+        }, {
           key: "getMenuList",
           value: function getMenuList() {
             return [{
@@ -1235,22 +1248,39 @@
         function ExampleLayoutService() {
           _classCallCheck(this, ExampleLayoutService);
 
-          this.appTitle = "appTitle";
+          this.appTitle = "@jood/appearer";
         }
 
         _createClass(ExampleLayoutService, [{
+          key: "getPublishList",
+          value: function getPublishList() {
+            return [{
+              label: "Github",
+              icon: "code",
+              url: "https://github.com/molgga/jood-appearer"
+            }, {
+              label: "NPM",
+              icon: "move_to_inbox",
+              url: "https://www.npmjs.com/package/@jood/appearer"
+            }, {
+              label: "Docs",
+              icon: "library_books",
+              url: "https://molgga.github.io/jood-appearer/documents"
+            }];
+          }
+        }, {
           key: "getMenuList",
           value: function getMenuList() {
             return [{
-              label: "Examples",
+              label: "Demo",
               children: [{
-                href: "/example/base-actor",
+                href: "/demo/base-actor",
                 label: "base-actor"
               }, {
-                href: "/example/once-actor",
+                href: "/demo/once-actor",
                 label: "once-actor"
               }, {
-                href: "/example/lazy-actor",
+                href: "/demo/lazy-actor",
                 label: "lazy-actor"
               }]
             }];
@@ -1387,6 +1417,12 @@
       var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
       /*! @angular/material/toolbar */
       "../../node_modules/@angular/material/__ivy_ngcc__/fesm2015/toolbar.js");
+      /* harmony import */
+
+
+      var _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+      /*! @angular/material/tooltip */
+      "../../node_modules/@angular/material/__ivy_ngcc__/fesm2015/tooltip.js");
 
       var MaterialModule = function MaterialModule() {
         _classCallCheck(this, MaterialModule);
@@ -1394,7 +1430,7 @@
 
       MaterialModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]],
-        exports: [_angular_material_input__WEBPACK_IMPORTED_MODULE_9__["MatInputModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_3__["MatButtonModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_10__["MatPaginatorModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_16__["MatToolbarModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_15__["MatTableModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_5__["MatCheckboxModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_12__["MatRadioModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_4__["MatCardModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatFormFieldModule"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_11__["MatProgressBarModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_14__["MatSnackBarModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialogModule"], _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_13__["MatSidenavModule"]],
+        exports: [_angular_material_input__WEBPACK_IMPORTED_MODULE_9__["MatInputModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_3__["MatButtonModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_10__["MatPaginatorModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_16__["MatToolbarModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_15__["MatTableModule"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_5__["MatCheckboxModule"], _angular_material_radio__WEBPACK_IMPORTED_MODULE_12__["MatRadioModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_4__["MatCardModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatFormFieldModule"], _angular_material_progress_bar__WEBPACK_IMPORTED_MODULE_11__["MatProgressBarModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_14__["MatSnackBarModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialogModule"], _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_13__["MatSidenavModule"], _angular_material_tooltip__WEBPACK_IMPORTED_MODULE_17__["MatTooltipModule"]],
         declarations: [],
         providers: []
       })], MaterialModule);
