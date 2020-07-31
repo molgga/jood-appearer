@@ -6,6 +6,9 @@ import { ILayoutService } from "~/dev/app/modules/layout/service/types";
 })
 export class LayoutService implements ILayoutService {
   appTitle = "APP";
+  getPublishList() {
+    return [];
+  }
   getMenuList() {
     return [
       {

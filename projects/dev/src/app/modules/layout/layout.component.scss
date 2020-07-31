@@ -7,7 +7,10 @@
 .ly-header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
+  .head-bar {
+    flex: 1;
+  }
   .app-title {
     margin-left: 8px;
     font-size: 18px;

@@ -1,5 +1,9 @@
 # @jood/appearer
 
+javascript intersection observer
+
+---
+
 ![TRAVIS](https://travis-ci.org/molgga/jood-appearer.svg?branch=master)
 ![Codecov branch](https://img.shields.io/codecov/c/github/molgga/jood-appearer/master)
 ![NPM version](https://img.shields.io/npm/v/@jood/appearer.svg)
@@ -7,15 +11,12 @@
 ![NPM download](https://img.shields.io/npm/dt/@jood/appearer)
 ![NPM bundle size](https://img.shields.io/bundlephobia/min/@jood/appearer)
 
-javascript intersection observer
-
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli)
-
 ## Quick link
 
-- [Package npm](https://www.npmjs.com/package/@jood/appearer)
-- [Package source](https://github.com/molgga/jood-appearer/tree/master/projects/packages)
-- [Doc - API](https://molgga.github.io/jood-appearer)
+- [Demo](https://molgga.github.io/jood-appearer)
+- [Docs](https://molgga.github.io/jood-appearer/documents)
+- [Github](https://github.com/molgga/jood-appearer)
+- [NPM](https://www.npmjs.com/package/@jood/appearer)
 
 ## Quick sample
 
@@ -82,7 +83,7 @@ const someStage = new AppearStage();
 someStage.init();
 
 const myList = new OnceActor(document.querySelectorAll(".my-some-box"));
-myList.forEach(elBox => {
+myList.forEach((elBox) => {
   const lazyActor = new LazyActor(elBox);
   someStage.observe(lazyActor);
 
@@ -109,11 +110,11 @@ const someStage = new AppearStage();
  **/
 someStage.init({
   root: elHorizontalContainer,
-  rootMargin: "0 25% 0 25%"
+  rootMargin: "0 25% 0 25%",
 });
 
 const myBoxList = elHorizontalContainer.querySelectorAll(".my-some-box");
-myBoxList.forEach(elBox => {
+myBoxList.forEach((elBox) => {
   const lazyActor = new LazyActor(elBox);
   someStage.observe(lazyActor);
 
@@ -155,3 +156,7 @@ function fetchMore() {
   });
 }
 ```
+
+---
+
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli)
