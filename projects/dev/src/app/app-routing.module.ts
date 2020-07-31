@@ -11,7 +11,7 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: "example",
+        path: "demo",
         loadChildren: () =>
           import("~/dev/app/pages/demo/demo.module").then((m) => m.PageModule),
       },
