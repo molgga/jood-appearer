@@ -38,7 +38,7 @@ notifications:
 # see: https://docs.travis-ci.com/user/job-lifecycle/#the-job-lifecycle
 
 install:
-  - yarn install
+  - npm install
 
 services:
   - xvfb
@@ -50,17 +50,17 @@ script:
   - echo $TRAVIS_PULL_REQUEST
   - echo $TRAVIS_BUILD_NUMBER
   - echo $TRAVIS_REPO_SLUG
-  - yarn run ci:build
-  - yarn run ci:test
+  - npm run ci:test
+  - npm run ci:build
 
 branches:
   only:
     - master
-    - /^v[0-9]+\.[0-9]+\.[0-9]+$/
+    - /^v[0-9]+\.[0-9]+\.[0-9]+(\-[0-9|a-z]+)?$/
 
 # condition https://stackoverflow.com/questions/34591587/travis-conditional-on-branch-after-success
 after_success:
-  - test $TRAVIS_BRANCH = "master" && yarn run ci:after-success
+  - test $TRAVIS_BRANCH = "master" && npm run ci:after-success
 
 deploy:
   # 배포 설정 - npm module
@@ -74,7 +74,7 @@ deploy:
     on:
       repo: molgga/jood-appearer
       all_branches: true
-      condition: $TRAVIS_TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+$
+      condition: $TRAVIS_TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+(\-[0-9|a-z]+)?$
 
   # 배포 설정 - github page
   - provider: pages
