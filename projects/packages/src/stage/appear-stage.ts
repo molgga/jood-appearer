@@ -1,11 +1,11 @@
-import { IStage, IActor, StageOption, ActorElement } from "../common/types";
+import { IStage, StageOption, Actor, ActorElement } from "../common/types";
 
 /**
  * 화면(지정된 root 영역)에 진입 여부를 판단하고 알리기 위한 클래스.
  * 등록된 Actor(s)를 IntersectionObserver 를 통해 관찰하고 관찰된 상태에 따라 Actor 에게 알림.
  * @template T Actor
  */
-export class AppearStage<T extends IActor = any> implements IStage<T> {
+export class AppearStage<T extends Actor> implements IStage<T> {
   /**
    * Actor 맵
    */
