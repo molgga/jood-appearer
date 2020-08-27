@@ -40,14 +40,14 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { IStage, IActor, StageOption, ActorElement } from "../common/types";
+            <pre class="prettyprint source linenums"><code>import { IStage, StageOption, Actor, ActorElement } from "../common/types";
 
 /**
  * 화면(지정된 root 영역)에 진입 여부를 판단하고 알리기 위한 클래스.
  * 등록된 Actor(s)를 IntersectionObserver 를 통해 관찰하고 관찰된 상태에 따라 Actor 에게 알림.
  * @template T Actor
  */
-export class AppearStage&lt;T extends IActor = any> implements IStage&lt;T> {
+export class AppearStage&lt;T extends Actor = Actor> implements IStage&lt;T> {
   /**
    * Actor 맵
    */
@@ -165,7 +165,7 @@ export class AppearStage&lt;T extends IActor = any> implements IStage&lt;T> {
 <br class="clear">
 
 <footer>
-    Documentation generated at Sat Aug 01 2020 02:53:41 GMT+0000 (Coordinated Universal Time)
+    Documentation generated at Thu Aug 27 2020 06:16:18 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script>prettyPrint();</script>
