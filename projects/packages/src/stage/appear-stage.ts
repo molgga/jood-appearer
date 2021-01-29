@@ -85,6 +85,7 @@ export class AppearStage<T extends Actor = Actor> implements IStage<T> {
    */
   protected onObserveEntries(entries: IntersectionObserverEntry[]) {
     entries.forEach((entry: IntersectionObserverEntry) => {
+      if (!this.actorMap) return;
       const { isIntersecting, target } = entry;
       const actor = this.actorMap.get(target);
       if (actor) {
@@ -101,13 +102,13 @@ export class AppearStage<T extends Actor = Actor> implements IStage<T> {
    * 파기
    */
   dispose(): void {
-    if (this.actorMap) {
-      this.actorMap.clear();
-      this.actorMap = null;
-    }
     if (this.observer) {
       this.observer.disconnect();
       this.observer = null;
+    }
+    if (this.actorMap) {
+      this.actorMap.clear();
+      this.actorMap = null;
     }
   }
 }

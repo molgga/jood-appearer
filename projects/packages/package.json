@@ -1,6 +1,6 @@
 {
   "name": "@jood/appearer",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "license": "MIT",
   "dependencies": {
     "intersection-observer": ">=0.7.0",
