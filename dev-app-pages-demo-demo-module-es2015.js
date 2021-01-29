@@ -1,9 +1,545 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["dev-app-pages-demo-demo-module"],{
 
-/***/ "../../node_modules/intersection-observer/intersection-observer.js":
-/*!***********************************************************************************************************!*\
-  !*** /home/travis/build/molgga/jood-appearer/node_modules/intersection-observer/intersection-observer.js ***!
-  \***********************************************************************************************************/
+/***/ "/lh0":
+/*!****************************************************************************!*\
+  !*** ./projects/dev/src/app/pages/demo/lazy-actor/lazy-actor.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: LazyActorComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LazyActorComponent", function() { return LazyActorComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_lazy_actor_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./lazy-actor.component.html */ "ZdiY");
+/* harmony import */ var _lazy_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lazy-actor.component.scss */ "I7Ms");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! projects/packages/src/public-api */ "otmC");
+/* harmony import */ var _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~/dev/app/modules/example/common/sample-actor/types */ "dN8t");
+
+
+
+
+
+
+let LazyActorComponent = class LazyActorComponent {
+    constructor() { }
+    ngOnInit() {
+        this.actorMakeList = Array.from(Array(50)).map((a, b) => {
+            return { id: b };
+        });
+        this.appearStage = new projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_4__["AppearStage"]();
+        this.appearStage.init();
+    }
+    onSampleAppearEvent(evt) {
+        const { type, actor } = evt;
+        switch (type) {
+            case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__["SampleActorEventType"].ATTACH:
+                this.appearStage.observe(actor);
+                break;
+            case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__["SampleActorEventType"].DETACH:
+                this.appearStage.unobserve(actor);
+                break;
+        }
+    }
+    ngOnDestroy() {
+        try {
+            if (this.appearStage) {
+                this.appearStage.dispose();
+                this.appearStage = null;
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+};
+LazyActorComponent.ctorParameters = () => [];
+LazyActorComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: "example-lazy-actor",
+        template: _raw_loader_lazy_actor_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_lazy_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], LazyActorComponent);
+
+
+
+/***/ }),
+
+/***/ "5xd1":
+/*!********************************************************!*\
+  !*** ./projects/dev/src/app/pages/demo/demo.module.ts ***!
+  \********************************************************/
+/*! exports provided: PageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageModule", function() { return PageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _dev_app_pages_demo_demo_routing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/dev/app/pages/demo/demo.routing */ "8XIj");
+/* harmony import */ var _dev_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~/dev/app/shared/shared.module */ "a6a7");
+/* harmony import */ var _dev_app_modules_example_common_common_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~/dev/app/modules/example/common/common.module */ "qNk/");
+/* harmony import */ var _base_actor_base_actor_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./base-actor/base-actor.component */ "THYa");
+/* harmony import */ var _once_actor_once_actor_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./once-actor/once-actor.component */ "KR75");
+/* harmony import */ var _lazy_actor_lazy_actor_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lazy-actor/lazy-actor.component */ "/lh0");
+
+
+
+
+
+
+
+
+
+let PageModule = class PageModule {
+};
+PageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _dev_app_pages_demo_demo_routing__WEBPACK_IMPORTED_MODULE_3__["RoutingModule"], _dev_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_4__["SharedModule"], _dev_app_modules_example_common_common_module__WEBPACK_IMPORTED_MODULE_5__["ExampleCommonModule"]],
+        declarations: [_base_actor_base_actor_component__WEBPACK_IMPORTED_MODULE_6__["BaseActorComponent"], _once_actor_once_actor_component__WEBPACK_IMPORTED_MODULE_7__["OnceActorComponent"], _lazy_actor_lazy_actor_component__WEBPACK_IMPORTED_MODULE_8__["LazyActorComponent"]],
+    })
+], PageModule);
+
+
+
+/***/ }),
+
+/***/ "7kPS":
+/*!********************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./projects/dev/src/app/pages/demo/base-actor/base-actor.component.html ***!
+  \********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"horizontal-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    [item]=\"item\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n\n<div class=\"vertical-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    [item]=\"item\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n");
+
+/***/ }),
+
+/***/ "8XIj":
+/*!*********************************************************!*\
+  !*** ./projects/dev/src/app/pages/demo/demo.routing.ts ***!
+  \*********************************************************/
+/*! exports provided: RoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RoutingModule", function() { return RoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _base_actor_base_actor_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./base-actor/base-actor.component */ "THYa");
+/* harmony import */ var _once_actor_once_actor_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./once-actor/once-actor.component */ "KR75");
+/* harmony import */ var _lazy_actor_lazy_actor_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lazy-actor/lazy-actor.component */ "/lh0");
+
+
+
+
+
+
+const routes = [
+    {
+        path: "",
+        children: [
+            {
+                path: "base-actor",
+                component: _base_actor_base_actor_component__WEBPACK_IMPORTED_MODULE_3__["BaseActorComponent"],
+            },
+            {
+                path: "once-actor",
+                component: _once_actor_once_actor_component__WEBPACK_IMPORTED_MODULE_4__["OnceActorComponent"],
+            },
+            {
+                path: "lazy-actor",
+                component: _lazy_actor_lazy_actor_component__WEBPACK_IMPORTED_MODULE_5__["LazyActorComponent"],
+            },
+            {
+                path: "**",
+                component: _base_actor_base_actor_component__WEBPACK_IMPORTED_MODULE_3__["BaseActorComponent"],
+            },
+        ],
+    },
+];
+let RoutingModule = class RoutingModule {
+};
+RoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+    })
+], RoutingModule);
+
+
+
+/***/ }),
+
+/***/ "E0sH":
+/*!***************************************************!*\
+  !*** ./projects/packages/src/actor/once-actor.ts ***!
+  \***************************************************/
+/*! exports provided: OnceActor */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OnceActor", function() { return OnceActor; });
+/* harmony import */ var _base_actor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./base-actor */ "lbm4");
+/* harmony import */ var _common_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common/types */ "POQn");
+
+
+/**
+ * Stage 에 등록될 Actor.
+ * 스테이지 진입을 한번만 감지한 후 본인 스스로 관찰 해제하는 감지형.
+ * (사용 예: 화면 진입시 한번만 애니메이션 한다, 이미지 로드를 한다)
+ * @class OnceActor
+ * @extends {BaseActor}
+ */
+class OnceActor extends _base_actor__WEBPACK_IMPORTED_MODULE_0__["BaseActor"] {
+    /**
+     * 스테이지 진입. 진입시 자동 관찰 해제.
+     * @override
+     * @param [entry]
+     */
+    appear(entry) {
+        if (this.isAppear)
+            return;
+        this.isAppear = true;
+        this.dispatch(_common_types__WEBPACK_IMPORTED_MODULE_1__["AppearEvent"].APPEAR, entry);
+        if (this.stage) {
+            this.stage.unobserve(this);
+        }
+    }
+}
+
+
+/***/ }),
+
+/***/ "I7Ms":
+/*!******************************************************************************!*\
+  !*** ./projects/dev/src/app/pages/demo/lazy-actor/lazy-actor.component.scss ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".horizontal-list {\n  display: flex;\n  flex-wrap: nowrap;\n  overflow-x: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uL2xhenktYWN0b3IuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtBQUNGIiwiZmlsZSI6ImxhenktYWN0b3IuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaG9yaXpvbnRhbC1saXN0IHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC13cmFwOiBub3dyYXA7XG4gIG92ZXJmbG93LXg6IGF1dG87XG59XG4iXX0= */");
+
+/***/ }),
+
+/***/ "KR75":
+/*!****************************************************************************!*\
+  !*** ./projects/dev/src/app/pages/demo/once-actor/once-actor.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: OnceActorComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OnceActorComponent", function() { return OnceActorComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_once_actor_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./once-actor.component.html */ "loGT");
+/* harmony import */ var _once_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./once-actor.component.scss */ "aUML");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! projects/packages/src/public-api */ "otmC");
+/* harmony import */ var _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~/dev/app/modules/example/common/sample-actor/types */ "dN8t");
+
+
+
+
+
+
+let OnceActorComponent = class OnceActorComponent {
+    constructor() { }
+    ngOnInit() {
+        this.actorMakeList = Array.from(Array(50)).map((a, b) => {
+            return { id: b };
+        });
+        this.appearStage = new projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_4__["AppearStage"]();
+        this.appearStage.init();
+    }
+    onSampleAppearEvent(evt) {
+        const { type, actor } = evt;
+        switch (type) {
+            case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__["SampleActorEventType"].ATTACH:
+                this.appearStage.observe(actor);
+                break;
+            case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__["SampleActorEventType"].DETACH:
+                this.appearStage.unobserve(actor);
+                break;
+        }
+    }
+    ngOnDestroy() {
+        try {
+            if (this.appearStage) {
+                this.appearStage.dispose();
+                this.appearStage = null;
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+};
+OnceActorComponent.ctorParameters = () => [];
+OnceActorComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: "example-once-actor",
+        template: _raw_loader_once_actor_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_once_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], OnceActorComponent);
+
+
+
+/***/ }),
+
+/***/ "POQn":
+/*!***********************************************!*\
+  !*** ./projects/packages/src/common/types.ts ***!
+  \***********************************************/
+/*! exports provided: AppearType, AppearEvent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppearType", function() { return AppearType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppearEvent", function() { return AppearEvent; });
+/**
+ * Actor type 구분
+ * @export
+ * @enum {number}
+ */
+var AppearType;
+(function (AppearType) {
+    AppearType["BASE"] = "base";
+    AppearType["ONCE"] = "once";
+    AppearType["LAZY"] = "lazy";
+})(AppearType || (AppearType = {}));
+/**
+ * 관찰대상의 이벤트
+ * @implements {AppearEventData<T>}
+ * @template T
+ */
+class AppearEvent {
+    /**
+     * @param type 이벤트 타입
+     * @param option 이벤트 데이터
+     */
+    constructor(type, option) {
+        const { actor, entry } = option;
+        this.type = type;
+        this.actor = actor;
+        this.entry = entry;
+    }
+}
+/**
+ * 이벤트 타입 - 진입
+ */
+AppearEvent.APPEAR = "APPEAR";
+/**
+ * 이벤트 타입 - 이탈
+ */
+AppearEvent.DISAPPEAR = "DISAPPEAR";
+
+
+/***/ }),
+
+/***/ "THYa":
+/*!****************************************************************************!*\
+  !*** ./projects/dev/src/app/pages/demo/base-actor/base-actor.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: BaseActorComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseActorComponent", function() { return BaseActorComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_base_actor_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./base-actor.component.html */ "7kPS");
+/* harmony import */ var _base_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./base-actor.component.scss */ "WeDA");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! projects/packages/src/public-api */ "otmC");
+/* harmony import */ var _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~/dev/app/modules/example/common/sample-actor/types */ "dN8t");
+
+
+
+
+
+
+let BaseActorComponent = class BaseActorComponent {
+    constructor() {
+        this.actorMakeList = [];
+    }
+    ngOnInit() {
+        this.actorMakeList = Array.from(Array(50)).map((a, b) => {
+            return { id: b };
+        });
+        this.appearStage = new projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_4__["AppearStage"]();
+        this.appearStage.init();
+    }
+    onSampleAppearEvent(evt) {
+        const { type, actor } = evt;
+        switch (type) {
+            case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__["SampleActorEventType"].ATTACH:
+                this.appearStage.observe(actor);
+                break;
+            case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__["SampleActorEventType"].DETACH:
+                this.appearStage.unobserve(actor);
+                break;
+        }
+    }
+    ngOnDestroy() {
+        try {
+            if (this.appearStage) {
+                this.appearStage.dispose();
+                this.appearStage = null;
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+};
+BaseActorComponent.ctorParameters = () => [];
+BaseActorComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: "example-base-actor",
+        template: _raw_loader_base_actor_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_base_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], BaseActorComponent);
+
+
+
+/***/ }),
+
+/***/ "UOhG":
+/*!********************************************************************************************!*\
+  !*** ./projects/dev/src/app/modules/example/common/sample-actor/sample-actor.component.ts ***!
+  \********************************************************************************************/
+/*! exports provided: SampleActorComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SampleActorComponent", function() { return SampleActorComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_sample_actor_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./sample-actor.component.html */ "zml4");
+/* harmony import */ var _sample_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sample-actor.component.scss */ "fSkw");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! projects/packages/src/public-api */ "otmC");
+/* harmony import */ var _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ~/dev/app/modules/example/common/sample-actor/types */ "dN8t");
+
+
+
+
+
+
+
+let SampleActorComponent = class SampleActorComponent {
+    constructor(elRef) {
+        this.elRef = elRef;
+        this.emitter = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["EventEmitter"]();
+        this.appearCount = 0;
+        this.disappearCount = 0;
+        this.appearerListener = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subscription"]();
+    }
+    get isAppeared() {
+        return !!(this.actor && this.actor.isAppear);
+    }
+    ngOnInit() {
+        const { nativeElement } = this.elRef;
+        switch (this.actorType) {
+            case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_6__["SampleActorType"].ONCE:
+                this.actor = new projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_5__["OnceActor"](nativeElement);
+                break;
+            case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_6__["SampleActorType"].LAZY:
+                this.actor = new projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_5__["LazyActor"](nativeElement);
+                this.actor.setCheckoutDelay(1000);
+                this.actor.setAppearDelay(200);
+                break;
+            default:
+                this.actor = new projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_5__["BaseActor"](nativeElement);
+                break;
+        }
+        const observeAppearEvent = this.actor.events.subscribe(this.onAppearEvent.bind(this));
+        this.appearerListener.add(observeAppearEvent);
+        this.emitter.emit({
+            type: _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_6__["SampleActorEventType"].ATTACH,
+            actor: this.actor,
+        });
+    }
+    onAppearEvent(evt) {
+        switch (evt.type) {
+            case projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_5__["AppearEvent"].APPEAR:
+                this.appearCount++;
+                break;
+            case projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_5__["AppearEvent"].DISAPPEAR:
+                this.disappearCount++;
+                break;
+        }
+    }
+    ngOnDestroy() {
+        try {
+            this.emitter.emit({
+                type: _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_6__["SampleActorEventType"].DETACH,
+                actor: this.actor,
+            });
+            if (this.appearerListener) {
+                this.appearerListener.unsubscribe();
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+};
+SampleActorComponent.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"] }
+];
+SampleActorComponent.propDecorators = {
+    item: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+    actorType: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+    emitter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Output"], args: ["sampleEvent",] }],
+    isAppeared: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["HostBinding"], args: ["class.is-appeared",] }]
+};
+SampleActorComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
+        selector: "sample-actor",
+        template: _raw_loader_sample_actor_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_sample_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], SampleActorComponent);
+
+
+
+/***/ }),
+
+/***/ "WeDA":
+/*!******************************************************************************!*\
+  !*** ./projects/dev/src/app/pages/demo/base-actor/base-actor.component.scss ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".horizontal-list {\n  display: flex;\n  flex-wrap: nowrap;\n  overflow-x: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uL2Jhc2UtYWN0b3IuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtBQUNGIiwiZmlsZSI6ImJhc2UtYWN0b3IuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaG9yaXpvbnRhbC1saXN0IHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC13cmFwOiBub3dyYXA7XG4gIG92ZXJmbG93LXg6IGF1dG87XG59XG4iXX0= */");
+
+/***/ }),
+
+/***/ "Wr5T":
+/*!*********************************************************************!*\
+  !*** ./node_modules/intersection-observer/intersection-observer.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -997,36 +1533,10 @@ window.IntersectionObserverEntry = IntersectionObserverEntry;
 
 /***/ }),
 
-/***/ "../../node_modules/raw-loader/dist/cjs.js!./src/app/modules/example/common/sample-actor/sample-actor.component.html":
-/*!*************************************************************************************************************************************************************!*\
-  !*** /home/travis/build/molgga/jood-appearer/node_modules/raw-loader/dist/cjs.js!./src/app/modules/example/common/sample-actor/sample-actor.component.html ***!
-  \*************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"panel-count\">\n  <div class=\"aside\">\n    <span class=\"label\">appearCount</span>\n    <span class=\"count\">{{ appearCount }}</span>\n  </div>\n  <div class=\"spacer\"></div>\n  <div class=\"bside\">\n    <span class=\"label\">disappearCount</span>\n    <span class=\"count\">{{ disappearCount }}</span>\n  </div>\n</div>\n<div class=\"panel-item\">\n  {{ item | json }}\n</div>\n");
-
-/***/ }),
-
-/***/ "../../node_modules/raw-loader/dist/cjs.js!./src/app/pages/demo/base-actor/base-actor.component.html":
-/*!*********************************************************************************************************************************************!*\
-  !*** /home/travis/build/molgga/jood-appearer/node_modules/raw-loader/dist/cjs.js!./src/app/pages/demo/base-actor/base-actor.component.html ***!
-  \*********************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"horizontal-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    [item]=\"item\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n\n<div class=\"vertical-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    [item]=\"item\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n");
-
-/***/ }),
-
-/***/ "../../node_modules/raw-loader/dist/cjs.js!./src/app/pages/demo/lazy-actor/lazy-actor.component.html":
-/*!*********************************************************************************************************************************************!*\
-  !*** /home/travis/build/molgga/jood-appearer/node_modules/raw-loader/dist/cjs.js!./src/app/pages/demo/lazy-actor/lazy-actor.component.html ***!
-  \*********************************************************************************************************************************************/
+/***/ "ZdiY":
+/*!********************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./projects/dev/src/app/pages/demo/lazy-actor/lazy-actor.component.html ***!
+  \********************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1036,31 +1546,70 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "../../node_modules/raw-loader/dist/cjs.js!./src/app/pages/demo/once-actor/once-actor.component.html":
-/*!*********************************************************************************************************************************************!*\
-  !*** /home/travis/build/molgga/jood-appearer/node_modules/raw-loader/dist/cjs.js!./src/app/pages/demo/once-actor/once-actor.component.html ***!
-  \*********************************************************************************************************************************************/
+/***/ "aUML":
+/*!******************************************************************************!*\
+  !*** ./projects/dev/src/app/pages/demo/once-actor/once-actor.component.scss ***!
+  \******************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"horizontal-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    actorType=\"once\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n\n<div class=\"vertical-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    actorType=\"once\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = (".horizontal-list {\n  display: flex;\n  flex-wrap: nowrap;\n  overflow-x: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uL29uY2UtYWN0b3IuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtBQUNGIiwiZmlsZSI6Im9uY2UtYWN0b3IuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaG9yaXpvbnRhbC1saXN0IHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC13cmFwOiBub3dyYXA7XG4gIG92ZXJmbG93LXg6IGF1dG87XG59XG4iXX0= */");
 
 /***/ }),
 
-/***/ "../packages/src/actor/base-actor.ts":
-/*!*******************************************!*\
-  !*** ../packages/src/actor/base-actor.ts ***!
-  \*******************************************/
+/***/ "dN8t":
+/*!***************************************************************************!*\
+  !*** ./projects/dev/src/app/modules/example/common/sample-actor/types.ts ***!
+  \***************************************************************************/
+/*! exports provided: SampleActorType, SampleActorEventType */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SampleActorType", function() { return SampleActorType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SampleActorEventType", function() { return SampleActorEventType; });
+var SampleActorType;
+(function (SampleActorType) {
+    SampleActorType["BASE"] = "base";
+    SampleActorType["ONCE"] = "once";
+    SampleActorType["LAZY"] = "lazy";
+})(SampleActorType || (SampleActorType = {}));
+var SampleActorEventType;
+(function (SampleActorEventType) {
+    SampleActorEventType["ATTACH"] = "ATTACH";
+    SampleActorEventType["DETACH"] = "DETACH";
+})(SampleActorEventType || (SampleActorEventType = {}));
+
+
+/***/ }),
+
+/***/ "fSkw":
+/*!**********************************************************************************************!*\
+  !*** ./projects/dev/src/app/modules/example/common/sample-actor/sample-actor.component.scss ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  margin: 10px;\n  padding: 20px;\n  color: #333333;\n  border-radius: 4px;\n  box-sizing: border-box;\n  background-color: #ffffff;\n  transition: color 300ms, background-color 300ms;\n}\n:host.is-appeared {\n  color: #ffffff;\n  background-color: #333333;\n}\n:host .panel-count {\n  display: flex;\n  text-align: center;\n}\n:host .panel-count .spacer {\n  flex: 1;\n  min-width: 20px;\n}\n:host .panel-count .label {\n  display: block;\n  font-size: 13px;\n}\n:host .panel-count .count {\n  display: block;\n  padding-top: 5px;\n  font-size: 24px;\n  font-weight: bold;\n}\n:host .panel-item {\n  padding-top: 5px;\n  text-align: center;\n  font-size: 13px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL3NhbXBsZS1hY3Rvci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUNBLGNBQUE7RUFDQSxrQkFBQTtFQUNBLHNCQUFBO0VBQ0EseUJBQUE7RUFDQSwrQ0FBQTtBQUNGO0FBQUU7RUFDRSxjQUFBO0VBQ0EseUJBQUE7QUFFSjtBQUNFO0VBQ0UsYUFBQTtFQUNBLGtCQUFBO0FBQ0o7QUFBSTtFQUNFLE9BQUE7RUFDQSxlQUFBO0FBRU47QUFBSTtFQUNFLGNBQUE7RUFDQSxlQUFBO0FBRU47QUFBSTtFQUNFLGNBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQUVOO0FBRUU7RUFDRSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtBQUFKIiwiZmlsZSI6InNhbXBsZS1hY3Rvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG1hcmdpbjogMTBweDtcbiAgcGFkZGluZzogMjBweDtcbiAgY29sb3I6ICMzMzMzMzM7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcbiAgdHJhbnNpdGlvbjogY29sb3IgMzAwbXMsIGJhY2tncm91bmQtY29sb3IgMzAwbXM7XG4gICYuaXMtYXBwZWFyZWQge1xuICAgIGNvbG9yOiAjZmZmZmZmO1xuICAgIGJhY2tncm91bmQtY29sb3I6ICMzMzMzMzM7XG4gIH1cblxuICAucGFuZWwtY291bnQge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIC5zcGFjZXIge1xuICAgICAgZmxleDogMTtcbiAgICAgIG1pbi13aWR0aDogMjBweDtcbiAgICB9XG4gICAgLmxhYmVsIHtcbiAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgZm9udC1zaXplOiAxM3B4O1xuICAgIH1cbiAgICAuY291bnQge1xuICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICBwYWRkaW5nLXRvcDogNXB4O1xuICAgICAgZm9udC1zaXplOiAyNHB4O1xuICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgfVxuICB9XG5cbiAgLnBhbmVsLWl0ZW0ge1xuICAgIHBhZGRpbmctdG9wOiA1cHg7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIGZvbnQtc2l6ZTogMTNweDtcbiAgfVxufVxuIl19 */");
+
+/***/ }),
+
+/***/ "lbm4":
+/*!***************************************************!*\
+  !*** ./projects/packages/src/actor/base-actor.ts ***!
+  \***************************************************/
 /*! exports provided: BaseActor */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseActor", function() { return BaseActor; });
-/* harmony import */ var _common_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../common/types */ "../packages/src/common/types.ts");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "../../node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _common_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../common/types */ "POQn");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "qCKp");
 
 
 /**
@@ -1136,18 +1685,101 @@ class BaseActor {
 
 /***/ }),
 
-/***/ "../packages/src/actor/lazy-actor.ts":
-/*!*******************************************!*\
-  !*** ../packages/src/actor/lazy-actor.ts ***!
-  \*******************************************/
+/***/ "loGT":
+/*!********************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./projects/dev/src/app/pages/demo/once-actor/once-actor.component.html ***!
+  \********************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"horizontal-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    actorType=\"once\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n\n<div class=\"vertical-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    actorType=\"once\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n");
+
+/***/ }),
+
+/***/ "otmC":
+/*!*********************************************!*\
+  !*** ./projects/packages/src/public-api.ts ***!
+  \*********************************************/
+/*! exports provided: AppearStage, BaseActor, OnceActor, LazyActor, AppearType, AppearEvent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var intersection_observer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! intersection-observer */ "Wr5T");
+/* harmony import */ var intersection_observer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(intersection_observer__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _stage_appear_stage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stage/appear-stage */ "z1+7");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AppearStage", function() { return _stage_appear_stage__WEBPACK_IMPORTED_MODULE_1__["AppearStage"]; });
+
+/* harmony import */ var _actor_base_actor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./actor/base-actor */ "lbm4");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseActor", function() { return _actor_base_actor__WEBPACK_IMPORTED_MODULE_2__["BaseActor"]; });
+
+/* harmony import */ var _actor_once_actor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./actor/once-actor */ "E0sH");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OnceActor", function() { return _actor_once_actor__WEBPACK_IMPORTED_MODULE_3__["OnceActor"]; });
+
+/* harmony import */ var _actor_lazy_actor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actor/lazy-actor */ "v3ac");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LazyActor", function() { return _actor_lazy_actor__WEBPACK_IMPORTED_MODULE_4__["LazyActor"]; });
+
+/* harmony import */ var _common_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./common/types */ "POQn");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AppearType", function() { return _common_types__WEBPACK_IMPORTED_MODULE_5__["AppearType"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AppearEvent", function() { return _common_types__WEBPACK_IMPORTED_MODULE_5__["AppearEvent"]; });
+
+
+
+
+
+
+
+
+
+/***/ }),
+
+/***/ "qNk/":
+/*!**********************************************************************!*\
+  !*** ./projects/dev/src/app/modules/example/common/common.module.ts ***!
+  \**********************************************************************/
+/*! exports provided: ExampleCommonModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExampleCommonModule", function() { return ExampleCommonModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _dev_app_modules_example_common_sample_actor_sample_actor_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/dev/app/modules/example/common/sample-actor/sample-actor.component */ "UOhG");
+
+
+
+
+let ExampleCommonModule = class ExampleCommonModule {
+};
+ExampleCommonModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]],
+        exports: [_dev_app_modules_example_common_sample_actor_sample_actor_component__WEBPACK_IMPORTED_MODULE_3__["SampleActorComponent"]],
+        declarations: [_dev_app_modules_example_common_sample_actor_sample_actor_component__WEBPACK_IMPORTED_MODULE_3__["SampleActorComponent"]],
+    })
+], ExampleCommonModule);
+
+
+
+/***/ }),
+
+/***/ "v3ac":
+/*!***************************************************!*\
+  !*** ./projects/packages/src/actor/lazy-actor.ts ***!
+  \***************************************************/
 /*! exports provided: LazyActor */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LazyActor", function() { return LazyActor; });
-/* harmony import */ var _base_actor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./base-actor */ "../packages/src/actor/base-actor.ts");
-/* harmony import */ var _common_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common/types */ "../packages/src/common/types.ts");
+/* harmony import */ var _base_actor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./base-actor */ "lbm4");
+/* harmony import */ var _common_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common/types */ "POQn");
 
 
 /**
@@ -1235,140 +1867,10 @@ class LazyActor extends _base_actor__WEBPACK_IMPORTED_MODULE_0__["BaseActor"] {
 
 /***/ }),
 
-/***/ "../packages/src/actor/once-actor.ts":
-/*!*******************************************!*\
-  !*** ../packages/src/actor/once-actor.ts ***!
-  \*******************************************/
-/*! exports provided: OnceActor */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OnceActor", function() { return OnceActor; });
-/* harmony import */ var _base_actor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./base-actor */ "../packages/src/actor/base-actor.ts");
-/* harmony import */ var _common_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../common/types */ "../packages/src/common/types.ts");
-
-
-/**
- * Stage 에 등록될 Actor.
- * 스테이지 진입을 한번만 감지한 후 본인 스스로 관찰 해제하는 감지형.
- * (사용 예: 화면 진입시 한번만 애니메이션 한다, 이미지 로드를 한다)
- * @class OnceActor
- * @extends {BaseActor}
- */
-class OnceActor extends _base_actor__WEBPACK_IMPORTED_MODULE_0__["BaseActor"] {
-    /**
-     * 스테이지 진입. 진입시 자동 관찰 해제.
-     * @override
-     * @param [entry]
-     */
-    appear(entry) {
-        if (this.isAppear)
-            return;
-        this.isAppear = true;
-        this.dispatch(_common_types__WEBPACK_IMPORTED_MODULE_1__["AppearEvent"].APPEAR, entry);
-        if (this.stage) {
-            this.stage.unobserve(this);
-        }
-    }
-}
-
-
-/***/ }),
-
-/***/ "../packages/src/common/types.ts":
-/*!***************************************!*\
-  !*** ../packages/src/common/types.ts ***!
-  \***************************************/
-/*! exports provided: AppearType, AppearEvent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppearType", function() { return AppearType; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppearEvent", function() { return AppearEvent; });
-/**
- * Actor type 구분
- * @export
- * @enum {number}
- */
-var AppearType;
-(function (AppearType) {
-    AppearType["BASE"] = "base";
-    AppearType["ONCE"] = "once";
-    AppearType["LAZY"] = "lazy";
-})(AppearType || (AppearType = {}));
-/**
- * 관찰대상의 이벤트
- * @implements {AppearEventData<T>}
- * @template T
- */
-class AppearEvent {
-    /**
-     * @param type 이벤트 타입
-     * @param option 이벤트 데이터
-     */
-    constructor(type, option) {
-        const { actor, entry } = option;
-        this.type = type;
-        this.actor = actor;
-        this.entry = entry;
-    }
-}
-/**
- * 이벤트 타입 - 진입
- */
-AppearEvent.APPEAR = "APPEAR";
-/**
- * 이벤트 타입 - 이탈
- */
-AppearEvent.DISAPPEAR = "DISAPPEAR";
-
-
-/***/ }),
-
-/***/ "../packages/src/public-api.ts":
-/*!*************************************!*\
-  !*** ../packages/src/public-api.ts ***!
-  \*************************************/
-/*! exports provided: AppearStage, BaseActor, OnceActor, LazyActor, AppearType, AppearEvent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var intersection_observer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! intersection-observer */ "../../node_modules/intersection-observer/intersection-observer.js");
-/* harmony import */ var intersection_observer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(intersection_observer__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _stage_appear_stage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stage/appear-stage */ "../packages/src/stage/appear-stage.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AppearStage", function() { return _stage_appear_stage__WEBPACK_IMPORTED_MODULE_1__["AppearStage"]; });
-
-/* harmony import */ var _actor_base_actor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./actor/base-actor */ "../packages/src/actor/base-actor.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BaseActor", function() { return _actor_base_actor__WEBPACK_IMPORTED_MODULE_2__["BaseActor"]; });
-
-/* harmony import */ var _actor_once_actor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./actor/once-actor */ "../packages/src/actor/once-actor.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OnceActor", function() { return _actor_once_actor__WEBPACK_IMPORTED_MODULE_3__["OnceActor"]; });
-
-/* harmony import */ var _actor_lazy_actor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actor/lazy-actor */ "../packages/src/actor/lazy-actor.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LazyActor", function() { return _actor_lazy_actor__WEBPACK_IMPORTED_MODULE_4__["LazyActor"]; });
-
-/* harmony import */ var _common_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./common/types */ "../packages/src/common/types.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AppearType", function() { return _common_types__WEBPACK_IMPORTED_MODULE_5__["AppearType"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AppearEvent", function() { return _common_types__WEBPACK_IMPORTED_MODULE_5__["AppearEvent"]; });
-
-
-
-
-
-
-
-
-
-/***/ }),
-
-/***/ "../packages/src/stage/appear-stage.ts":
-/*!*********************************************!*\
-  !*** ../packages/src/stage/appear-stage.ts ***!
-  \*********************************************/
+/***/ "z1+7":
+/*!*****************************************************!*\
+  !*** ./projects/packages/src/stage/appear-stage.ts ***!
+  \*****************************************************/
 /*! exports provided: AppearStage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1441,6 +1943,8 @@ class AppearStage {
      */
     onObserveEntries(entries) {
         entries.forEach((entry) => {
+            if (!this.actorMap)
+                return;
             const { isIntersecting, target } = entry;
             const actor = this.actorMap.get(target);
             if (actor) {
@@ -1457,13 +1961,13 @@ class AppearStage {
      * 파기
      */
     dispose() {
-        if (this.actorMap) {
-            this.actorMap.clear();
-            this.actorMap = null;
-        }
         if (this.observer) {
             this.observer.disconnect();
             this.observer = null;
+        }
+        if (this.actorMap) {
+            this.actorMap.clear();
+            this.actorMap = null;
         }
     }
 }
@@ -1471,502 +1975,16 @@ class AppearStage {
 
 /***/ }),
 
-/***/ "./src/app/modules/example/common/common.module.ts":
-/*!*********************************************************!*\
-  !*** ./src/app/modules/example/common/common.module.ts ***!
-  \*********************************************************/
-/*! exports provided: ExampleCommonModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExampleCommonModule", function() { return ExampleCommonModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "../../node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-/* harmony import */ var _dev_app_modules_example_common_sample_actor_sample_actor_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/dev/app/modules/example/common/sample-actor/sample-actor.component */ "./src/app/modules/example/common/sample-actor/sample-actor.component.ts");
-
-
-
-
-let ExampleCommonModule = class ExampleCommonModule {
-};
-ExampleCommonModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]],
-        exports: [_dev_app_modules_example_common_sample_actor_sample_actor_component__WEBPACK_IMPORTED_MODULE_3__["SampleActorComponent"]],
-        declarations: [_dev_app_modules_example_common_sample_actor_sample_actor_component__WEBPACK_IMPORTED_MODULE_3__["SampleActorComponent"]],
-    })
-], ExampleCommonModule);
-
-
-
-/***/ }),
-
-/***/ "./src/app/modules/example/common/sample-actor/sample-actor.component.scss":
-/*!*********************************************************************************!*\
-  !*** ./src/app/modules/example/common/sample-actor/sample-actor.component.scss ***!
-  \*********************************************************************************/
+/***/ "zml4":
+/*!************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./projects/dev/src/app/modules/example/common/sample-actor/sample-actor.component.html ***!
+  \************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (":host {\n  display: block;\n  margin: 10px;\n  padding: 20px;\n  color: #333333;\n  border-radius: 4px;\n  box-sizing: border-box;\n  background-color: #ffffff;\n  transition: color 300ms, background-color 300ms;\n}\n:host.is-appeared {\n  color: #ffffff;\n  background-color: #333333;\n}\n:host .panel-count {\n  display: flex;\n  text-align: center;\n}\n:host .panel-count .spacer {\n  flex: 1;\n  min-width: 20px;\n}\n:host .panel-count .label {\n  display: block;\n  font-size: 13px;\n}\n:host .panel-count .count {\n  display: block;\n  padding-top: 5px;\n  font-size: 24px;\n  font-weight: bold;\n}\n:host .panel-item {\n  padding-top: 5px;\n  text-align: center;\n  font-size: 13px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2plY3RzL2Rldi9zcmMvYXBwL21vZHVsZXMvZXhhbXBsZS9jb21tb24vc2FtcGxlLWFjdG9yL3NhbXBsZS1hY3Rvci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUNBLGNBQUE7RUFDQSxrQkFBQTtFQUNBLHNCQUFBO0VBQ0EseUJBQUE7RUFDQSwrQ0FBQTtBQUNGO0FBQUU7RUFDRSxjQUFBO0VBQ0EseUJBQUE7QUFFSjtBQUNFO0VBQ0UsYUFBQTtFQUNBLGtCQUFBO0FBQ0o7QUFBSTtFQUNFLE9BQUE7RUFDQSxlQUFBO0FBRU47QUFBSTtFQUNFLGNBQUE7RUFDQSxlQUFBO0FBRU47QUFBSTtFQUNFLGNBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQUVOO0FBRUU7RUFDRSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtBQUFKIiwiZmlsZSI6InByb2plY3RzL2Rldi9zcmMvYXBwL21vZHVsZXMvZXhhbXBsZS9jb21tb24vc2FtcGxlLWFjdG9yL3NhbXBsZS1hY3Rvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG1hcmdpbjogMTBweDtcbiAgcGFkZGluZzogMjBweDtcbiAgY29sb3I6ICMzMzMzMzM7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcbiAgdHJhbnNpdGlvbjogY29sb3IgMzAwbXMsIGJhY2tncm91bmQtY29sb3IgMzAwbXM7XG4gICYuaXMtYXBwZWFyZWQge1xuICAgIGNvbG9yOiAjZmZmZmZmO1xuICAgIGJhY2tncm91bmQtY29sb3I6ICMzMzMzMzM7XG4gIH1cblxuICAucGFuZWwtY291bnQge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIC5zcGFjZXIge1xuICAgICAgZmxleDogMTtcbiAgICAgIG1pbi13aWR0aDogMjBweDtcbiAgICB9XG4gICAgLmxhYmVsIHtcbiAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgZm9udC1zaXplOiAxM3B4O1xuICAgIH1cbiAgICAuY291bnQge1xuICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICBwYWRkaW5nLXRvcDogNXB4O1xuICAgICAgZm9udC1zaXplOiAyNHB4O1xuICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgfVxuICB9XG5cbiAgLnBhbmVsLWl0ZW0ge1xuICAgIHBhZGRpbmctdG9wOiA1cHg7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIGZvbnQtc2l6ZTogMTNweDtcbiAgfVxufVxuIl19 */");
-
-/***/ }),
-
-/***/ "./src/app/modules/example/common/sample-actor/sample-actor.component.ts":
-/*!*******************************************************************************!*\
-  !*** ./src/app/modules/example/common/sample-actor/sample-actor.component.ts ***!
-  \*******************************************************************************/
-/*! exports provided: SampleActorComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SampleActorComponent", function() { return SampleActorComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "../../node_modules/rxjs/_esm2015/index.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/packages/src/public-api */ "../packages/src/public-api.ts");
-/* harmony import */ var _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~/dev/app/modules/example/common/sample-actor/types */ "./src/app/modules/example/common/sample-actor/types.ts");
-
-
-
-
-
-let SampleActorComponent = class SampleActorComponent {
-    constructor(elRef) {
-        this.elRef = elRef;
-        this.emitter = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
-        this.appearCount = 0;
-        this.disappearCount = 0;
-        this.appearerListener = new rxjs__WEBPACK_IMPORTED_MODULE_1__["Subscription"]();
-    }
-    get isAppeared() {
-        return !!(this.actor && this.actor.isAppear);
-    }
-    ngOnInit() {
-        const { nativeElement } = this.elRef;
-        switch (this.actorType) {
-            case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_4__["SampleActorType"].ONCE:
-                this.actor = new projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_3__["OnceActor"](nativeElement);
-                break;
-            case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_4__["SampleActorType"].LAZY:
-                this.actor = new projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_3__["LazyActor"](nativeElement);
-                this.actor.setCheckoutDelay(1000);
-                this.actor.setAppearDelay(200);
-                break;
-            default:
-                this.actor = new projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_3__["BaseActor"](nativeElement);
-                break;
-        }
-        const observeAppearEvent = this.actor.events.subscribe(this.onAppearEvent.bind(this));
-        this.appearerListener.add(observeAppearEvent);
-        this.emitter.emit({
-            type: _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_4__["SampleActorEventType"].ATTACH,
-            actor: this.actor,
-        });
-    }
-    onAppearEvent(evt) {
-        switch (evt.type) {
-            case projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_3__["AppearEvent"].APPEAR:
-                this.appearCount++;
-                break;
-            case projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_3__["AppearEvent"].DISAPPEAR:
-                this.disappearCount++;
-                break;
-        }
-    }
-    ngOnDestroy() {
-        try {
-            this.emitter.emit({
-                type: _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_4__["SampleActorEventType"].DETACH,
-                actor: this.actor,
-            });
-            if (this.appearerListener) {
-                this.appearerListener.unsubscribe();
-            }
-        }
-        catch (err) {
-            console.log(err);
-        }
-    }
-};
-SampleActorComponent.ctorParameters = () => [
-    { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"] }
-];
-SampleActorComponent.propDecorators = {
-    item: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
-    actorType: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
-    emitter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"], args: ["sampleEvent",] }],
-    isAppeared: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["HostBinding"], args: ["class.is-appeared",] }]
-};
-SampleActorComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
-        selector: "sample-actor",
-        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./sample-actor.component.html */ "../../node_modules/raw-loader/dist/cjs.js!./src/app/modules/example/common/sample-actor/sample-actor.component.html")).default,
-        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./sample-actor.component.scss */ "./src/app/modules/example/common/sample-actor/sample-actor.component.scss")).default]
-    })
-], SampleActorComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/modules/example/common/sample-actor/types.ts":
-/*!**************************************************************!*\
-  !*** ./src/app/modules/example/common/sample-actor/types.ts ***!
-  \**************************************************************/
-/*! exports provided: SampleActorType, SampleActorEventType */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SampleActorType", function() { return SampleActorType; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SampleActorEventType", function() { return SampleActorEventType; });
-var SampleActorType;
-(function (SampleActorType) {
-    SampleActorType["BASE"] = "base";
-    SampleActorType["ONCE"] = "once";
-    SampleActorType["LAZY"] = "lazy";
-})(SampleActorType || (SampleActorType = {}));
-var SampleActorEventType;
-(function (SampleActorEventType) {
-    SampleActorEventType["ATTACH"] = "ATTACH";
-    SampleActorEventType["DETACH"] = "DETACH";
-})(SampleActorEventType || (SampleActorEventType = {}));
-
-
-/***/ }),
-
-/***/ "./src/app/pages/demo/base-actor/base-actor.component.scss":
-/*!*****************************************************************!*\
-  !*** ./src/app/pages/demo/base-actor/base-actor.component.scss ***!
-  \*****************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".horizontal-list {\n  display: flex;\n  flex-wrap: nowrap;\n  overflow-x: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2plY3RzL2Rldi9zcmMvYXBwL3BhZ2VzL2RlbW8vYmFzZS1hY3Rvci9iYXNlLWFjdG9yLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7QUFDRiIsImZpbGUiOiJwcm9qZWN0cy9kZXYvc3JjL2FwcC9wYWdlcy9kZW1vL2Jhc2UtYWN0b3IvYmFzZS1hY3Rvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ob3Jpem9udGFsLWxpc3Qge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LXdyYXA6IG5vd3JhcDtcbiAgb3ZlcmZsb3cteDogYXV0bztcbn1cbiJdfQ== */");
-
-/***/ }),
-
-/***/ "./src/app/pages/demo/base-actor/base-actor.component.ts":
-/*!***************************************************************!*\
-  !*** ./src/app/pages/demo/base-actor/base-actor.component.ts ***!
-  \***************************************************************/
-/*! exports provided: BaseActorComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseActorComponent", function() { return BaseActorComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! projects/packages/src/public-api */ "../packages/src/public-api.ts");
-/* harmony import */ var _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/dev/app/modules/example/common/sample-actor/types */ "./src/app/modules/example/common/sample-actor/types.ts");
-
-
-
-
-let BaseActorComponent = class BaseActorComponent {
-    constructor() {
-        this.actorMakeList = [];
-    }
-    ngOnInit() {
-        this.actorMakeList = Array.from(Array(50)).map((a, b) => {
-            return { id: b };
-        });
-        this.appearStage = new projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_2__["AppearStage"]();
-        this.appearStage.init();
-    }
-    onSampleAppearEvent(evt) {
-        const { type, actor } = evt;
-        switch (type) {
-            case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_3__["SampleActorEventType"].ATTACH:
-                this.appearStage.observe(actor);
-                break;
-            case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_3__["SampleActorEventType"].DETACH:
-                this.appearStage.unobserve(actor);
-                break;
-        }
-    }
-    ngOnDestroy() {
-        try {
-            if (this.appearStage) {
-                this.appearStage.dispose();
-                this.appearStage = null;
-            }
-        }
-        catch (err) {
-            console.log(err);
-        }
-    }
-};
-BaseActorComponent.ctorParameters = () => [];
-BaseActorComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: "example-base-actor",
-        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./base-actor.component.html */ "../../node_modules/raw-loader/dist/cjs.js!./src/app/pages/demo/base-actor/base-actor.component.html")).default,
-        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./base-actor.component.scss */ "./src/app/pages/demo/base-actor/base-actor.component.scss")).default]
-    })
-], BaseActorComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/pages/demo/demo.module.ts":
-/*!*******************************************!*\
-  !*** ./src/app/pages/demo/demo.module.ts ***!
-  \*******************************************/
-/*! exports provided: PageModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageModule", function() { return PageModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "../../node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-/* harmony import */ var _dev_app_pages_demo_demo_routing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/dev/app/pages/demo/demo.routing */ "./src/app/pages/demo/demo.routing.ts");
-/* harmony import */ var _dev_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ~/dev/app/shared/shared.module */ "./src/app/shared/shared.module.ts");
-/* harmony import */ var _dev_app_modules_example_common_common_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ~/dev/app/modules/example/common/common.module */ "./src/app/modules/example/common/common.module.ts");
-/* harmony import */ var _base_actor_base_actor_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./base-actor/base-actor.component */ "./src/app/pages/demo/base-actor/base-actor.component.ts");
-/* harmony import */ var _once_actor_once_actor_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./once-actor/once-actor.component */ "./src/app/pages/demo/once-actor/once-actor.component.ts");
-/* harmony import */ var _lazy_actor_lazy_actor_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./lazy-actor/lazy-actor.component */ "./src/app/pages/demo/lazy-actor/lazy-actor.component.ts");
-
-
-
-
-
-
-
-
-
-let PageModule = class PageModule {
-};
-PageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _dev_app_pages_demo_demo_routing__WEBPACK_IMPORTED_MODULE_3__["RoutingModule"], _dev_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_4__["SharedModule"], _dev_app_modules_example_common_common_module__WEBPACK_IMPORTED_MODULE_5__["ExampleCommonModule"]],
-        declarations: [_base_actor_base_actor_component__WEBPACK_IMPORTED_MODULE_6__["BaseActorComponent"], _once_actor_once_actor_component__WEBPACK_IMPORTED_MODULE_7__["OnceActorComponent"], _lazy_actor_lazy_actor_component__WEBPACK_IMPORTED_MODULE_8__["LazyActorComponent"]],
-    })
-], PageModule);
-
-
-
-/***/ }),
-
-/***/ "./src/app/pages/demo/demo.routing.ts":
-/*!********************************************!*\
-  !*** ./src/app/pages/demo/demo.routing.ts ***!
-  \********************************************/
-/*! exports provided: RoutingModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RoutingModule", function() { return RoutingModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "../../node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-/* harmony import */ var _base_actor_base_actor_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./base-actor/base-actor.component */ "./src/app/pages/demo/base-actor/base-actor.component.ts");
-/* harmony import */ var _once_actor_once_actor_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./once-actor/once-actor.component */ "./src/app/pages/demo/once-actor/once-actor.component.ts");
-/* harmony import */ var _lazy_actor_lazy_actor_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./lazy-actor/lazy-actor.component */ "./src/app/pages/demo/lazy-actor/lazy-actor.component.ts");
-
-
-
-
-
-
-const routes = [
-    {
-        path: "",
-        children: [
-            {
-                path: "base-actor",
-                component: _base_actor_base_actor_component__WEBPACK_IMPORTED_MODULE_3__["BaseActorComponent"],
-            },
-            {
-                path: "once-actor",
-                component: _once_actor_once_actor_component__WEBPACK_IMPORTED_MODULE_4__["OnceActorComponent"],
-            },
-            {
-                path: "lazy-actor",
-                component: _lazy_actor_lazy_actor_component__WEBPACK_IMPORTED_MODULE_5__["LazyActorComponent"],
-            },
-            {
-                path: "**",
-                component: _base_actor_base_actor_component__WEBPACK_IMPORTED_MODULE_3__["BaseActorComponent"],
-            },
-        ],
-    },
-];
-let RoutingModule = class RoutingModule {
-};
-RoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
-        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
-    })
-], RoutingModule);
-
-
-
-/***/ }),
-
-/***/ "./src/app/pages/demo/lazy-actor/lazy-actor.component.scss":
-/*!*****************************************************************!*\
-  !*** ./src/app/pages/demo/lazy-actor/lazy-actor.component.scss ***!
-  \*****************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".horizontal-list {\n  display: flex;\n  flex-wrap: nowrap;\n  overflow-x: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2plY3RzL2Rldi9zcmMvYXBwL3BhZ2VzL2RlbW8vbGF6eS1hY3Rvci9sYXp5LWFjdG9yLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7QUFDRiIsImZpbGUiOiJwcm9qZWN0cy9kZXYvc3JjL2FwcC9wYWdlcy9kZW1vL2xhenktYWN0b3IvbGF6eS1hY3Rvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ob3Jpem9udGFsLWxpc3Qge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LXdyYXA6IG5vd3JhcDtcbiAgb3ZlcmZsb3cteDogYXV0bztcbn1cbiJdfQ== */");
-
-/***/ }),
-
-/***/ "./src/app/pages/demo/lazy-actor/lazy-actor.component.ts":
-/*!***************************************************************!*\
-  !*** ./src/app/pages/demo/lazy-actor/lazy-actor.component.ts ***!
-  \***************************************************************/
-/*! exports provided: LazyActorComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LazyActorComponent", function() { return LazyActorComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! projects/packages/src/public-api */ "../packages/src/public-api.ts");
-/* harmony import */ var _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/dev/app/modules/example/common/sample-actor/types */ "./src/app/modules/example/common/sample-actor/types.ts");
-
-
-
-
-let LazyActorComponent = class LazyActorComponent {
-    constructor() { }
-    ngOnInit() {
-        this.actorMakeList = Array.from(Array(50)).map((a, b) => {
-            return { id: b };
-        });
-        this.appearStage = new projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_2__["AppearStage"]();
-        this.appearStage.init();
-    }
-    onSampleAppearEvent(evt) {
-        const { type, actor } = evt;
-        switch (type) {
-            case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_3__["SampleActorEventType"].ATTACH:
-                this.appearStage.observe(actor);
-                break;
-            case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_3__["SampleActorEventType"].DETACH:
-                this.appearStage.unobserve(actor);
-                break;
-        }
-    }
-    ngOnDestroy() {
-        try {
-            if (this.appearStage) {
-                this.appearStage.dispose();
-                this.appearStage = null;
-            }
-        }
-        catch (err) {
-            console.log(err);
-        }
-    }
-};
-LazyActorComponent.ctorParameters = () => [];
-LazyActorComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: "example-lazy-actor",
-        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./lazy-actor.component.html */ "../../node_modules/raw-loader/dist/cjs.js!./src/app/pages/demo/lazy-actor/lazy-actor.component.html")).default,
-        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./lazy-actor.component.scss */ "./src/app/pages/demo/lazy-actor/lazy-actor.component.scss")).default]
-    })
-], LazyActorComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/pages/demo/once-actor/once-actor.component.scss":
-/*!*****************************************************************!*\
-  !*** ./src/app/pages/demo/once-actor/once-actor.component.scss ***!
-  \*****************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".horizontal-list {\n  display: flex;\n  flex-wrap: nowrap;\n  overflow-x: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2plY3RzL2Rldi9zcmMvYXBwL3BhZ2VzL2RlbW8vb25jZS1hY3Rvci9vbmNlLWFjdG9yLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7QUFDRiIsImZpbGUiOiJwcm9qZWN0cy9kZXYvc3JjL2FwcC9wYWdlcy9kZW1vL29uY2UtYWN0b3Ivb25jZS1hY3Rvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5ob3Jpem9udGFsLWxpc3Qge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LXdyYXA6IG5vd3JhcDtcbiAgb3ZlcmZsb3cteDogYXV0bztcbn1cbiJdfQ== */");
-
-/***/ }),
-
-/***/ "./src/app/pages/demo/once-actor/once-actor.component.ts":
-/*!***************************************************************!*\
-  !*** ./src/app/pages/demo/once-actor/once-actor.component.ts ***!
-  \***************************************************************/
-/*! exports provided: OnceActorComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OnceActorComponent", function() { return OnceActorComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "../../node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../../node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! projects/packages/src/public-api */ "../packages/src/public-api.ts");
-/* harmony import */ var _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ~/dev/app/modules/example/common/sample-actor/types */ "./src/app/modules/example/common/sample-actor/types.ts");
-
-
-
-
-let OnceActorComponent = class OnceActorComponent {
-    constructor() { }
-    ngOnInit() {
-        this.actorMakeList = Array.from(Array(50)).map((a, b) => {
-            return { id: b };
-        });
-        this.appearStage = new projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_2__["AppearStage"]();
-        this.appearStage.init();
-    }
-    onSampleAppearEvent(evt) {
-        const { type, actor } = evt;
-        switch (type) {
-            case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_3__["SampleActorEventType"].ATTACH:
-                this.appearStage.observe(actor);
-                break;
-            case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_3__["SampleActorEventType"].DETACH:
-                this.appearStage.unobserve(actor);
-                break;
-        }
-    }
-    ngOnDestroy() {
-        try {
-            if (this.appearStage) {
-                this.appearStage.dispose();
-                this.appearStage = null;
-            }
-        }
-        catch (err) {
-            console.log(err);
-        }
-    }
-};
-OnceActorComponent.ctorParameters = () => [];
-OnceActorComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: "example-once-actor",
-        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./once-actor.component.html */ "../../node_modules/raw-loader/dist/cjs.js!./src/app/pages/demo/once-actor/once-actor.component.html")).default,
-        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./once-actor.component.scss */ "./src/app/pages/demo/once-actor/once-actor.component.scss")).default]
-    })
-], OnceActorComponent);
-
-
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"panel-count\">\n  <div class=\"aside\">\n    <span class=\"label\">appearCount</span>\n    <span class=\"count\">{{ appearCount }}</span>\n  </div>\n  <div class=\"spacer\"></div>\n  <div class=\"bside\">\n    <span class=\"label\">disappearCount</span>\n    <span class=\"count\">{{ disappearCount }}</span>\n  </div>\n</div>\n<div class=\"panel-item\">\n  {{ item | json }}\n</div>\n");
 
 /***/ })
 
