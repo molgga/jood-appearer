@@ -82,7 +82,7 @@ import { AppearStage, AppearEvent, LazyActor } from "@jood/appearer";
 const someStage = new AppearStage();
 someStage.init();
 
-const myList = new OnceActor(document.querySelectorAll(".my-some-box"));
+const myList = document.querySelectorAll(".my-some-box");
 myList.forEach((elBox) => {
   const lazyActor = new LazyActor(elBox);
   someStage.observe(lazyActor);
