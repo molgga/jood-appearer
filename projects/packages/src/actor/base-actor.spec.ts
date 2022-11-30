@@ -1,9 +1,9 @@
-import { sleep, createEntry } from "../__testing__";
-import { AppearStage } from "../stage/appear-stage"; //"projects/packages/src/stage/appear-stage";
-import { AppearEvent } from "../common/types";
-import { BaseActor } from "./base-actor";
+import { sleep, createEntry } from '../__testing__';
+import { AppearStage } from '../stage/appear-stage'; //"projects/packages/src/stage/appear-stage";
+import { AppearEvent } from '../common/types';
+import { BaseActor } from './base-actor';
 
-describe("BaseActor", () => {
+describe('BaseActor', () => {
   let stage: AppearStage;
   let dom: HTMLElement;
   let actor: BaseActor;
@@ -11,7 +11,7 @@ describe("BaseActor", () => {
 
   beforeEach(() => {
     stage = new AppearStage();
-    dom = document.createElement("div");
+    dom = document.createElement('div');
     actor = new BaseActor(dom);
     entry = createEntry({ target: dom });
   });
@@ -23,28 +23,28 @@ describe("BaseActor", () => {
     stage = null;
   });
 
-  it("최초 생성시 값 확인", () => {
+  it('최초 생성시 값 확인', () => {
     expect(actor.element).toBe(dom);
-    expect(actor.isAppear).toBe(false);
+    expect(actor.isAppear).toBe(null);
   });
 
-  it("stage observe 등록시 연결된 stage 확인", () => {
+  it('stage observe 등록시 연결된 stage 확인', () => {
     stage.init();
     stage.observe(actor);
     expect(actor.stage).toBe(stage);
   });
 
-  it("appear, disappear 호출시 진입 여부 상태 확인", () => {
+  it('appear, disappear 호출시 진입 여부 상태 확인', () => {
     stage.init();
     stage.observe(actor);
-    expect(actor.isAppear).toBe(false);
+    expect(actor.isAppear).toBe(null);
     actor.appear(null);
     expect(actor.isAppear).toBe(true);
     actor.disappear(null);
     expect(actor.isAppear).toBe(false);
   });
 
-  it("appear, disappear 호출시 이벤트에 전달되는 값 확인", () => {
+  it('appear, disappear 호출시 이벤트에 전달되는 값 확인', () => {
     stage.init();
     stage.observe(actor);
 
@@ -66,7 +66,7 @@ describe("BaseActor", () => {
     subscription.unsubscribe();
   });
 
-  it("appear, disappear 호출시 stage 등록 상태 확인", () => {
+  it('appear, disappear 호출시 stage 등록 상태 확인', () => {
     stage.init();
     stage.observe(actor);
     expect(actor.stage).toBe(stage);
@@ -77,24 +77,11 @@ describe("BaseActor", () => {
     expect(stage.actorSize).toBe(1);
   });
 
-  it("appear 되지 않은 상태에서 disapper 되지 않는것 확인", async () => {
-    let isCalled = false;
-    const subscription = actor.events.subscribe((evt: AppearEvent) => {
-      isCalled = true;
-    });
-    actor.disappear(entry);
-
-    await sleep(10);
-
-    expect(isCalled).toBe(false);
-    subscription.unsubscribe();
-  });
-
-  it("appear 중복 진입 안된는것 확인", () => {
+  it('appear 중복 진입 안된는것 확인', () => {
     stage.init();
     stage.observe(actor);
 
-    const handle = spyOn(actor, "dispatch");
+    const handle = spyOn(actor, 'dispatch');
 
     actor.appear(null);
     expect(handle.calls.count()).toBe(1);

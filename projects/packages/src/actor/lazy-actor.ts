@@ -1,5 +1,5 @@
-import { BaseActor } from "./base-actor";
-import { AppearEvent, ILazyActor } from "../common/types";
+import { BaseActor } from './base-actor';
+import { AppearEvent, ILazyActor } from '../common/types';
 
 /**
  * Stage 에 등록될 Actor.
@@ -47,7 +47,7 @@ export class LazyActor extends BaseActor implements ILazyActor {
    */
   appear(entry: IntersectionObserverEntry) {
     this.clearAppearTimer();
-    if (this.isAppear) return;
+    if (this.isAppear === true) return;
     if (this.checkoutDelay <= entry.time) {
       this.appearTimer = setTimeout(() => {
         this.doAppear(entry);

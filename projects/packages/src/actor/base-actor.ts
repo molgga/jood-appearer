@@ -1,5 +1,5 @@
-import { ActorElement, AppearEvent, IActor, IStage } from "../common/types";
-import { Subject } from "rxjs";
+import { ActorElement, AppearEvent, IActor, IStage } from '../common/types';
+import { Subject } from 'rxjs';
 
 /**
  * Stage 에 등록될 Actor.
@@ -34,7 +34,7 @@ export class BaseActor implements IActor {
   /**
    * 현재 진입 여부 상태
    */
-  isAppear: boolean = false;
+  isAppear: boolean = null;
 
   /**
    * 해당 인스턴스를 관찰하는 스테이지를 연결
@@ -53,7 +53,7 @@ export class BaseActor implements IActor {
     this.events.next(
       new AppearEvent(type, {
         actor: this,
-        entry
+        entry,
       })
     );
   }
@@ -63,7 +63,7 @@ export class BaseActor implements IActor {
    * @param [entry] 스테이지 진입시 관찰 상태
    */
   appear(entry?: IntersectionObserverEntry): void {
-    if (this.isAppear) return;
+    if (this.isAppear === true) return;
     this.isAppear = true;
     this.dispatch(AppearEvent.APPEAR, entry);
   }
@@ -73,7 +73,7 @@ export class BaseActor implements IActor {
    * @param [entry] 스테이지 이탈시 관찰 상태
    */
   disappear(entry?: IntersectionObserverEntry): void {
-    if (!this.isAppear) return;
+    if (this.isAppear === false) return;
     this.isAppear = false;
     this.dispatch(AppearEvent.DISAPPEAR, entry);
   }

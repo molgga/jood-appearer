@@ -1,5 +1,5 @@
-import { BaseActor } from "./base-actor";
-import { AppearEvent, IOnceActor } from "../common/types";
+import { BaseActor } from './base-actor';
+import { AppearEvent, IOnceActor } from '../common/types';
 
 /**
  * Stage 에 등록될 Actor.
@@ -15,7 +15,7 @@ export class OnceActor extends BaseActor implements IOnceActor {
    * @param [entry]
    */
   appear(entry?: IntersectionObserverEntry): void {
-    if (this.isAppear) return;
+    if (this.isAppear === true) return;
     this.isAppear = true;
     this.dispatch(AppearEvent.APPEAR, entry);
     if (this.stage) {
