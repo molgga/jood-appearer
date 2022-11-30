@@ -1,86 +1,47 @@
 (function () {
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-  function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+  function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
   function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-  function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
+  function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
   function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-  function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+  function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+  function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return typeof key === "symbol" ? key : String(key); }
+  function _toPrimitive(input, hint) { if (typeof input !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (typeof res !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["dev-app-pages-demo-demo-module"], {
-    /***/
-    "/lh0":
+    /***/"/lh0":
     /*!****************************************************************************!*\
       !*** ./projects/dev/src/app/pages/demo/lazy-actor/lazy-actor.component.ts ***!
       \****************************************************************************/
-
     /*! exports provided: LazyActorComponent */
-
     /***/
     function lh0(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
-
-
       __webpack_require__.d(__webpack_exports__, "LazyActorComponent", function () {
         return LazyActorComponent;
       });
       /* harmony import */
-
-
-      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! tslib */
-      "mrSG");
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! tslib */"mrSG");
       /* harmony import */
-
-
-      var _raw_loader_lazy_actor_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! raw-loader!./lazy-actor.component.html */
-      "ZdiY");
+      var _raw_loader_lazy_actor_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__( /*! raw-loader!./lazy-actor.component.html */"ZdiY");
       /* harmony import */
-
-
-      var _lazy_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ./lazy-actor.component.scss */
-      "I7Ms");
+      var _lazy_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__( /*! ./lazy-actor.component.scss */"I7Ms");
       /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! @angular/core */
-      "fXoL");
+      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__( /*! @angular/core */"fXoL");
       /* harmony import */
-
-
-      var projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! projects/packages/src/public-api */
-      "otmC");
+      var projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__( /*! projects/packages/src/public-api */"otmC");
       /* harmony import */
-
-
-      var _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! ~/dev/app/modules/example/common/sample-actor/types */
-      "dN8t");
-
+      var _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__( /*! ~/dev/app/modules/example/common/sample-actor/types */"dN8t");
       var LazyActorComponent = /*#__PURE__*/function () {
         function LazyActorComponent() {
           _classCallCheck(this, LazyActorComponent);
         }
-
         _createClass(LazyActorComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
@@ -96,13 +57,11 @@
           key: "onSampleAppearEvent",
           value: function onSampleAppearEvent(evt) {
             var type = evt.type,
-                actor = evt.actor;
-
+              actor = evt.actor;
             switch (type) {
               case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__["SampleActorEventType"].ATTACH:
                 this.appearStage.observe(actor);
                 break;
-
               case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__["SampleActorEventType"].DETACH:
                 this.appearStage.unobserve(actor);
                 break;
@@ -121,183 +80,105 @@
             }
           }
         }]);
-
         return LazyActorComponent;
       }();
-
       LazyActorComponent.ctorParameters = function () {
         return [];
       };
-
       LazyActorComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
         selector: "example-lazy-actor",
         template: _raw_loader_lazy_actor_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_lazy_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
       })], LazyActorComponent);
+
       /***/
     },
 
-    /***/
-    "5xd1":
+    /***/"5xd1":
     /*!********************************************************!*\
       !*** ./projects/dev/src/app/pages/demo/demo.module.ts ***!
       \********************************************************/
-
     /*! exports provided: PageModule */
-
     /***/
     function xd1(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
-
-
       __webpack_require__.d(__webpack_exports__, "PageModule", function () {
         return PageModule;
       });
       /* harmony import */
-
-
-      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! tslib */
-      "mrSG");
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! tslib */"mrSG");
       /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! @angular/core */
-      "fXoL");
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__( /*! @angular/core */"fXoL");
       /* harmony import */
-
-
-      var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! @angular/common */
-      "ofXK");
+      var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__( /*! @angular/common */"ofXK");
       /* harmony import */
-
-
-      var _dev_app_pages_demo_demo_routing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! ~/dev/app/pages/demo/demo.routing */
-      "8XIj");
+      var _dev_app_pages_demo_demo_routing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__( /*! ~/dev/app/pages/demo/demo.routing */"8XIj");
       /* harmony import */
-
-
-      var _dev_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ~/dev/app/shared/shared.module */
-      "a6a7");
+      var _dev_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__( /*! ~/dev/app/shared/shared.module */"a6a7");
       /* harmony import */
-
-
-      var _dev_app_modules_example_common_common_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! ~/dev/app/modules/example/common/common.module */
-      "qNk/");
+      var _dev_app_modules_example_common_common_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__( /*! ~/dev/app/modules/example/common/common.module */"qNk/");
       /* harmony import */
-
-
-      var _base_actor_base_actor_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-      /*! ./base-actor/base-actor.component */
-      "THYa");
+      var _base_actor_base_actor_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__( /*! ./base-actor/base-actor.component */"THYa");
       /* harmony import */
-
-
-      var _once_actor_once_actor_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-      /*! ./once-actor/once-actor.component */
-      "KR75");
+      var _once_actor_once_actor_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__( /*! ./once-actor/once-actor.component */"KR75");
       /* harmony import */
-
-
-      var _lazy_actor_lazy_actor_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
-      /*! ./lazy-actor/lazy-actor.component */
-      "/lh0");
-
-      var PageModule = function PageModule() {
+      var _lazy_actor_lazy_actor_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__( /*! ./lazy-actor/lazy-actor.component */"/lh0");
+      var PageModule = /*#__PURE__*/_createClass(function PageModule() {
         _classCallCheck(this, PageModule);
-      };
-
+      });
       PageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _dev_app_pages_demo_demo_routing__WEBPACK_IMPORTED_MODULE_3__["RoutingModule"], _dev_app_shared_shared_module__WEBPACK_IMPORTED_MODULE_4__["SharedModule"], _dev_app_modules_example_common_common_module__WEBPACK_IMPORTED_MODULE_5__["ExampleCommonModule"]],
         declarations: [_base_actor_base_actor_component__WEBPACK_IMPORTED_MODULE_6__["BaseActorComponent"], _once_actor_once_actor_component__WEBPACK_IMPORTED_MODULE_7__["OnceActorComponent"], _lazy_actor_lazy_actor_component__WEBPACK_IMPORTED_MODULE_8__["LazyActorComponent"]]
       })], PageModule);
+
       /***/
     },
 
-    /***/
-    "7kPS":
+    /***/"7kPS":
     /*!********************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./projects/dev/src/app/pages/demo/base-actor/base-actor.component.html ***!
       \********************************************************************************************************************/
-
     /*! exports provided: default */
-
     /***/
     function kPS(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
-
-
       __webpack_exports__["default"] = "<div class=\"horizontal-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    [item]=\"item\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n\n<div class=\"vertical-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    [item]=\"item\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n";
+
       /***/
     },
 
-    /***/
-    "8XIj":
+    /***/"8XIj":
     /*!*********************************************************!*\
       !*** ./projects/dev/src/app/pages/demo/demo.routing.ts ***!
       \*********************************************************/
-
     /*! exports provided: RoutingModule */
-
     /***/
     function XIj(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
-
-
       __webpack_require__.d(__webpack_exports__, "RoutingModule", function () {
         return RoutingModule;
       });
       /* harmony import */
-
-
-      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! tslib */
-      "mrSG");
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! tslib */"mrSG");
       /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! @angular/core */
-      "fXoL");
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__( /*! @angular/core */"fXoL");
       /* harmony import */
-
-
-      var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! @angular/router */
-      "tyNb");
+      var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__( /*! @angular/router */"tyNb");
       /* harmony import */
-
-
-      var _base_actor_base_actor_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! ./base-actor/base-actor.component */
-      "THYa");
+      var _base_actor_base_actor_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__( /*! ./base-actor/base-actor.component */"THYa");
       /* harmony import */
-
-
-      var _once_actor_once_actor_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ./once-actor/once-actor.component */
-      "KR75");
+      var _once_actor_once_actor_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__( /*! ./once-actor/once-actor.component */"KR75");
       /* harmony import */
-
-
-      var _lazy_actor_lazy_actor_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! ./lazy-actor/lazy-actor.component */
-      "/lh0");
-
+      var _lazy_actor_lazy_actor_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__( /*! ./lazy-actor/lazy-actor.component */"/lh0");
       var routes = [{
         path: "",
         children: [{
@@ -314,49 +195,36 @@
           component: _base_actor_base_actor_component__WEBPACK_IMPORTED_MODULE_3__["BaseActorComponent"]
         }]
       }];
-
-      var RoutingModule = function RoutingModule() {
+      var RoutingModule = /*#__PURE__*/_createClass(function RoutingModule() {
         _classCallCheck(this, RoutingModule);
-      };
-
+      });
       RoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
         exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
       })], RoutingModule);
+
       /***/
     },
 
-    /***/
-    "E0sH":
+    /***/"E0sH":
     /*!***************************************************!*\
       !*** ./projects/packages/src/actor/once-actor.ts ***!
       \***************************************************/
-
     /*! exports provided: OnceActor */
-
     /***/
     function E0sH(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
-
-
       __webpack_require__.d(__webpack_exports__, "OnceActor", function () {
         return OnceActor;
       });
       /* harmony import */
-
-
-      var _base_actor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! ./base-actor */
-      "lbm4");
+      var _base_actor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! ./base-actor */"lbm4");
       /* harmony import */
+      var _common_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__( /*! ../common/types */"POQn");
 
-
-      var _common_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! ../common/types */
-      "POQn");
       /**
        * Stage 에 등록될 Actor.
        * 스테이지 진입을 한번만 감지한 후 본인 스스로 관찰 해제하는 감지형.
@@ -364,125 +232,80 @@
        * @class OnceActor
        * @extends {BaseActor}
        */
-
-
       var OnceActor = /*#__PURE__*/function (_base_actor__WEBPACK_) {
         _inherits(OnceActor, _base_actor__WEBPACK_);
-
         var _super = _createSuper(OnceActor);
-
         function OnceActor() {
           _classCallCheck(this, OnceActor);
-
           return _super.apply(this, arguments);
         }
-
         _createClass(OnceActor, [{
           key: "appear",
-
+          value:
           /**
            * 스테이지 진입. 진입시 자동 관찰 해제.
            * @override
            * @param [entry]
            */
-          value: function appear(entry) {
-            if (this.isAppear) return;
+          function appear(entry) {
+            if (this.isAppear === true) return;
             this.isAppear = true;
             this.dispatch(_common_types__WEBPACK_IMPORTED_MODULE_1__["AppearEvent"].APPEAR, entry);
-
             if (this.stage) {
               this.stage.unobserve(this);
             }
           }
         }]);
-
         return OnceActor;
       }(_base_actor__WEBPACK_IMPORTED_MODULE_0__["BaseActor"]);
       /***/
-
     },
-
-    /***/
-    "I7Ms":
+    /***/"I7Ms":
     /*!******************************************************************************!*\
       !*** ./projects/dev/src/app/pages/demo/lazy-actor/lazy-actor.component.scss ***!
       \******************************************************************************/
-
     /*! exports provided: default */
-
     /***/
     function I7Ms(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
-
-
       __webpack_exports__["default"] = ".horizontal-list {\n  display: flex;\n  flex-wrap: nowrap;\n  overflow-x: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uL2xhenktYWN0b3IuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtBQUNGIiwiZmlsZSI6ImxhenktYWN0b3IuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaG9yaXpvbnRhbC1saXN0IHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC13cmFwOiBub3dyYXA7XG4gIG92ZXJmbG93LXg6IGF1dG87XG59XG4iXX0= */";
+
       /***/
     },
 
-    /***/
-    "KR75":
+    /***/"KR75":
     /*!****************************************************************************!*\
       !*** ./projects/dev/src/app/pages/demo/once-actor/once-actor.component.ts ***!
       \****************************************************************************/
-
     /*! exports provided: OnceActorComponent */
-
     /***/
     function KR75(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
-
-
       __webpack_require__.d(__webpack_exports__, "OnceActorComponent", function () {
         return OnceActorComponent;
       });
       /* harmony import */
-
-
-      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! tslib */
-      "mrSG");
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! tslib */"mrSG");
       /* harmony import */
-
-
-      var _raw_loader_once_actor_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! raw-loader!./once-actor.component.html */
-      "loGT");
+      var _raw_loader_once_actor_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__( /*! raw-loader!./once-actor.component.html */"loGT");
       /* harmony import */
-
-
-      var _once_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ./once-actor.component.scss */
-      "aUML");
+      var _once_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__( /*! ./once-actor.component.scss */"aUML");
       /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! @angular/core */
-      "fXoL");
+      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__( /*! @angular/core */"fXoL");
       /* harmony import */
-
-
-      var projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! projects/packages/src/public-api */
-      "otmC");
+      var projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__( /*! projects/packages/src/public-api */"otmC");
       /* harmony import */
-
-
-      var _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! ~/dev/app/modules/example/common/sample-actor/types */
-      "dN8t");
-
+      var _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__( /*! ~/dev/app/modules/example/common/sample-actor/types */"dN8t");
       var OnceActorComponent = /*#__PURE__*/function () {
         function OnceActorComponent() {
           _classCallCheck(this, OnceActorComponent);
         }
-
         _createClass(OnceActorComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
@@ -498,13 +321,11 @@
           key: "onSampleAppearEvent",
           value: function onSampleAppearEvent(evt) {
             var type = evt.type,
-                actor = evt.actor;
-
+              actor = evt.actor;
             switch (type) {
               case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__["SampleActorEventType"].ATTACH:
                 this.appearStage.observe(actor);
                 break;
-
               case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__["SampleActorEventType"].DETACH:
                 this.appearStage.unobserve(actor);
                 break;
@@ -523,44 +344,35 @@
             }
           }
         }]);
-
         return OnceActorComponent;
       }();
-
       OnceActorComponent.ctorParameters = function () {
         return [];
       };
-
       OnceActorComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
         selector: "example-once-actor",
         template: _raw_loader_once_actor_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_once_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
       })], OnceActorComponent);
+
       /***/
     },
 
-    /***/
-    "POQn":
+    /***/"POQn":
     /*!***********************************************!*\
       !*** ./projects/packages/src/common/types.ts ***!
       \***********************************************/
-
     /*! exports provided: AppearType, AppearEvent */
-
     /***/
     function POQn(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
-
-
       __webpack_require__.d(__webpack_exports__, "AppearType", function () {
         return AppearType;
       });
       /* harmony export (binding) */
-
-
       __webpack_require__.d(__webpack_exports__, "AppearEvent", function () {
         return AppearEvent;
       });
@@ -569,10 +381,7 @@
        * @export
        * @enum {number}
        */
-
-
       var AppearType;
-
       (function (AppearType) {
         AppearType["BASE"] = "base";
         AppearType["ONCE"] = "once";
@@ -583,99 +392,62 @@
        * @implements {AppearEventData<T>}
        * @template T
        */
-
-
-      var AppearEvent =
+      var AppearEvent = /*#__PURE__*/_createClass(
       /**
        * @param type 이벤트 타입
        * @param option 이벤트 데이터
        */
       function AppearEvent(type, option) {
         _classCallCheck(this, AppearEvent);
-
         var actor = option.actor,
-            entry = option.entry;
+          entry = option.entry;
         this.type = type;
         this.actor = actor;
         this.entry = entry;
-      };
+      });
       /**
        * 이벤트 타입 - 진입
        */
-
-
       AppearEvent.APPEAR = "APPEAR";
       /**
        * 이벤트 타입 - 이탈
        */
-
       AppearEvent.DISAPPEAR = "DISAPPEAR";
+
       /***/
     },
 
-    /***/
-    "THYa":
+    /***/"THYa":
     /*!****************************************************************************!*\
       !*** ./projects/dev/src/app/pages/demo/base-actor/base-actor.component.ts ***!
       \****************************************************************************/
-
     /*! exports provided: BaseActorComponent */
-
     /***/
     function THYa(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
-
-
       __webpack_require__.d(__webpack_exports__, "BaseActorComponent", function () {
         return BaseActorComponent;
       });
       /* harmony import */
-
-
-      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! tslib */
-      "mrSG");
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! tslib */"mrSG");
       /* harmony import */
-
-
-      var _raw_loader_base_actor_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! raw-loader!./base-actor.component.html */
-      "7kPS");
+      var _raw_loader_base_actor_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__( /*! raw-loader!./base-actor.component.html */"7kPS");
       /* harmony import */
-
-
-      var _base_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ./base-actor.component.scss */
-      "WeDA");
+      var _base_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__( /*! ./base-actor.component.scss */"WeDA");
       /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! @angular/core */
-      "fXoL");
+      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__( /*! @angular/core */"fXoL");
       /* harmony import */
-
-
-      var projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! projects/packages/src/public-api */
-      "otmC");
+      var projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__( /*! projects/packages/src/public-api */"otmC");
       /* harmony import */
-
-
-      var _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! ~/dev/app/modules/example/common/sample-actor/types */
-      "dN8t");
-
+      var _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__( /*! ~/dev/app/modules/example/common/sample-actor/types */"dN8t");
       var BaseActorComponent = /*#__PURE__*/function () {
         function BaseActorComponent() {
           _classCallCheck(this, BaseActorComponent);
-
           this.actorMakeList = [];
         }
-
         _createClass(BaseActorComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
@@ -691,13 +463,11 @@
           key: "onSampleAppearEvent",
           value: function onSampleAppearEvent(evt) {
             var type = evt.type,
-                actor = evt.actor;
-
+              actor = evt.actor;
             switch (type) {
               case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__["SampleActorEventType"].ATTACH:
                 this.appearStage.observe(actor);
                 break;
-
               case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_5__["SampleActorEventType"].DETACH:
                 this.appearStage.unobserve(actor);
                 break;
@@ -716,116 +486,79 @@
             }
           }
         }]);
-
         return BaseActorComponent;
       }();
-
       BaseActorComponent.ctorParameters = function () {
         return [];
       };
-
       BaseActorComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
         selector: "example-base-actor",
         template: _raw_loader_base_actor_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_base_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
       })], BaseActorComponent);
+
       /***/
     },
 
-    /***/
-    "UOhG":
+    /***/"UOhG":
     /*!********************************************************************************************!*\
       !*** ./projects/dev/src/app/modules/example/common/sample-actor/sample-actor.component.ts ***!
       \********************************************************************************************/
-
     /*! exports provided: SampleActorComponent */
-
     /***/
     function UOhG(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
-
-
       __webpack_require__.d(__webpack_exports__, "SampleActorComponent", function () {
         return SampleActorComponent;
       });
       /* harmony import */
-
-
-      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! tslib */
-      "mrSG");
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! tslib */"mrSG");
       /* harmony import */
-
-
-      var _raw_loader_sample_actor_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! raw-loader!./sample-actor.component.html */
-      "zml4");
+      var _raw_loader_sample_actor_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__( /*! raw-loader!./sample-actor.component.html */"zml4");
       /* harmony import */
-
-
-      var _sample_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ./sample-actor.component.scss */
-      "fSkw");
+      var _sample_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__( /*! ./sample-actor.component.scss */"fSkw");
       /* harmony import */
-
-
-      var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! rxjs */
-      "qCKp");
+      var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__( /*! rxjs */"qCKp");
       /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! @angular/core */
-      "fXoL");
+      var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__( /*! @angular/core */"fXoL");
       /* harmony import */
-
-
-      var projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! projects/packages/src/public-api */
-      "otmC");
+      var projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__( /*! projects/packages/src/public-api */"otmC");
       /* harmony import */
-
-
-      var _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-      /*! ~/dev/app/modules/example/common/sample-actor/types */
-      "dN8t");
-
+      var _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__( /*! ~/dev/app/modules/example/common/sample-actor/types */"dN8t");
       var SampleActorComponent = /*#__PURE__*/function () {
         function SampleActorComponent(elRef) {
           _classCallCheck(this, SampleActorComponent);
-
           this.elRef = elRef;
           this.emitter = new _angular_core__WEBPACK_IMPORTED_MODULE_4__["EventEmitter"]();
           this.appearCount = 0;
           this.disappearCount = 0;
           this.appearerListener = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subscription"]();
         }
-
         _createClass(SampleActorComponent, [{
+          key: "isAppeared",
+          get: function get() {
+            return !!(this.actor && this.actor.isAppear);
+          }
+        }, {
           key: "ngOnInit",
           value: function ngOnInit() {
             var nativeElement = this.elRef.nativeElement;
-
             switch (this.actorType) {
               case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_6__["SampleActorType"].ONCE:
                 this.actor = new projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_5__["OnceActor"](nativeElement);
                 break;
-
               case _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_6__["SampleActorType"].LAZY:
                 this.actor = new projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_5__["LazyActor"](nativeElement);
                 this.actor.setCheckoutDelay(1000);
                 this.actor.setAppearDelay(200);
                 break;
-
               default:
                 this.actor = new projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_5__["BaseActor"](nativeElement);
                 break;
             }
-
             var observeAppearEvent = this.actor.events.subscribe(this.onAppearEvent.bind(this));
             this.appearerListener.add(observeAppearEvent);
             this.emitter.emit({
@@ -840,7 +573,6 @@
               case projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_5__["AppearEvent"].APPEAR:
                 this.appearCount++;
                 break;
-
               case projects_packages_src_public_api__WEBPACK_IMPORTED_MODULE_5__["AppearEvent"].DISAPPEAR:
                 this.disappearCount++;
                 break;
@@ -854,7 +586,6 @@
                 type: _dev_app_modules_example_common_sample_actor_types__WEBPACK_IMPORTED_MODULE_6__["SampleActorEventType"].DETACH,
                 actor: this.actor
               });
-
               if (this.appearerListener) {
                 this.appearerListener.unsubscribe();
               }
@@ -862,22 +593,14 @@
               console.log(err);
             }
           }
-        }, {
-          key: "isAppeared",
-          get: function get() {
-            return !!(this.actor && this.actor.isAppear);
-          }
         }]);
-
         return SampleActorComponent;
       }();
-
       SampleActorComponent.ctorParameters = function () {
         return [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ElementRef"]
         }];
       };
-
       SampleActorComponent.propDecorators = {
         item: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"]
@@ -899,37 +622,31 @@
         template: _raw_loader_sample_actor_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_sample_actor_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
       })], SampleActorComponent);
+
       /***/
     },
 
-    /***/
-    "WeDA":
+    /***/"WeDA":
     /*!******************************************************************************!*\
       !*** ./projects/dev/src/app/pages/demo/base-actor/base-actor.component.scss ***!
       \******************************************************************************/
-
     /*! exports provided: default */
-
     /***/
     function WeDA(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
-
-
       __webpack_exports__["default"] = ".horizontal-list {\n  display: flex;\n  flex-wrap: nowrap;\n  overflow-x: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uL2Jhc2UtYWN0b3IuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtBQUNGIiwiZmlsZSI6ImJhc2UtYWN0b3IuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaG9yaXpvbnRhbC1saXN0IHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC13cmFwOiBub3dyYXA7XG4gIG92ZXJmbG93LXg6IGF1dG87XG59XG4iXX0= */";
+
       /***/
     },
 
-    /***/
-    "Wr5T":
+    /***/"Wr5T":
     /*!*********************************************************************!*\
       !*** ./node_modules/intersection-observer/intersection-observer.js ***!
       \*********************************************************************/
-
     /*! no static exports found */
-
     /***/
     function Wr5T(module, exports) {
       /**
@@ -941,14 +658,15 @@
        *
        */
       (function () {
-        'use strict'; // Exit early if we're not running in a browser.
+        'use strict';
 
+        // Exit early if we're not running in a browser.
         if (typeof window !== 'object') {
           return;
-        } // Exit early if all IntersectionObserver and IntersectionObserverEntry
+        }
+
+        // Exit early if all IntersectionObserver and IntersectionObserverEntry
         // features are natively supported.
-
-
         if ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
           // Minimal polyfill for Edge 15's lack of `isIntersecting`
           // See: https://github.com/w3c/IntersectionObserver/issues/211
@@ -959,16 +677,14 @@
               }
             });
           }
-
           return;
         }
+
         /**
          * Returns the embedding frame element, if any.
          * @param {!Document} doc
          * @return {!Element}
          */
-
-
         function getFrameElement(doc) {
           try {
             return doc.defaultView && doc.defaultView.frameElement || null;
@@ -977,64 +693,62 @@
             return null;
           }
         }
+
         /**
          * A local reference to the root document.
          */
-
-
         var document = function (startDoc) {
           var doc = startDoc;
           var frame = getFrameElement(doc);
-
           while (frame) {
             doc = frame.ownerDocument;
             frame = getFrameElement(doc);
           }
-
           return doc;
         }(window.document);
+
         /**
          * An IntersectionObserver registry. This registry exists to hold a strong
          * reference to IntersectionObserver instances currently observing a target
          * element. Without this registry, instances without another reference may be
          * garbage collected.
          */
-
-
         var registry = [];
+
         /**
          * The signal updater for cross-origin intersection. When not null, it means
          * that the polyfill is configured to work in a cross-origin mode.
          * @type {function(DOMRect|ClientRect, DOMRect|ClientRect)}
          */
-
         var crossOriginUpdater = null;
+
         /**
          * The current cross-origin intersection. Only used in the cross-origin mode.
          * @type {DOMRect|ClientRect}
          */
-
         var crossOriginRect = null;
+
         /**
          * Creates the global IntersectionObserverEntry constructor.
          * https://w3c.github.io/IntersectionObserver/#intersection-observer-entry
          * @param {Object} entry A dictionary of instance properties.
          * @constructor
          */
-
         function IntersectionObserverEntry(entry) {
           this.time = entry.time;
           this.target = entry.target;
           this.rootBounds = ensureDOMRect(entry.rootBounds);
           this.boundingClientRect = ensureDOMRect(entry.boundingClientRect);
           this.intersectionRect = ensureDOMRect(entry.intersectionRect || getEmptyRect());
-          this.isIntersecting = !!entry.intersectionRect; // Calculates the intersection ratio.
+          this.isIntersecting = !!entry.intersectionRect;
 
+          // Calculates the intersection ratio.
           var targetRect = this.boundingClientRect;
           var targetArea = targetRect.width * targetRect.height;
           var intersectionRect = this.intersectionRect;
-          var intersectionArea = intersectionRect.width * intersectionRect.height; // Sets intersection ratio.
+          var intersectionArea = intersectionRect.width * intersectionRect.height;
 
+          // Sets intersection ratio.
           if (targetArea) {
             // Round the intersection ratio to avoid floating point math issues:
             // https://github.com/w3c/IntersectionObserver/issues/324
@@ -1044,6 +758,7 @@
             this.intersectionRatio = this.isIntersecting ? 1 : 0;
           }
         }
+
         /**
          * Creates the global IntersectionObserver constructor.
          * https://w3c.github.io/IntersectionObserver/#intersection-observer-interface
@@ -1053,59 +768,56 @@
          * @param {Object=} opt_options Optional configuration options.
          * @constructor
          */
-
-
         function IntersectionObserver(callback, opt_options) {
           var options = opt_options || {};
-
           if (typeof callback != 'function') {
             throw new Error('callback must be a function');
           }
-
           if (options.root && options.root.nodeType != 1) {
             throw new Error('root must be an Element');
-          } // Binds and throttles `this._checkForIntersections`.
+          }
 
+          // Binds and throttles `this._checkForIntersections`.
+          this._checkForIntersections = throttle(this._checkForIntersections.bind(this), this.THROTTLE_TIMEOUT);
 
-          this._checkForIntersections = throttle(this._checkForIntersections.bind(this), this.THROTTLE_TIMEOUT); // Private properties.
-
+          // Private properties.
           this._callback = callback;
           this._observationTargets = [];
           this._queuedEntries = [];
-          this._rootMarginValues = this._parseRootMargin(options.rootMargin); // Public properties.
+          this._rootMarginValues = this._parseRootMargin(options.rootMargin);
 
+          // Public properties.
           this.thresholds = this._initThresholds(options.threshold);
           this.root = options.root || null;
           this.rootMargin = this._rootMarginValues.map(function (margin) {
             return margin.value + margin.unit;
           }).join(' ');
-          /** @private @const {!Array<!Document>} */
 
+          /** @private @const {!Array<!Document>} */
           this._monitoringDocuments = [];
           /** @private @const {!Array<function()>} */
-
           this._monitoringUnsubscribes = [];
         }
+
         /**
          * The minimum interval within which the document will be checked for
          * intersection changes.
          */
-
-
         IntersectionObserver.prototype.THROTTLE_TIMEOUT = 100;
+
         /**
          * The frequency in which the polyfill polls for intersection changes.
          * this can be updated on a per instance basis and must be set prior to
          * calling `observe` on the first target.
          */
-
         IntersectionObserver.prototype.POLL_INTERVAL = null;
+
         /**
          * Use a mutation observer on the root element
          * to detect intersection changes.
          */
-
         IntersectionObserver.prototype.USE_MUTATION_OBSERVER = true;
+
         /**
          * Sets up the polyfill in the cross-origin mode. The result is the
          * updater function that accepts two arguments: `boundingClientRect` and
@@ -1115,7 +827,6 @@
          * window, e.g. via messaging.
          * @return {function(DOMRect|ClientRect, DOMRect|ClientRect)}
          */
-
         IntersectionObserver._setupCrossOriginUpdater = function () {
           if (!crossOriginUpdater) {
             /**
@@ -1128,98 +839,81 @@
               } else {
                 crossOriginRect = convertFromParentRect(boundingClientRect, intersectionRect);
               }
-
               registry.forEach(function (observer) {
                 observer._checkForIntersections();
               });
             };
           }
-
           return crossOriginUpdater;
         };
+
         /**
          * Resets the cross-origin mode.
          */
-
-
         IntersectionObserver._resetCrossOriginUpdater = function () {
           crossOriginUpdater = null;
           crossOriginRect = null;
         };
+
         /**
          * Starts observing a target element for intersection changes based on
          * the thresholds values.
          * @param {Element} target The DOM element to observe.
          */
-
-
         IntersectionObserver.prototype.observe = function (target) {
           var isTargetAlreadyObserved = this._observationTargets.some(function (item) {
             return item.element == target;
           });
-
           if (isTargetAlreadyObserved) {
             return;
           }
-
           if (!(target && target.nodeType == 1)) {
             throw new Error('target must be an Element');
           }
-
           this._registerInstance();
-
           this._observationTargets.push({
             element: target,
             entry: null
           });
-
           this._monitorIntersections(target.ownerDocument);
-
           this._checkForIntersections();
         };
+
         /**
          * Stops observing a target element for intersection changes.
          * @param {Element} target The DOM element to observe.
          */
-
-
         IntersectionObserver.prototype.unobserve = function (target) {
           this._observationTargets = this._observationTargets.filter(function (item) {
             return item.element != target;
           });
-
           this._unmonitorIntersections(target.ownerDocument);
-
           if (this._observationTargets.length == 0) {
             this._unregisterInstance();
           }
         };
+
         /**
          * Stops observing all target elements for intersection changes.
          */
-
-
         IntersectionObserver.prototype.disconnect = function () {
           this._observationTargets = [];
-
           this._unmonitorAllIntersections();
-
           this._unregisterInstance();
         };
+
         /**
          * Returns any queue entries that have not yet been reported to the
          * callback and clears the queue. This can be used in conjunction with the
          * callback to obtain the absolute most up-to-date intersection information.
          * @return {Array} The currently queued entries.
          */
-
-
         IntersectionObserver.prototype.takeRecords = function () {
           var records = this._queuedEntries.slice();
-
           this._queuedEntries = [];
           return records;
         };
+
         /**
          * Accepts the threshold value from the user configuration object and
          * returns a sorted array of unique threshold values. If a value is not
@@ -1229,8 +923,6 @@
          *     a list of threshold values, defaulting to [0].
          * @return {Array} A sorted list of unique and valid threshold values.
          */
-
-
         IntersectionObserver.prototype._initThresholds = function (opt_threshold) {
           var threshold = opt_threshold || [0];
           if (!Array.isArray(threshold)) threshold = [threshold];
@@ -1238,10 +930,10 @@
             if (typeof t != 'number' || isNaN(t) || t < 0 || t > 1) {
               throw new Error('threshold must be a number between 0 and 1 inclusively');
             }
-
             return t !== a[i - 1];
           });
         };
+
         /**
          * Accepts the rootMargin value from the user configuration object
          * and returns an array of the four margin values as an object containing
@@ -1253,61 +945,55 @@
          * @return {Array<Object>} An array of margin objects with the keys
          *     value and unit.
          */
-
-
         IntersectionObserver.prototype._parseRootMargin = function (opt_rootMargin) {
           var marginString = opt_rootMargin || '0px';
           var margins = marginString.split(/\s+/).map(function (margin) {
             var parts = /^(-?\d*\.?\d+)(px|%)$/.exec(margin);
-
             if (!parts) {
               throw new Error('rootMargin must be specified in pixels or percent');
             }
-
             return {
               value: parseFloat(parts[1]),
               unit: parts[2]
             };
-          }); // Handles shorthand.
+          });
 
+          // Handles shorthand.
           margins[1] = margins[1] || margins[0];
           margins[2] = margins[2] || margins[0];
           margins[3] = margins[3] || margins[1];
           return margins;
         };
+
         /**
          * Starts polling for intersection changes if the polling is not already
          * happening, and if the page's visibility state is visible.
          * @param {!Document} doc
          * @private
          */
-
-
         IntersectionObserver.prototype._monitorIntersections = function (doc) {
           var win = doc.defaultView;
-
           if (!win) {
             // Already destroyed.
             return;
           }
-
           if (this._monitoringDocuments.indexOf(doc) != -1) {
             // Already monitoring.
             return;
-          } // Private state for monitoring.
+          }
 
-
+          // Private state for monitoring.
           var callback = this._checkForIntersections;
           var monitoringInterval = null;
-          var domObserver = null; // If a poll interval is set, use polling instead of listening to
-          // resize and scroll events or DOM mutations.
+          var domObserver = null;
 
+          // If a poll interval is set, use polling instead of listening to
+          // resize and scroll events or DOM mutations.
           if (this.POLL_INTERVAL) {
             monitoringInterval = win.setInterval(callback, this.POLL_INTERVAL);
           } else {
             addEvent(win, 'resize', callback, true);
             addEvent(doc, 'scroll', callback, true);
-
             if (this.USE_MUTATION_OBSERVER && 'MutationObserver' in win) {
               domObserver = new win.MutationObserver(callback);
               domObserver.observe(doc, {
@@ -1318,140 +1004,113 @@
               });
             }
           }
-
           this._monitoringDocuments.push(doc);
-
           this._monitoringUnsubscribes.push(function () {
             // Get the window object again. When a friendly iframe is destroyed, it
             // will be null.
             var win = doc.defaultView;
-
             if (win) {
               if (monitoringInterval) {
                 win.clearInterval(monitoringInterval);
               }
-
               removeEvent(win, 'resize', callback, true);
             }
-
             removeEvent(doc, 'scroll', callback, true);
-
             if (domObserver) {
               domObserver.disconnect();
             }
-          }); // Also monitor the parent.
+          });
 
-
+          // Also monitor the parent.
           if (doc != (this.root && this.root.ownerDocument || document)) {
             var frame = getFrameElement(doc);
-
             if (frame) {
               this._monitorIntersections(frame.ownerDocument);
             }
           }
         };
+
         /**
          * Stops polling for intersection changes.
          * @param {!Document} doc
          * @private
          */
-
-
         IntersectionObserver.prototype._unmonitorIntersections = function (doc) {
           var index = this._monitoringDocuments.indexOf(doc);
-
           if (index == -1) {
             return;
           }
+          var rootDoc = this.root && this.root.ownerDocument || document;
 
-          var rootDoc = this.root && this.root.ownerDocument || document; // Check if any dependent targets are still remaining.
-
+          // Check if any dependent targets are still remaining.
           var hasDependentTargets = this._observationTargets.some(function (item) {
-            var itemDoc = item.element.ownerDocument; // Target is in this context.
-
+            var itemDoc = item.element.ownerDocument;
+            // Target is in this context.
             if (itemDoc == doc) {
               return true;
-            } // Target is nested in this context.
-
-
+            }
+            // Target is nested in this context.
             while (itemDoc && itemDoc != rootDoc) {
               var frame = getFrameElement(itemDoc);
               itemDoc = frame && frame.ownerDocument;
-
               if (itemDoc == doc) {
                 return true;
               }
             }
-
             return false;
           });
-
           if (hasDependentTargets) {
             return;
-          } // Unsubscribe.
+          }
 
-
+          // Unsubscribe.
           var unsubscribe = this._monitoringUnsubscribes[index];
-
           this._monitoringDocuments.splice(index, 1);
-
           this._monitoringUnsubscribes.splice(index, 1);
+          unsubscribe();
 
-          unsubscribe(); // Also unmonitor the parent.
-
+          // Also unmonitor the parent.
           if (doc != rootDoc) {
             var frame = getFrameElement(doc);
-
             if (frame) {
               this._unmonitorIntersections(frame.ownerDocument);
             }
           }
         };
+
         /**
          * Stops polling for intersection changes.
          * @param {!Document} doc
          * @private
          */
-
-
         IntersectionObserver.prototype._unmonitorAllIntersections = function () {
           var unsubscribes = this._monitoringUnsubscribes.slice(0);
-
           this._monitoringDocuments.length = 0;
           this._monitoringUnsubscribes.length = 0;
-
           for (var i = 0; i < unsubscribes.length; i++) {
             unsubscribes[i]();
           }
         };
+
         /**
          * Scans each observation target for intersection changes and adds them
          * to the internal entries queue. If new entries are found, it
          * schedules the callback to be invoked.
          * @private
          */
-
-
         IntersectionObserver.prototype._checkForIntersections = function () {
           if (!this.root && crossOriginUpdater && !crossOriginRect) {
             // Cross origin monitoring, but no initial data available yet.
             return;
           }
-
           var rootIsInDom = this._rootIsInDom();
-
           var rootRect = rootIsInDom ? this._getRootRect() : getEmptyRect();
-
           this._observationTargets.forEach(function (item) {
             var target = item.element;
             var targetRect = getBoundingClientRect(target);
-
             var rootContainsTarget = this._rootContainsTarget(target);
-
             var oldEntry = item.entry;
-
             var intersectionRect = rootIsInDom && rootContainsTarget && this._computeTargetAndRootIntersection(target, targetRect, rootRect);
-
             var newEntry = item.entry = new IntersectionObserverEntry({
               time: now(),
               target: target,
@@ -1459,7 +1118,6 @@
               rootBounds: crossOriginUpdater && !this.root ? null : rootRect,
               intersectionRect: intersectionRect
             });
-
             if (!oldEntry) {
               this._queuedEntries.push(newEntry);
             } else if (rootIsInDom && rootContainsTarget) {
@@ -1477,11 +1135,11 @@
               }
             }
           }, this);
-
           if (this._queuedEntries.length) {
             this._callback(this.takeRecords(), this);
           }
         };
+
         /**
          * Accepts a target and root rect computes the intersection between then
          * following the algorithm in the spec.
@@ -1495,26 +1153,20 @@
          *     intersection is found.
          * @private
          */
-
-
         IntersectionObserver.prototype._computeTargetAndRootIntersection = function (target, targetRect, rootRect) {
           // If the element isn't displayed, an intersection can't happen.
           if (window.getComputedStyle(target).display == 'none') return;
           var intersectionRect = targetRect;
           var parent = getParentNode(target);
           var atRoot = false;
-
           while (!atRoot && parent) {
             var parentRect = null;
-            var parentComputedStyle = parent.nodeType == 1 ? window.getComputedStyle(parent) : {}; // If the parent isn't displayed, an intersection can't happen.
+            var parentComputedStyle = parent.nodeType == 1 ? window.getComputedStyle(parent) : {};
 
+            // If the parent isn't displayed, an intersection can't happen.
             if (parentComputedStyle.display == 'none') return null;
-
-            if (parent == this.root || parent.nodeType ==
-            /* DOCUMENT */
-            9) {
+            if (parent == this.root || parent.nodeType == /* DOCUMENT */9) {
               atRoot = true;
-
               if (parent == this.root || parent == document) {
                 if (crossOriginUpdater && !this.root) {
                   if (!crossOriginRect || crossOriginRect.width == 0 && crossOriginRect.height == 0) {
@@ -1532,9 +1184,7 @@
                 // Check if there's a frame that can be navigated to.
                 var frame = getParentNode(parent);
                 var frameRect = frame && getBoundingClientRect(frame);
-
                 var frameIntersect = frame && this._computeTargetAndRootIntersection(frame, frameRect, rootRect);
-
                 if (frameRect && frameIntersect) {
                   parent = frame;
                   parentRect = convertFromParentRect(frameRect, frameIntersect);
@@ -1549,34 +1199,29 @@
               // Note: <body> and <html> cannot be clipped to a rect that's not also
               // the document rect, so no need to compute a new intersection.
               var doc = parent.ownerDocument;
-
               if (parent != doc.body && parent != doc.documentElement && parentComputedStyle.overflow != 'visible') {
                 parentRect = getBoundingClientRect(parent);
               }
-            } // If either of the above conditionals set a new parentRect,
+            }
+
+            // If either of the above conditionals set a new parentRect,
             // calculate new intersection data.
-
-
             if (parentRect) {
               intersectionRect = computeRectIntersection(parentRect, intersectionRect);
             }
-
             if (!intersectionRect) break;
             parent = parent && getParentNode(parent);
           }
-
           return intersectionRect;
         };
+
         /**
          * Returns the root rect after being expanded by the rootMargin value.
          * @return {ClientRect} The expanded root rect.
          * @private
          */
-
-
         IntersectionObserver.prototype._getRootRect = function () {
           var rootRect;
-
           if (this.root) {
             rootRect = getBoundingClientRect(this.root);
           } else {
@@ -1592,22 +1237,19 @@
               height: html.clientHeight || body.clientHeight
             };
           }
-
           return this._expandRectByRootMargin(rootRect);
         };
+
         /**
          * Accepts a rect and expands it by the rootMargin value.
          * @param {DOMRect|ClientRect} rect The rect object to expand.
          * @return {ClientRect} The expanded rect.
          * @private
          */
-
-
         IntersectionObserver.prototype._expandRectByRootMargin = function (rect) {
           var margins = this._rootMarginValues.map(function (margin, i) {
             return margin.unit == 'px' ? margin.value : margin.value * (i % 2 ? rect.width : rect.height) / 100;
           });
-
           var newRect = {
             top: rect.top - margins[0],
             right: rect.right + margins[1],
@@ -1618,6 +1260,7 @@
           newRect.height = newRect.bottom - newRect.top;
           return newRect;
         };
+
         /**
          * Accepts an old and new entry and returns true if at least one of the
          * threshold values has been crossed.
@@ -1628,78 +1271,73 @@
          * @return {boolean} Returns true if a any threshold has been crossed.
          * @private
          */
-
-
         IntersectionObserver.prototype._hasCrossedThreshold = function (oldEntry, newEntry) {
           // To make comparing easier, an entry that has a ratio of 0
           // but does not actually intersect is given a value of -1
           var oldRatio = oldEntry && oldEntry.isIntersecting ? oldEntry.intersectionRatio || 0 : -1;
-          var newRatio = newEntry.isIntersecting ? newEntry.intersectionRatio || 0 : -1; // Ignore unchanged ratios
+          var newRatio = newEntry.isIntersecting ? newEntry.intersectionRatio || 0 : -1;
 
+          // Ignore unchanged ratios
           if (oldRatio === newRatio) return;
-
           for (var i = 0; i < this.thresholds.length; i++) {
-            var threshold = this.thresholds[i]; // Return true if an entry matches a threshold or if the new ratio
-            // and the old ratio are on the opposite sides of a threshold.
+            var threshold = this.thresholds[i];
 
+            // Return true if an entry matches a threshold or if the new ratio
+            // and the old ratio are on the opposite sides of a threshold.
             if (threshold == oldRatio || threshold == newRatio || threshold < oldRatio !== threshold < newRatio) {
               return true;
             }
           }
         };
+
         /**
          * Returns whether or not the root element is an element and is in the DOM.
          * @return {boolean} True if the root element is an element and is in the DOM.
          * @private
          */
-
-
         IntersectionObserver.prototype._rootIsInDom = function () {
           return !this.root || containsDeep(document, this.root);
         };
+
         /**
          * Returns whether or not the target element is a child of root.
          * @param {Element} target The target element to check.
          * @return {boolean} True if the target element is a child of root.
          * @private
          */
-
-
         IntersectionObserver.prototype._rootContainsTarget = function (target) {
           return containsDeep(this.root || document, target) && (!this.root || this.root.ownerDocument == target.ownerDocument);
         };
+
         /**
          * Adds the instance to the global IntersectionObserver registry if it isn't
          * already present.
          * @private
          */
-
-
         IntersectionObserver.prototype._registerInstance = function () {
           if (registry.indexOf(this) < 0) {
             registry.push(this);
           }
         };
+
         /**
          * Removes the instance from the global IntersectionObserver registry.
          * @private
          */
-
-
         IntersectionObserver.prototype._unregisterInstance = function () {
           var index = registry.indexOf(this);
           if (index != -1) registry.splice(index, 1);
         };
+
         /**
          * Returns the result of the performance.now() method or null in browsers
          * that don't support the API.
          * @return {number} The elapsed time since the page was requested.
          */
-
-
         function now() {
           return window.performance && performance.now && performance.now();
         }
+
         /**
          * Throttles a function and delays its execution, so it's only called at most
          * once within a given time period.
@@ -1708,8 +1346,6 @@
          *     function can be called again.
          * @return {Function} The throttled function.
          */
-
-
         function throttle(fn, timeout) {
           var timer = null;
           return function () {
@@ -1721,6 +1357,7 @@
             }
           };
         }
+
         /**
          * Adds an event handler to a DOM node ensuring cross-browser compatibility.
          * @param {Node} node The DOM node to add the event handler to.
@@ -1729,8 +1366,6 @@
          * @param {boolean} opt_useCapture Optionally adds the even to the capture
          *     phase. Note: this only works in modern browsers.
          */
-
-
         function addEvent(node, event, fn, opt_useCapture) {
           if (typeof node.addEventListener == 'function') {
             node.addEventListener(event, fn, opt_useCapture || false);
@@ -1738,6 +1373,7 @@
             node.attachEvent('on' + event, fn);
           }
         }
+
         /**
          * Removes a previously added event handler from a DOM node.
          * @param {Node} node The DOM node to remove the event handler from.
@@ -1746,8 +1382,6 @@
          * @param {boolean} opt_useCapture If the event handler was added with this
          *     flag set to true, it should be set to true here in order to remove it.
          */
-
-
         function removeEvent(node, event, fn, opt_useCapture) {
           if (typeof node.removeEventListener == 'function') {
             node.removeEventListener(event, fn, opt_useCapture || false);
@@ -1755,6 +1389,7 @@
             node.detatchEvent('on' + event, fn);
           }
         }
+
         /**
          * Returns the intersection between two rect objects.
          * @param {Object} rect1 The first rect.
@@ -1762,8 +1397,6 @@
          * @return {?Object|?ClientRect} The intersection rect or undefined if no
          *     intersection is found.
          */
-
-
         function computeRectIntersection(rect1, rect2) {
           var top = Math.max(rect1.top, rect2.top);
           var bottom = Math.min(rect1.bottom, rect2.bottom);
@@ -1780,24 +1413,23 @@
             height: height
           } || null;
         }
+
         /**
          * Shims the native getBoundingClientRect for compatibility with older IE.
          * @param {Element} el The element whose bounding rect to get.
          * @return {DOMRect|ClientRect} The (possibly shimmed) rect of the element.
          */
-
-
         function getBoundingClientRect(el) {
           var rect;
-
           try {
             rect = el.getBoundingClientRect();
-          } catch (err) {// Ignore Windows 7 IE11 "Unspecified error"
+          } catch (err) {
+            // Ignore Windows 7 IE11 "Unspecified error"
             // https://github.com/w3c/IntersectionObserver/pull/205
           }
+          if (!rect) return getEmptyRect();
 
-          if (!rect) return getEmptyRect(); // Older IE
-
+          // Older IE
           if (!(rect.width && rect.height)) {
             rect = {
               top: rect.top,
@@ -1808,16 +1440,14 @@
               height: rect.bottom - rect.top
             };
           }
-
           return rect;
         }
+
         /**
          * Returns an empty rect object. An empty rect is returned when an element
          * is not in the DOM.
          * @return {ClientRect} The empty rect.
          */
-
-
         function getEmptyRect() {
           return {
             top: 0,
@@ -1828,6 +1458,7 @@
             height: 0
           };
         }
+
         /**
          * Ensure that the result has all of the necessary fields of the DOMRect.
          * Specifically this ensures that `x` and `y` fields are set.
@@ -1835,18 +1466,15 @@
          * @param {?DOMRect|?ClientRect} rect
          * @return {?DOMRect}
          */
-
-
         function ensureDOMRect(rect) {
           // A `DOMRect` object has `x` and `y` fields.
           if (!rect || 'x' in rect) {
             return rect;
-          } // A IE's `ClientRect` type does not have `x` and `y`. The same is the case
+          }
+          // A IE's `ClientRect` type does not have `x` and `y`. The same is the case
           // for internally calculated Rect objects. For the purposes of
           // `IntersectionObserver`, it's sufficient to simply mirror `left` and `top`
           // for these fields.
-
-
           return {
             top: rect.top,
             y: rect.top,
@@ -1858,6 +1486,7 @@
             height: rect.height
           };
         }
+
         /**
          * Inverts the intersection and bounding rect from the parent (frame) BCR to
          * the local BCR space.
@@ -1865,8 +1494,6 @@
          * @param {DOMRect|ClientRect} parentIntersectionRect The parent's own intersection rect.
          * @return {ClientRect} The local root bounding rect for the parent's children.
          */
-
-
         function convertFromParentRect(parentBoundingRect, parentIntersectionRect) {
           var top = parentIntersectionRect.top - parentBoundingRect.top;
           var left = parentIntersectionRect.left - parentBoundingRect.left;
@@ -1879,6 +1506,7 @@
             right: left + parentIntersectionRect.width
           };
         }
+
         /**
          * Checks to see if a parent element contains a child element (including inside
          * shadow DOM).
@@ -1886,207 +1514,158 @@
          * @param {Node} child The child element.
          * @return {boolean} True if the parent node contains the child node.
          */
-
-
         function containsDeep(parent, child) {
           var node = child;
-
           while (node) {
             if (node == parent) return true;
             node = getParentNode(node);
           }
-
           return false;
         }
+
         /**
          * Gets the parent node of an element or its host element if the parent node
          * is a shadow root.
          * @param {Node} node The node whose parent to get.
          * @return {Node|null} The parent node or null if no parent exists.
          */
-
-
         function getParentNode(node) {
           var parent = node.parentNode;
-
-          if (node.nodeType ==
-          /* DOCUMENT */
-          9 && node != document) {
+          if (node.nodeType == /* DOCUMENT */9 && node != document) {
             // If this node is a document node, look for the embedding frame.
             return getFrameElement(node);
           }
-
           if (parent && parent.nodeType == 11 && parent.host) {
             // If the parent is a shadow root, return the host element.
             return parent.host;
           }
-
           if (parent && parent.assignedSlot) {
             // If the parent is distributed in a <slot>, return the parent of a slot.
             return parent.assignedSlot.parentNode;
           }
-
           return parent;
-        } // Exposes the constructors globally.
+        }
 
-
+        // Exposes the constructors globally.
         window.IntersectionObserver = IntersectionObserver;
         window.IntersectionObserverEntry = IntersectionObserverEntry;
       })();
-      /***/
 
+      /***/
     },
 
-    /***/
-    "ZdiY":
+    /***/"ZdiY":
     /*!********************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./projects/dev/src/app/pages/demo/lazy-actor/lazy-actor.component.html ***!
       \********************************************************************************************************************/
-
     /*! exports provided: default */
-
     /***/
     function ZdiY(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
-
-
       __webpack_exports__["default"] = "<div class=\"horizontal-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    actorType=\"lazy\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n\n<div class=\"vertical-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    actorType=\"lazy\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n";
+
       /***/
     },
 
-    /***/
-    "aUML":
+    /***/"aUML":
     /*!******************************************************************************!*\
       !*** ./projects/dev/src/app/pages/demo/once-actor/once-actor.component.scss ***!
       \******************************************************************************/
-
     /*! exports provided: default */
-
     /***/
     function aUML(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
-
-
       __webpack_exports__["default"] = ".horizontal-list {\n  display: flex;\n  flex-wrap: nowrap;\n  overflow-x: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uL29uY2UtYWN0b3IuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFBO0VBQ0EsaUJBQUE7RUFDQSxnQkFBQTtBQUNGIiwiZmlsZSI6Im9uY2UtYWN0b3IuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaG9yaXpvbnRhbC1saXN0IHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC13cmFwOiBub3dyYXA7XG4gIG92ZXJmbG93LXg6IGF1dG87XG59XG4iXX0= */";
+
       /***/
     },
 
-    /***/
-    "dN8t":
+    /***/"dN8t":
     /*!***************************************************************************!*\
       !*** ./projects/dev/src/app/modules/example/common/sample-actor/types.ts ***!
       \***************************************************************************/
-
     /*! exports provided: SampleActorType, SampleActorEventType */
-
     /***/
     function dN8t(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
-
-
       __webpack_require__.d(__webpack_exports__, "SampleActorType", function () {
         return SampleActorType;
       });
       /* harmony export (binding) */
-
-
       __webpack_require__.d(__webpack_exports__, "SampleActorEventType", function () {
         return SampleActorEventType;
       });
-
       var SampleActorType;
-
       (function (SampleActorType) {
         SampleActorType["BASE"] = "base";
         SampleActorType["ONCE"] = "once";
         SampleActorType["LAZY"] = "lazy";
       })(SampleActorType || (SampleActorType = {}));
-
       var SampleActorEventType;
-
       (function (SampleActorEventType) {
         SampleActorEventType["ATTACH"] = "ATTACH";
         SampleActorEventType["DETACH"] = "DETACH";
       })(SampleActorEventType || (SampleActorEventType = {}));
-      /***/
 
+      /***/
     },
 
-    /***/
-    "fSkw":
+    /***/"fSkw":
     /*!**********************************************************************************************!*\
       !*** ./projects/dev/src/app/modules/example/common/sample-actor/sample-actor.component.scss ***!
       \**********************************************************************************************/
-
     /*! exports provided: default */
-
     /***/
     function fSkw(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
-
-
       __webpack_exports__["default"] = ":host {\n  display: block;\n  margin: 10px;\n  padding: 20px;\n  color: #333333;\n  border-radius: 4px;\n  box-sizing: border-box;\n  background-color: #ffffff;\n  transition: color 300ms, background-color 300ms;\n}\n:host.is-appeared {\n  color: #ffffff;\n  background-color: #333333;\n}\n:host .panel-count {\n  display: flex;\n  text-align: center;\n}\n:host .panel-count .spacer {\n  flex: 1;\n  min-width: 20px;\n}\n:host .panel-count .label {\n  display: block;\n  font-size: 13px;\n}\n:host .panel-count .count {\n  display: block;\n  padding-top: 5px;\n  font-size: 24px;\n  font-weight: bold;\n}\n:host .panel-item {\n  padding-top: 5px;\n  text-align: center;\n  font-size: 13px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL3NhbXBsZS1hY3Rvci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQUE7RUFDQSxZQUFBO0VBQ0EsYUFBQTtFQUNBLGNBQUE7RUFDQSxrQkFBQTtFQUNBLHNCQUFBO0VBQ0EseUJBQUE7RUFDQSwrQ0FBQTtBQUNGO0FBQUU7RUFDRSxjQUFBO0VBQ0EseUJBQUE7QUFFSjtBQUNFO0VBQ0UsYUFBQTtFQUNBLGtCQUFBO0FBQ0o7QUFBSTtFQUNFLE9BQUE7RUFDQSxlQUFBO0FBRU47QUFBSTtFQUNFLGNBQUE7RUFDQSxlQUFBO0FBRU47QUFBSTtFQUNFLGNBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxpQkFBQTtBQUVOO0FBRUU7RUFDRSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtBQUFKIiwiZmlsZSI6InNhbXBsZS1hY3Rvci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG1hcmdpbjogMTBweDtcbiAgcGFkZGluZzogMjBweDtcbiAgY29sb3I6ICMzMzMzMzM7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjtcbiAgdHJhbnNpdGlvbjogY29sb3IgMzAwbXMsIGJhY2tncm91bmQtY29sb3IgMzAwbXM7XG4gICYuaXMtYXBwZWFyZWQge1xuICAgIGNvbG9yOiAjZmZmZmZmO1xuICAgIGJhY2tncm91bmQtY29sb3I6ICMzMzMzMzM7XG4gIH1cblxuICAucGFuZWwtY291bnQge1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIC5zcGFjZXIge1xuICAgICAgZmxleDogMTtcbiAgICAgIG1pbi13aWR0aDogMjBweDtcbiAgICB9XG4gICAgLmxhYmVsIHtcbiAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgZm9udC1zaXplOiAxM3B4O1xuICAgIH1cbiAgICAuY291bnQge1xuICAgICAgZGlzcGxheTogYmxvY2s7XG4gICAgICBwYWRkaW5nLXRvcDogNXB4O1xuICAgICAgZm9udC1zaXplOiAyNHB4O1xuICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgfVxuICB9XG5cbiAgLnBhbmVsLWl0ZW0ge1xuICAgIHBhZGRpbmctdG9wOiA1cHg7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIGZvbnQtc2l6ZTogMTNweDtcbiAgfVxufVxuIl19 */";
+
       /***/
     },
 
-    /***/
-    "lbm4":
+    /***/"lbm4":
     /*!***************************************************!*\
       !*** ./projects/packages/src/actor/base-actor.ts ***!
       \***************************************************/
-
     /*! exports provided: BaseActor */
-
     /***/
     function lbm4(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
-
-
       __webpack_require__.d(__webpack_exports__, "BaseActor", function () {
         return BaseActor;
       });
       /* harmony import */
-
-
-      var _common_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! ../common/types */
-      "POQn");
+      var _common_types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! ../common/types */"POQn");
       /* harmony import */
+      var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__( /*! rxjs */"qCKp");
 
-
-      var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! rxjs */
-      "qCKp");
       /**
        * Stage 에 등록될 Actor.
        * 스테이지에 진입, 이탈 시 계속 알려주는 기본형.
        * @class BaseActor
        * @implements {IActor}
        */
-
-
       var BaseActor = /*#__PURE__*/function () {
         /**
          * @param element 옵저버에 등록되어야 하는 native element
          */
         function BaseActor(element) {
           _classCallCheck(this, BaseActor);
-
           /**
            * 이벤트 Observable
            * @see https://rxjs-dev.firebaseapp.com/guide/subject
@@ -2095,16 +1674,13 @@
           /**
            * 현재 진입 여부 상태
            */
-
-          this.isAppear = false;
+          this.isAppear = null;
           this.element = element;
         }
         /**
          * 해당 인스턴스를 관찰하는 스테이지를 연결
          * @param stage 스테이지
          */
-
-
         _createClass(BaseActor, [{
           key: "bind",
           value: function bind(stage) {
@@ -2115,7 +1691,6 @@
            * @param type 이벤트 타입
            * @param [entry] 상태 변경시 관찰된 상태
            */
-
         }, {
           key: "dispatch",
           value: function dispatch(type, entry) {
@@ -2128,11 +1703,10 @@
            * 스테이지 진입
            * @param [entry] 스테이지 진입시 관찰 상태
            */
-
         }, {
           key: "appear",
           value: function appear(entry) {
-            if (this.isAppear) return;
+            if (this.isAppear === true) return;
             this.isAppear = true;
             this.dispatch(_common_types__WEBPACK_IMPORTED_MODULE_0__["AppearEvent"].APPEAR, entry);
           }
@@ -2140,18 +1714,16 @@
            * 스테이지 이탈
            * @param [entry] 스테이지 이탈시 관찰 상태
            */
-
         }, {
           key: "disappear",
           value: function disappear(entry) {
-            if (!this.isAppear) return;
+            if (this.isAppear === false) return;
             this.isAppear = false;
             this.dispatch(_common_types__WEBPACK_IMPORTED_MODULE_0__["AppearEvent"].DISAPPEAR, entry);
           }
           /**
            * 파기
            */
-
         }, {
           key: "dispose",
           value: function dispose() {
@@ -2160,213 +1732,136 @@
             }
           }
         }]);
-
         return BaseActor;
       }();
       /***/
-
     },
-
-    /***/
-    "loGT":
+    /***/"loGT":
     /*!********************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./projects/dev/src/app/pages/demo/once-actor/once-actor.component.html ***!
       \********************************************************************************************************************/
-
     /*! exports provided: default */
-
     /***/
     function loGT(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
-
-
       __webpack_exports__["default"] = "<div class=\"horizontal-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    actorType=\"once\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n\n<div class=\"vertical-list\">\n  <sample-actor\n    *ngFor=\"let item of actorMakeList\"\n    actorType=\"once\"\n    (sampleEvent)=\"onSampleAppearEvent($event)\"\n  >\n  </sample-actor>\n</div>\n";
+
       /***/
     },
 
-    /***/
-    "otmC":
+    /***/"otmC":
     /*!*********************************************!*\
       !*** ./projects/packages/src/public-api.ts ***!
       \*********************************************/
-
     /*! exports provided: AppearStage, BaseActor, OnceActor, LazyActor, AppearType, AppearEvent */
-
     /***/
     function otmC(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony import */
-
-
-      var intersection_observer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! intersection-observer */
-      "Wr5T");
+      var intersection_observer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! intersection-observer */"Wr5T");
       /* harmony import */
-
-
       var intersection_observer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(intersection_observer__WEBPACK_IMPORTED_MODULE_0__);
       /* harmony import */
-
-
-      var _stage_appear_stage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! ./stage/appear-stage */
-      "z1+7");
+      var _stage_appear_stage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__( /*! ./stage/appear-stage */"z1+7");
       /* harmony reexport (safe) */
-
-
       __webpack_require__.d(__webpack_exports__, "AppearStage", function () {
         return _stage_appear_stage__WEBPACK_IMPORTED_MODULE_1__["AppearStage"];
       });
+
       /* harmony import */
-
-
-      var _actor_base_actor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! ./actor/base-actor */
-      "lbm4");
+      var _actor_base_actor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__( /*! ./actor/base-actor */"lbm4");
       /* harmony reexport (safe) */
-
-
       __webpack_require__.d(__webpack_exports__, "BaseActor", function () {
         return _actor_base_actor__WEBPACK_IMPORTED_MODULE_2__["BaseActor"];
       });
+
       /* harmony import */
-
-
-      var _actor_once_actor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! ./actor/once-actor */
-      "E0sH");
+      var _actor_once_actor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__( /*! ./actor/once-actor */"E0sH");
       /* harmony reexport (safe) */
-
-
       __webpack_require__.d(__webpack_exports__, "OnceActor", function () {
         return _actor_once_actor__WEBPACK_IMPORTED_MODULE_3__["OnceActor"];
       });
+
       /* harmony import */
-
-
-      var _actor_lazy_actor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! ./actor/lazy-actor */
-      "v3ac");
+      var _actor_lazy_actor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__( /*! ./actor/lazy-actor */"v3ac");
       /* harmony reexport (safe) */
-
-
       __webpack_require__.d(__webpack_exports__, "LazyActor", function () {
         return _actor_lazy_actor__WEBPACK_IMPORTED_MODULE_4__["LazyActor"];
       });
+
       /* harmony import */
-
-
-      var _common_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! ./common/types */
-      "POQn");
+      var _common_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__( /*! ./common/types */"POQn");
       /* harmony reexport (safe) */
-
-
       __webpack_require__.d(__webpack_exports__, "AppearType", function () {
         return _common_types__WEBPACK_IMPORTED_MODULE_5__["AppearType"];
       });
+
       /* harmony reexport (safe) */
-
-
       __webpack_require__.d(__webpack_exports__, "AppearEvent", function () {
         return _common_types__WEBPACK_IMPORTED_MODULE_5__["AppearEvent"];
       });
-      /***/
 
+      /***/
     },
 
-    /***/
-    "qNk/":
+    /***/"qNk/":
     /*!**********************************************************************!*\
       !*** ./projects/dev/src/app/modules/example/common/common.module.ts ***!
       \**********************************************************************/
-
     /*! exports provided: ExampleCommonModule */
-
     /***/
     function qNk(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
-
-
       __webpack_require__.d(__webpack_exports__, "ExampleCommonModule", function () {
         return ExampleCommonModule;
       });
       /* harmony import */
-
-
-      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! tslib */
-      "mrSG");
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! tslib */"mrSG");
       /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! @angular/core */
-      "fXoL");
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__( /*! @angular/core */"fXoL");
       /* harmony import */
-
-
-      var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-      /*! @angular/common */
-      "ofXK");
+      var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__( /*! @angular/common */"ofXK");
       /* harmony import */
-
-
-      var _dev_app_modules_example_common_sample_actor_sample_actor_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! ~/dev/app/modules/example/common/sample-actor/sample-actor.component */
-      "UOhG");
-
-      var ExampleCommonModule = function ExampleCommonModule() {
+      var _dev_app_modules_example_common_sample_actor_sample_actor_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__( /*! ~/dev/app/modules/example/common/sample-actor/sample-actor.component */"UOhG");
+      var ExampleCommonModule = /*#__PURE__*/_createClass(function ExampleCommonModule() {
         _classCallCheck(this, ExampleCommonModule);
-      };
-
+      });
       ExampleCommonModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]],
         exports: [_dev_app_modules_example_common_sample_actor_sample_actor_component__WEBPACK_IMPORTED_MODULE_3__["SampleActorComponent"]],
         declarations: [_dev_app_modules_example_common_sample_actor_sample_actor_component__WEBPACK_IMPORTED_MODULE_3__["SampleActorComponent"]]
       })], ExampleCommonModule);
+
       /***/
     },
 
-    /***/
-    "v3ac":
+    /***/"v3ac":
     /*!***************************************************!*\
       !*** ./projects/packages/src/actor/lazy-actor.ts ***!
       \***************************************************/
-
     /*! exports provided: LazyActor */
-
     /***/
     function v3ac(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
-
-
       __webpack_require__.d(__webpack_exports__, "LazyActor", function () {
         return LazyActor;
       });
       /* harmony import */
-
-
-      var _base_actor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! ./base-actor */
-      "lbm4");
+      var _base_actor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! ./base-actor */"lbm4");
       /* harmony import */
+      var _common_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__( /*! ../common/types */"POQn");
 
-
-      var _common_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-      /*! ../common/types */
-      "POQn");
       /**
        * Stage 에 등록될 Actor.
        * 스테이지에 진입을 한번만 감지하되, 진입 후 너무 빠르게 이탈시에는 감지 처리를 하지 않는 느린 감지형.
@@ -2374,18 +1869,12 @@
        * @class LazyActor
        * @extends {BaseActor}
        */
-
-
       var LazyActor = /*#__PURE__*/function (_base_actor__WEBPACK_2) {
         _inherits(LazyActor, _base_actor__WEBPACK_2);
-
         var _super2 = _createSuper(LazyActor);
-
         function LazyActor() {
           var _this;
-
           _classCallCheck(this, LazyActor);
-
           _this = _super2.apply(this, arguments);
           _this.appearTimer = null;
           _this.checkoutDelay = 1000;
@@ -2397,8 +1886,6 @@
          * 지정된 시간 전에 감지된 진입은 느린 감지를 하지 않고 바로 진입을 알림.
          * @param [delay=1000]
          */
-
-
         _createClass(LazyActor, [{
           key: "setCheckoutDelay",
           value: function setCheckoutDelay() {
@@ -2409,7 +1896,6 @@
            * 지정된 시간 사이에 진입 후 진출을 하는 경우 진입 알림을 하지 않는 대기 시간.
            * @param [delay=150]
            */
-
         }, {
           key: "setAppearDelay",
           value: function setAppearDelay() {
@@ -2419,7 +1905,6 @@
           /**
            * 진입 대기 타이머 파기
            */
-
         }, {
           key: "clearAppearTimer",
           value: function clearAppearTimer() {
@@ -2433,15 +1918,12 @@
            * @override
            * @param [entry]
            */
-
         }, {
           key: "appear",
           value: function appear(entry) {
             var _this2 = this;
-
             this.clearAppearTimer();
-            if (this.isAppear) return;
-
+            if (this.isAppear === true) return;
             if (this.checkoutDelay <= entry.time) {
               this.appearTimer = setTimeout(function () {
                 _this2.doAppear(entry);
@@ -2455,13 +1937,11 @@
            * @private
            * @param entry
            */
-
         }, {
           key: "doAppear",
           value: function doAppear(entry) {
             this.isAppear = true;
             this.dispatch(_common_types__WEBPACK_IMPORTED_MODULE_1__["AppearEvent"].APPEAR, entry);
-
             if (this.stage) {
               this.stage.unobserve(this);
             }
@@ -2471,7 +1951,6 @@
            * @override
            * @param entry
            */
-
         }, {
           key: "disappear",
           value: function disappear(entry) {
@@ -2481,29 +1960,21 @@
             this.dispatch(_common_types__WEBPACK_IMPORTED_MODULE_1__["AppearEvent"].DISAPPEAR, entry);
           }
         }]);
-
         return LazyActor;
       }(_base_actor__WEBPACK_IMPORTED_MODULE_0__["BaseActor"]);
       /***/
-
     },
-
-    /***/
-    "z1+7":
+    /***/"z1+7":
     /*!*****************************************************!*\
       !*** ./projects/packages/src/stage/appear-stage.ts ***!
       \*****************************************************/
-
     /*! exports provided: AppearStage */
-
     /***/
     function z17(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
-
-
       __webpack_require__.d(__webpack_exports__, "AppearStage", function () {
         return AppearStage;
       });
@@ -2512,23 +1983,19 @@
        * 등록된 Actor(s)를 IntersectionObserver 를 통해 관찰하고 관찰된 상태에 따라 Actor 에게 알림.
        * @template T Actor
        */
-
-
       var AppearStage = /*#__PURE__*/function () {
         function AppearStage() {
           _classCallCheck(this, AppearStage);
         }
-
         _createClass(AppearStage, [{
           key: "init",
-
+          value:
           /**
            * 초기화
            * @param [option] 초기 옵션. 인터섹션 옵저버는 생성시에만 옵션 지정이 가능
            */
-          value: function init() {
+          function init() {
             var option = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
             if (!this.observer) {
               this.actorMap = new Map();
               this.observer = new IntersectionObserver(this.onObserveEntries.bind(this), option);
@@ -2538,12 +2005,10 @@
            * 전달된 actor 를 옵저버에 등록합니다.
            * @param actor 등록할 Actor
            */
-
         }, {
           key: "observe",
           value: function observe(actor) {
             var element = actor.element;
-
             if (this.actorMap && !this.actorMap.has(element)) {
               actor.bind(this);
               this.actorMap.set(element, actor);
@@ -2554,12 +2019,10 @@
            * 전달된 actor 를 옵저버에서 제외합니다.
            * @param actor 제외할 Actor
            */
-
         }, {
           key: "unobserve",
           value: function unobserve(actor) {
             var element = actor.element;
-
             if (this.actorMap && this.actorMap.has(element)) {
               this.actorMap["delete"](element);
               this.intersectionObserver.unobserve(element);
@@ -2568,38 +2031,42 @@
           /**
            * 옵저버에 등록(관찰) 중 인 Actor 의 수
            */
-
         }, {
-          key: "getActors",
-
+          key: "actorSize",
+          get: function get() {
+            return this.actorMap ? this.actorMap.size : 0;
+          }
           /**
            * 등록 되어있는 Actor 를 반환 합니다.
            * @returns T[]
            */
+        }, {
+          key: "getActors",
           value: function getActors() {
             return Array.from(this.actorMap ? this.actorMap.values() : []);
           }
           /**
            * 생성된 intersection observer 인스턴스
            */
-
         }, {
-          key: "onObserveEntries",
-
+          key: "intersectionObserver",
+          get: function get() {
+            if (!this.observer) throw new Error("uninitialize");
+            return this.observer;
+          }
           /**
            * 옵저버의 콜백 핸들러
            * @param entries 옵저버의 콜백으로 전달받는 엔트리 값
            */
+        }, {
+          key: "onObserveEntries",
           value: function onObserveEntries(entries) {
             var _this3 = this;
-
             entries.forEach(function (entry) {
               if (!_this3.actorMap) return;
               var isIntersecting = entry.isIntersecting,
-                  target = entry.target;
-
+                target = entry.target;
               var actor = _this3.actorMap.get(target);
-
               if (actor) {
                 if (isIntersecting) {
                   actor.appear(entry);
@@ -2612,7 +2079,6 @@
           /**
            * 파기
            */
-
         }, {
           key: "dispose",
           value: function dispose() {
@@ -2620,48 +2086,29 @@
               this.observer.disconnect();
               this.observer = null;
             }
-
             if (this.actorMap) {
               this.actorMap.clear();
               this.actorMap = null;
             }
           }
-        }, {
-          key: "actorSize",
-          get: function get() {
-            return this.actorMap ? this.actorMap.size : 0;
-          }
-        }, {
-          key: "intersectionObserver",
-          get: function get() {
-            if (!this.observer) throw new Error("uninitialize");
-            return this.observer;
-          }
         }]);
-
         return AppearStage;
       }();
       /***/
-
     },
-
-    /***/
-    "zml4":
+    /***/"zml4":
     /*!************************************************************************************************************************************!*\
       !*** ./node_modules/raw-loader/dist/cjs.js!./projects/dev/src/app/modules/example/common/sample-actor/sample-actor.component.html ***!
       \************************************************************************************************************************************/
-
     /*! exports provided: default */
-
     /***/
     function zml4(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
-
-
       __webpack_exports__["default"] = "<div class=\"panel-count\">\n  <div class=\"aside\">\n    <span class=\"label\">appearCount</span>\n    <span class=\"count\">{{ appearCount }}</span>\n  </div>\n  <div class=\"spacer\"></div>\n  <div class=\"bside\">\n    <span class=\"label\">disappearCount</span>\n    <span class=\"count\">{{ disappearCount }}</span>\n  </div>\n</div>\n<div class=\"panel-item\">\n  {{ item | json }}\n</div>\n";
+
       /***/
     }
   }]);

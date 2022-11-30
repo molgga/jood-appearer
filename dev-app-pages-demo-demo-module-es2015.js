@@ -207,7 +207,7 @@ class OnceActor extends _base_actor__WEBPACK_IMPORTED_MODULE_0__["BaseActor"] {
      * @param [entry]
      */
     appear(entry) {
-        if (this.isAppear)
+        if (this.isAppear === true)
             return;
         this.isAppear = true;
         this.dispatch(_common_types__WEBPACK_IMPORTED_MODULE_1__["AppearEvent"].APPEAR, entry);
@@ -1631,7 +1631,7 @@ class BaseActor {
         /**
          * 현재 진입 여부 상태
          */
-        this.isAppear = false;
+        this.isAppear = null;
         this.element = element;
     }
     /**
@@ -1649,7 +1649,7 @@ class BaseActor {
     dispatch(type, entry) {
         this.events.next(new _common_types__WEBPACK_IMPORTED_MODULE_0__["AppearEvent"](type, {
             actor: this,
-            entry
+            entry,
         }));
     }
     /**
@@ -1657,7 +1657,7 @@ class BaseActor {
      * @param [entry] 스테이지 진입시 관찰 상태
      */
     appear(entry) {
-        if (this.isAppear)
+        if (this.isAppear === true)
             return;
         this.isAppear = true;
         this.dispatch(_common_types__WEBPACK_IMPORTED_MODULE_0__["AppearEvent"].APPEAR, entry);
@@ -1667,7 +1667,7 @@ class BaseActor {
      * @param [entry] 스테이지 이탈시 관찰 상태
      */
     disappear(entry) {
-        if (!this.isAppear)
+        if (this.isAppear === false)
             return;
         this.isAppear = false;
         this.dispatch(_common_types__WEBPACK_IMPORTED_MODULE_0__["AppearEvent"].DISAPPEAR, entry);
@@ -1827,7 +1827,7 @@ class LazyActor extends _base_actor__WEBPACK_IMPORTED_MODULE_0__["BaseActor"] {
      */
     appear(entry) {
         this.clearAppearTimer();
-        if (this.isAppear)
+        if (this.isAppear === true)
             return;
         if (this.checkoutDelay <= entry.time) {
             this.appearTimer = setTimeout(() => {
